@@ -1,0 +1,76 @@
+<p></p>
+<div class="container">
+    <form name="dataForm" novalidate>
+        <div>
+            <label for="code">กรอกรายละเอียดของแปลง สปก. :</label>
+            <input ng-model=alrId type="text" name="code" class="form-control" ng-disabled="true">
+            <div>
+                <label for="owner">
+                    <h3></h3>ชื่อเจ้าของแปลง :</label>
+                <input ng-model="data.owner" type="text" name="owner" placeholder="{{alrData[0].active_owner}}" class="form-control">
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-6 col-md-4">
+                    <label for="code">มีเนื้อที่ สปก. ทั้งหมด  (ไร่):</label>
+                    <input placeholder="{{alrData[0].spk_rai | number:1}}" type="text" name="code" class="form-control" ng-disabled="true">
+                </div>
+
+            </div>
+        </div>
+        <!-- <label for="type">การใช้ประโยชน์ที่ดินปัจจุบัน :</label>
+        <input ng-model="data.type" type="text" name="type" class="form-control"> -->
+        <div class="row">
+            <div class="col-xs-6 col-md-4">
+                <label for="ctype">ปลูกพืชชนิดที่ 1:</label>
+                <select ng-model="data.ctype" name="ctype" class="form-control">
+                    <option value="">{{alrData[0].active_type}} </option>
+                    <option ng-repeat="cList in alrCWR">{{cList.crop_name}}</option>
+                </select>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <label for="rai">เนื้อที่ (ไร่) :</label>
+                <input ng-model="data.rai" type="number" name="rai" class="form-control" placeholder="{{alrData[0].spk_rai | number:1}}">
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <label for="date">เริ่มดำเนินการเมื่อ :</label>
+                <input ng-model="data.date" type="date" name="date" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-4">
+                <label for="ctype">ปลูกพืชชนิดที่ 2 :</label>
+                <select ng-model="data.ctype2" name="ctype" class="form-control">
+                    <option ng-repeat="cList in alrCWR">{{cList.crop_name}}</option>
+                </select>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <label for="rai">เนื้อที่ (ไร่) :</label>
+                <input ng-model="data.rai2" type="number" name="rai" class="form-control" placeholder="{{ alrData[0].spk_rai - (data.rai) | number:1}}">
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <label for="date">เริ่มดำเนินการเมื่อ :</label>
+                <input ng-model="data.date2" type="date" name="date" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-4">
+                <label for="ctype">ปลูกพืชชนิดที่ 3 :</label>
+                <select ng-model="data.ctype3" name="ctype" class="form-control">
+                    <option ng-repeat="cList in alrCWR">{{cList.crop_name}}</option>
+                </select>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <label for="rai">เนื้อที่ (ไร่) :</label>
+                <input ng-model="data.rai3" type="number" name="rai" class="form-control" placeholder="{{alrData[0].spk_rai - (data.rai + data.rai2) | number:1}}">
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <label for="date">เริ่มดำเนินการเมื่อ :</label>
+                <input ng-model="data.date3" type="date" name="date" class="form-control">
+            </div>
+        </div>
+        <p></p>
+        <button class="btn btn-primary" type="button" ng-click="sendMessage(); resetForm();" ng-disabled="!isPersonChanged();" onclick="setTimeout(window.close,2000);">ตกลง</button>
+    </form>
+</div>
+<!-- " -->

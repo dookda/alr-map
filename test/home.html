@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-route.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers.js"></script>
+    <script src="services.js"></script>
+</head>
+<body ng-app="starter">
+    <div>
+        {{2+3}}
+    </div>
+    <div class="container">
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#">Home</a></li>
+                    <li role="presentation"><a href="#">About</a></li>
+                    <li role="presentation"><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">เลือกพื้นที่เหมาะสมสำหรับพัฒนาแหล่งน้ำ</h3>
+        </div>
+        <div class="jumbotron" ng-controller="locationController">
+            <div class="container">
+                <h3>เลือกพื้นที่และชั้นข้อมูล</h3>
+                <form class="form-horizontal">
+
+                    <div class="form-group">
+                        <label for="country" class="col-sm-2 control-label">Country </label>
+                        <div class="col-sm-7">
+                            <select class="form-control" ng-model="province" ng-required="true" ng-options="prov.prov_nam_t for prov in provs" ng-change="updateAmp()">
+                                <option value="">Select country</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state" class="col-sm-2 control-label">State </label>
+                        <div class="col-sm-7">
+                            <select class="form-control" ng-model="amphoe" ng-required="true" ng-options="amp.amp_nam_t for amp in availableAmp" ng-change="updateTam()">
+                                <option value="">Select state</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city" class="col-sm-2 control-label">City </label>
+                        <div class="col-sm-7">
+                            <select class="form-control" ng-model="tambon" ng-required="true" ng-options="tam.tam_nam_t for tam in availableTam">
+                                <option value="">Select city</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-offset-2">
+                        <button class="btn btn-success"  ng-click="showGMP(data)"> Save </button>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2">
+                            <b>Country:</b> {{province.prov_nam_t}}
+                            <b>State:</b> {{amphoe.amp_nam_t}}
+                            <b>City:</b> {{tambon.tam_nam_t}}
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <h3 class="text-muted">ลงทะเบียนแปลง</h3>
+        <div class="jumbotron">
+            <h1>Jumbotron heading</h1>
+            <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+        </div>
+        <h3 class="text-muted">สรุปข้อมูล</h3>
+        <div class="jumbotron">
+            <h1>Jumbotron heading</h1>
+            <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+        </div>
+        <div class="row marketing">
+            <div class="col-lg-6">
+                <h4>คำแนะนำ</h4>
+                <p>เลือก Module ที่ต้องการ กรอกรายละเอียดให้ครบ แล้วคลิ๊กเลือกแสดงแผนที่</p>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>&copy; 2017 gistnu lab</p>
+        </footer>
+    </div>
+    <!-- /container -->
+</body>
+
+</html>

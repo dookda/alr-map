@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>	
+    <head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>GeoExt WMS Capabilities Example</title>
+
+        <!-- ExtJS -->
+        <script type="text/javascript" src="http://cdn.sencha.com/ext/gpl/4.2.1/examples/shared/include-ext.js"></script>
+        <script type="text/javascript" src="http://cdn.sencha.com/ext/gpl/4.2.1/examples/shared/options-toolbar.js"></script>
+
+        <!-- Shared -->
+        <link rel="stylesheet" type="text/css" href="http://cdn.sencha.com/ext/gpl/4.2.1/examples/shared/example.css" />
+        <!-- Basic example styling -->
+        <link rel="stylesheet" type="text/css" href="/trfland/content/wmscapabilities/shared/example.css" />
+
+        <!-- You should definitely consider using a custom single-file version of OpenLayers -->
+        <script src="http://openlayers.org/api/2.13.1/OpenLayers.js"></script>
+        <script type="text/javascript" src="loader.js"></script>
+        <!--script type="text/javascript" src="wmscapabilities.js"></script -->
+		<script>
+		var store;
+		Ext.require([
+			'Ext.data.writer.Json',
+			'Ext.grid.Panel',
+			'GeoExt.data.reader.WmsCapabilities',
+			'GeoExt.data.WmsCapabilitiesLayerStore',
+			'GeoExt.panel.Map'
+		]);
+		Ext.application({
+			name: 'WMSGetCapabilities',
+			launch: function() {				
+				// create a new WMS capabilities store
+				store = Ext.create('GeoExt.data.WmsCapabilitiesStore', {
+					storeId: 'wmscapsStore',
+					url: "wms.xml",
+					autoLoad: true
+				});			
+				// create a grid to display records from the store
+				var grid = Ext.create('Ext.grid.Panel', {
+					title: "WMS Capabilities",
+					store: Ext.data.StoreManager.lookup('wmscapsStore'),
+					columns: [
+						{header: "Title", dataIndex: "title", sortable: true},
+						{header: "Name", dataIndex: "name", sortable: true},
+						{header: "Queryable", dataIndex: "queryable", sortable: true},
+						{id: "description", header: "Description", dataIndex: "abstract", flex: 1}
+					],
+					renderTo: "capgrid",
+					height: 500,
+					width: 800,
+					listeners: {
+						itemdblclick: mapPreview
+					}
+				});				
+				function mapPreview(grid, record) {
+					var layer = record.getLayer().clone();
+					var win = Ext.create('Ext.Window', {
+						title: "Preview: " + record.get("title"),
+						width: 512,
+						height: 256,
+						layout: "fit",
+						items: [{
+							xtype: "gx_mappanel",
+							layers: [layer],
+							extent: record.get("llbbox")
+						}]
+					});
+					win.show();
+				}
+			}
+		});
+		</script>
+
+    </head>
+    <body>
+        <h1>คำอธิบายข้อมูล</h1>
+        <p>WMS Capabilities ชั้นข้อมูลและคำอธิบายข้อมูลท่านมารถดับเบิ้ลคลิ๊กที่ชั้นข้อมูลเพื่อแสดงแผนที่ตัวอย่าง</p>
+
+        <div id="capgrid"></div>
+    </body>
+</html>
