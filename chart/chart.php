@@ -1446,7 +1446,7 @@ order by dru DESC;");
 					      $result = pg_query( "
 SELECT dru as name_bar ,count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and dru IS NOT NULL
+where prov_code = '$prov_name' 
 group by dru
 order by dru DESC;");
 						 
@@ -1455,7 +1455,7 @@ order by dru DESC;");
 					      $result = pg_query( "
 SELECT dru as name_bar ,count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and dru IS NOT NULL
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' 
 group by dru
 order by dru DESC;");
 						 
@@ -1464,7 +1464,7 @@ order by dru DESC;");
 					      $result = pg_query( "
 SELECT dru as name_bar ,count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and dru IS NOT NULL
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  
 group by dru
 order by dru DESC;");
 						 
@@ -1554,7 +1554,7 @@ order by flo DESC;");
 					      $result = pg_query( "
 SELECT flo as name_bar ,count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and flo IS NOT NULL
+where prov_code = '$prov_name'
 group by flo
 order by flo DESC;");
 						 
@@ -1563,7 +1563,7 @@ order by flo DESC;");
 					      $result = pg_query( "
 SELECT flo as name_bar ,count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and flo IS NOT NULL
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  
 group by flo
 order by flo DESC;");
 						 
@@ -1572,7 +1572,7 @@ order by flo DESC;");
 					      $result = pg_query( "
 SELECT flo as name_bar ,count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and flo IS NOT NULL
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name' 
 group by flo
 order by flo DESC;");
 						 
@@ -1615,29 +1615,23 @@ where hcr_km between 0 and 2.99;");
 				   }if ($prov_name != '0' and $amphoe_name == '0'){
 					   
 					      $result = pg_query( "
-SELECT flo as name_bar ,count(*) as sumpoint 
+SELECT count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and flo IS NOT NULL
-group by flo
-order by flo DESC;");
+where prov_code = '$prov_name' and hcr_km between 0 and 2.99;");
 						 
 				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
 					   
 					      $result = pg_query( "
-SELECT flo as name_bar ,count(*) as sumpoint 
+SELECT count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and flo IS NOT NULL
-group by flo
-order by flo DESC;");
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and hcr_km between 0 and 2.99;");
 						 
 				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
 						
 					      $result = pg_query( "
-SELECT flo as name_bar ,count(*) as sumpoint 
+SELECT count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and flo IS NOT NULL
-group by flo
-order by flo DESC;");
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and hcr_km between 0 and 2.99;");
 						 
 				   }
 			}
@@ -1656,29 +1650,23 @@ where hcr_km between 3 and 5.99;");
 				   }if ($prov_name != '0' and $amphoe_name == '0'){
 					   
 					      $result = pg_query( "
-SELECT flo as name_bar ,count(*) as sumpoint 
+SELECT count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and flo IS NOT NULL
-group by flo
-order by flo DESC;");
+where prov_code = '$prov_name' and hcr_km between 3 and 5.99;");
 						 
 				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
 					   
 					      $result = pg_query( "
-SELECT flo as name_bar ,count(*) as sumpoint 
+SELECT count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and flo IS NOT NULL
-group by flo
-order by flo DESC;");
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and hcr_km between 3 and 5.99;");
 						 
 				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
 						
 					      $result = pg_query( "
-SELECT flo as name_bar ,count(*) as sumpoint 
+SELECT count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and flo IS NOT NULL
-group by flo
-order by flo DESC;");
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and hcr_km between 3 and 5.99;");
 						 
 				   }
 			}
@@ -1697,29 +1685,23 @@ where hcr_km between 6 and 8.99;");
 				   }if ($prov_name != '0' and $amphoe_name == '0'){
 					   
 					      $result = pg_query( "
-SELECT flo as name_bar ,count(*) as sumpoint 
+SELECT count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and flo IS NOT NULL
-group by flo
-order by flo DESC;");
+where prov_code = '$prov_name' and hcr_km between 6 and 8.99;");
 						 
 				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
 					   
 					      $result = pg_query( "
-SELECT flo as name_bar ,count(*) as sumpoint 
+SELECT count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and flo IS NOT NULL
-group by flo
-order by flo DESC;");
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and hcr_km between 6 and 8.99;");
 						 
 				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
 						
 					      $result = pg_query( "
-SELECT flo as name_bar ,count(*) as sumpoint 
+SELECT count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and flo IS NOT NULL
-group by flo
-order by flo DESC;");
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and hcr_km between 6 and 8.99;");
 						 
 				   }
 			}
@@ -1738,29 +1720,23 @@ where hcr_km between 9 and 11.99;");
 				   }if ($prov_name != '0' and $amphoe_name == '0'){
 					   
 					      $result = pg_query( "
-SELECT flo as name_bar ,count(*) as sumpoint 
+SELECT count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and flo IS NOT NULL
-group by flo
-order by flo DESC;");
+where prov_code = '$prov_name' and hcr_km between 9 and 11.99;");
 						 
 				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
 					   
 					      $result = pg_query( "
-SELECT flo as name_bar ,count(*) as sumpoint 
+SELECT count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and flo IS NOT NULL
-group by flo
-order by flo DESC;");
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and hcr_km between 9 and 11.99;");
 						 
 				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
 						
 					      $result = pg_query( "
-SELECT flo as name_bar ,count(*) as sumpoint 
+SELECT count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and flo IS NOT NULL
-group by flo
-order by flo DESC;");
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and hcr_km between 9 and 11.99;");
 						 
 				   }
 			}
@@ -1779,29 +1755,23 @@ where hcr_km >= 12;");
 				   }if ($prov_name != '0' and $amphoe_name == '0'){
 					   
 					      $result = pg_query( "
-SELECT flo as name_bar ,count(*) as sumpoint 
+SELECT count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and flo IS NOT NULL
-group by flo
-order by flo DESC;");
+where prov_code = '$prov_name' and hcr_km >= 12;");
 						 
 				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
 					   
 					      $result = pg_query( "
-SELECT flo as name_bar ,count(*) as sumpoint 
+SELECT count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and flo IS NOT NULL
-group by flo
-order by flo DESC;");
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and hcr_km >= 12;");
 						 
 				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
 						
 					      $result = pg_query( "
-SELECT flo as name_bar ,count(*) as sumpoint 
+SELECT count(*) as sumpoint 
 FROM alr_parcel 
-where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and flo IS NOT NULL
-group by flo
-order by flo DESC;");
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and hcr_km >= 12;");
 						 
 				   }
 			}
