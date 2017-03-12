@@ -6,9 +6,9 @@
 include "../../lib/sel_config.php";
 conndb();
 
-	$prov_name = $_GET[prov_name];
-	$amphoe_name = $_GET[amphoe_name];
-	$tambon_name = $_GET[tambon_name];
+	$prov_name = $_GET[province3];
+	$amphoe_name = $_GET[amphoe3];
+	$tambon_name = $_GET[tambon3];
 	$sel_parcel = $_GET[sel_parcel];
 	$sel_plant = $_GET[sel_plant];
 	$sel_r = $_GET[sel_r];
