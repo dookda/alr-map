@@ -4,15 +4,20 @@
 <?php
 include "../lib/sel_config.php";
 conndb();
-	$prov_name = $_GET[province3];
-	$amphoe_name = $_GET[amphoe3];
-	$tambon_name = $_GET[tambon3];
+
+	$prov_name = $_GET[prov_name];
+	$amphoe_name = $_GET[amphoe_name];
+	$tambon_name = $_GET[tambon_name];
 	$sel_parcel = $_GET[sel_parcel];
 	$sel_plant = $_GET[sel_plant];
 	$sel_r = $_GET[sel_r];
 	$sel_m = $_GET[sel_m];
 	$sel_s = $_GET[sel_s];
 	$sel_c = $_GET[sel_c];
+	$sel_lu = $_GET[sel_lu];
+	$sel_dru = $_GET[sel_dru];
+	$sel_flo = $_GET[sel_flo];
+	$sel_hcr = $_GET[sel_hcr];
 	
 	
 	

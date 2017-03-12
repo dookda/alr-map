@@ -241,7 +241,7 @@ $(document).ready(function() {
                 <h3 class="text-muted">สรุปข้อมูล ส.ป.ก.</h3>
                 <p>เลือกพื้นที่</p>
                 <div class="jumbotron">
-                    <form method="get" action="charts.php" target="chart_php">
+                    <form method="get" action="chart/chart.php" target="chart_php">
                         <div class="form-group">
                             <div>
                                 <label for="Select">เลือกพื้นที่:</label>
@@ -252,12 +252,28 @@ $(document).ready(function() {
                             <div class="form-group" id="amphoe3"></div>
                             <label for="province">ตำบล</label>
                             <div class="form-group" id="tambon3"></div><br>
-				<input type="checkbox" name="sel_parcel" value="1" checked> ข้อมูลจำนวนแปลง ส.ป.ก.<br>
-				<input type="checkbox" name="sel_plant" value="1"> ข้อมูลการปลูกพืช<br>
-				<input type="checkbox" name="sel_r" value="1"> ข้าว<br>
-				<input type="checkbox" name="sel_m" value="1"> ข้าวโพด<br>
-				<input type="checkbox" name="sel_c" value="1"> มันสำปะหลัง<br>
-				<input type="checkbox" name="sel_s" value="1"> อ้อย<br>
+							
+							<div>
+                                <label for="Select">เลือกข้อมูลที่ต้องการแสดง : </label>
+                            </div>
+							 <div class="container">
+								<div class="col-xs-6 col-md-4">
+									<input type="checkbox" name="sel_parcel" value="1" checked> ข้อมูลจำนวนแปลง ส.ป.ก.<br>
+									<input type="checkbox" name="sel_plant" value="1"> ข้อมูลการปลูกพืช<br>
+									<input type="checkbox" name="sel_r" value="1"> ข้าว<br>
+									<input type="checkbox" name="sel_m" value="1"> ข้าวโพด<br>
+									<input type="checkbox" name="sel_c" value="1"> มันสำปะหลัง<br>
+									<input type="checkbox" name="sel_s" value="1"> อ้อย<br>
+								</div>
+								<div class="col-xs-6 col-md-4">
+									<input type="checkbox" name="sel_lu" value="1">การใช้ประโยชน์ที่ดิน<br>
+									<input type="checkbox" name="sel_dru" value="1">พื้นที่เสี่ยงแล้ง<br>
+									<input type="checkbox" name="sel_flo" value="1">พื้นที่น้ำท่วมซ้ำซาก<br>
+								</div>
+								<div class="col-xs-6 col-md-4">
+									<input type="checkbox" name="sel_hcr" value="1">ระยะห่างจาก รพ.สต.<br>
+								</div>
+							</div>
                         </div>
                         <button type="submit" class="btn btn-primary">ตกลง</button>
                     </form>
