@@ -189,22 +189,22 @@ var x=Heron.examples.searchPanelConfig = {
             name: "หมายเลขระวาง 1:50,000",
             protocol: new OpenLayers.Protocol.WFS({
                 version: "1.1.0",
-                url: "http://map.nu.ac.th:8080/geoserver/ows?",
+                url: "http://www.map.nu.ac.th/gs-alr2/ows?",
                 srsName: "EPSG:3857",
-                featureType: "index_ortho25k2", //gisldd:admin_tambon
+                featureType: "ln9p_prov", //gisldd:admin_tambon
                 //outputFormat: 'GML2',
                 maxFeatures: 1000
             }),
             downloadFormats: Heron.options.wfs.downloadFormats, //Heron.options.wfs.downloadFormats
             items: [{
                 xtype: "textfield",
-                name: "mapsheet__like",
-                value: "52383NW",
+                name: "prov_code__like",
+                value: "65",
                 fieldLabel: "Map Sheet"
             }, {
                 xtype: "textfield",
-                name: "utm_zone__like",
-                value: "47",
+                name: "prov_nam_t__like",
+                value: "จ.พิษณุโลก",
                 fieldLabel: "UTM Zone"
             },{
                 xtype: "label",
@@ -817,16 +817,6 @@ Heron.options.map.toolbar = [{
         type: "measurearea",
         options: {
             geodesic: false
-        }
-    }, {
-        type: "-"
-    }, {
-        type: "addbookmark"
-    }, {
-        type: "help",
-        options: {
-            tooltip: 'Help and info for this example',
-            contentUrl: 'help.html'
         }
     }, {
         type: "-"
