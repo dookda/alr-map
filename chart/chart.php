@@ -3,7 +3,7 @@
 
 <head>
     <?php
-include "../lib/sel_config.php";
+include "../../lib/sel_config.php";
 conndb();
 
 	$prov_name = $_GET[prov_name];
