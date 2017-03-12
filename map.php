@@ -28,8 +28,8 @@
 	<link rel="stylesheet" type="text/css" href="../heron-1.0.6/resources/css/default.css"/>
     <link rel="stylesheet" type="text/css" href="../heron-1.0.6/resources/css/default-theme-gray.css"/>
     <link rel="stylesheet" type="text/css" href="../heron-1.0.6/ux/gxp/git/src/theme/all.css"/>
-	<link rel="stylesheet" type="text/css" href="../heron-1.0.6/resources/css/portal.css"/>
-
+	<link rel="stylesheet" type="text/css" href="../heron-1.0.6/resources/css/portal.css"/>	
+	<script type="text/javascript" src="../heron-1.0.6/lib/i18n/en_US.js"></script>
 	<!--[if IE]>
 	<link rel="stylesheet" type="text/css" href="../heron-1.0.3/resources/css/portal-ie.css"/>
 	<![endif]-->
@@ -224,8 +224,7 @@ foreach($_GET as $key => $value) {
 closedb();
 ?>
 		
-<script type="text/javascript" src="../heron-1.0.6/script/Heron-alr.js"></script>
-<script type="text/javascript" src="../heron-1.0.6/lib/i18n/en_US.js"></script>
+<script type="text/javascript" src="Heron-alr.js"></script>
 <script type="text/javascript" src="layers.js"></script>
 <script type="text/javascript" src="plugin.js"></script>
 <script type="text/javascript" src="field.js"></script>
