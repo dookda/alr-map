@@ -18,3 +18,8 @@ Gear !!
 - mapnu geoserver (http://map.nu.ac.th/gs-alr/)
 
 test __
+<<<<<<< HEAD
+=======
+test das
+test poo --- edit for README
+>>>>>>> origin/master
