@@ -1,7 +1,10 @@
 # alr-map
 alr map project
 
-Goal !!
+## wiki page
+https://github.com/dookda/alr-map/wiki
+
+## Goal !!
 
 พัฒนา web maping ดังนี้
 - เปิดชั้นข้อมูล สปก + Base map เช่น goolge maps
@@ -12,14 +15,7 @@ Goal !!
 - หา location ปัจจุบันว่าเหมาะสมปลูกอะไร (soil suite from soilview)
 - ต้องเสร็จก่อน 15 jan 2017
 
-Gear !!
+## Gear !!
 - Heron-mc (http://heron-mc.org/)
 - leaflet js (http://leafletjs.com/)
 - mapnu geoserver (http://map.nu.ac.th/gs-alr/)
-
-test __
-<<<<<<< HEAD
-=======
-test das
-test poo --- edit for README
->>>>>>> origin/master
