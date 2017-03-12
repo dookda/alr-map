@@ -16,7 +16,7 @@ Heron.gridColumns = [{
         { header: 'เนื้อที่ทั้งหมดของแปลง ส.ป.ก. (ไร่)', dataIndex: 'spk_rai' },
         { header: 'ประเภทการใช้ประโยชน์ที่ดิน', dataIndex: 'active_type' },
         { header: 'เนื้อที่ที่ดำเนินกิจกรรม', dataIndex: 'active_rai' },
-        { header: 'วันที่เริ่มดำเนินการ', dataIndex: 'active_date' },        
+        { header: 'วันที่เริ่มดำเนินการ', dataIndex: 'active_date' },
         { header: 'รหัสตำบล', dataIndex: 'tam_code' },
         { header: 'ชื่อตำบล', dataIndex: 'tam_nam_t' },
         { header: 'รหัสอำเภอ', dataIndex: 'amp_code' },
@@ -67,6 +67,26 @@ Heron.gridColumns = [{
         { header: 'ความเสี่ยงภัยแล้ง', dataIndex: 'dru' },
         { header: 'ความเสี่ยงน้ำท่วมซ้ำซาก (ปี)', dataIndex: 'flo' }
     ]
+},
+{
+    featureType: 'wsupply_rain',
+    columns: [
+        //colModule,
+		//addEtc,
+        { header: 'ลำดับ', dataIndex: 'Gid' },
+        { header: 'ปริมาณน้ำฝน', dataIndex: 'Rain' },
+
+
+    ]
+},
+{
+    featureType: 'wsupply_runoff',
+    columns: [
+        //colModule,
+		//addEtc,
+        { header: 'ลำดับ', dataIndex: 'Gid' },
+        { header: 'ปริมาณน้ำท่า', dataIndex: 'runoff' },
+
+
+    ]
 }];
-
-
