@@ -62,7 +62,7 @@ var x=Heron.examples.searchPanelConfig = {
                 valueField: 'value',
                 displayField: 'item',
                 triggerAction: 'all',
-                fieldLabel: "Province Name",
+                fieldLabel: "ชื่อจังหวัด",
                 listeners: {
                     select: function(combo, records, eOpts) {
                         amphoe = Ext.getCmp('a_cb');
@@ -87,7 +87,7 @@ var x=Heron.examples.searchPanelConfig = {
                 valueField: 'value',
                 displayField: 'item',
                 triggerAction: 'all',
-                fieldLabel: "Amphoe Name",
+                fieldLabel: "ชื่ออำเภอ",
                 listeners: {
                     select: function(combo, records, eOpts) {
                         tambon = Ext.getCmp('t_cb');
@@ -110,7 +110,7 @@ var x=Heron.examples.searchPanelConfig = {
                 valueField: 'value',
                 displayField: 'item',
                 triggerAction: 'all',
-                fieldLabel: "Tambon Name"
+                fieldLabel: "ชื่อตำบล"
             }
             , {
                 xtype: "combo",
@@ -124,7 +124,7 @@ var x=Heron.examples.searchPanelConfig = {
                 valueField: 'value',
                 displayField: 'display',
                 name: "layerType",
-                fieldLabel: "ค้นหาในชั้นข้อมูล"
+                fieldLabel: "ค้นหาชั้นข้อมูล"
             },{
                 xtype: "label",
                 id: "helplabel",
@@ -784,7 +784,7 @@ Heron.options.map.toolbar = [{
     }, {
         type: "-"
     },{
-        type: "pan"    
+        type: "pan"
     },
     //    {type: "pan", options: {iconCls: "icon-hand"}},
     {
@@ -807,7 +807,7 @@ Heron.options.map.toolbar = [{
     }, {
         type: "-"
     },
-    // Use "geodesic: true" for non-linear/Mercator projections like Google, Bing etc 
+    // Use "geodesic: true" for non-linear/Mercator projections like Google, Bing etc
     {
         type: "measurelength",
         options: {
@@ -994,13 +994,13 @@ Heron.layout = {
                     tools: [{
                         // ptype: "gxp_layertree",
                         ptype: "gxp_layermanager",
-                        groups: layersGroup,                        
+                        groups: layersGroup,
                         outputConfig: {
                             id: "layertree",
-                            //title: __('Layers weew'),                                     
+                            //title: __('Layers weew'),
                             //header: false,
                             //border: false,
-                            //tbar: [], // we will add buttons to "tree.bbar" later                                     
+                            //tbar: [], // we will add buttons to "tree.bbar" later
                         },
                         outputTarget: "gxplayerpanel"
                     }, {
@@ -1096,9 +1096,9 @@ Heron.layout = {
                     collapseMode: 'mini',
                     collapsible: true,
                     collapsed: true,
-                    //width: 350,   
+                    //width: 350,
                     height: 300,
-                    split: true,                                    
+                    split: true,
                     header: false,
                     showTopToolbar: false
                 }]
