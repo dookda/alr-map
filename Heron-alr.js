@@ -7090,6 +7090,13 @@ Heron.widgets.search.FeatureInfoPanel = Ext.extend(Ext.Panel, {
                 featureSets[featureSetKey] = featureSet;
             }
             for (var attrName in feature.attributes) {
+                
+
+                //add parcel name to alrVal
+                if(attrName =='alrcode'){
+                    var alrVal = feature.attributes[attrName];
+                }
+
                 var attrValue = feature.attributes[attrName];
                 if (attrValue && typeof attrValue == 'string' && attrValue.indexOf("http://") >= 0) {
                     feature.attributes[attrName] = '<a href="' + attrValue + '" target="_new">' + attrValue + '</a>';
@@ -7120,6 +7127,15 @@ Heron.widgets.search.FeatureInfoPanel = Ext.extend(Ext.Panel, {
                     }
                 }
             }
+
+
+            //alert(alrVal);
+            var ccurent = new Ext.Panel({
+                title: 'ภาพ'+featureSet.title,
+                html: '<iframe src="takeaphoto/index.php?alrcode='+alrVal+'" scrolling="yes" frameborder="0" style="position: relative; height: 100%; width: 100%;"></iframe>',
+                cls:'empty'
+                });
+
             var panel = new Heron.widgets.search.FeaturePanel({
                 title: featureSet.title,
                 featureType: featureSet.featureType,
@@ -7146,21 +7162,35 @@ Heron.widgets.search.FeatureInfoPanel = Ext.extend(Ext.Panel, {
                     zoomLevelPointSelect: 8
                 }
             });
+            
+            if(featureSet.title=="แปลงที่ดิน ส.ป.ก."){                
+                var tab = [panel, ccurent];
+
+                
+            }else{
+                var tab = [panel];
+            };
+
             if (!this.tabPanel) {
                 this.tabPanel = new Ext.TabPanel({
                     border: false,
                     autoDestroy: true,
                     enableTabScroll: true,
-                    items: [panel],
+                    items: tab,
                     activeTab: 0
                 });
             } else {
                 this.tabPanel.add(panel);
                 this.tabPanel.setActiveTab(0);
-            }
+            };
+
+
+
             panel.loadFeatures(featureSet.features, featureSet.featureType);
         }
         return this.tabPanel;
+
+
     },
     displayTree: function(evt) {
         var panel = new Heron.widgets.XMLTreePanel();
