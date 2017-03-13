@@ -9,17 +9,26 @@ OpenLayers.DOTS_PER_INCH = 25.4 / 0.28;
 
 Ext.BLANK_IMAGE_URL = 'http://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/resources/images/default/s.gif';
 
-
 var prj4326 = new OpenLayers.Projection("EPSG:4326");
-var prj3857 = new OpenLayers.Projection("EPSG:900913");
+//var prj32647 = new OpenLayers.Projection("EPSG:32647");
+var prj3857 = new OpenLayers.Projection("EPSG:3857");
 var pnt = new OpenLayers.LonLat(100, 17.04);
 //var center = pnt.transform(prj4326, prj3857);
 //map.zoomToExtent(new OpenLayers.Bounds(10880654.89,1709976.28,11331413.44,2082257.42).transform("EPSG:4326", "EPSG:900913"));
 
+// Without default bottom status bar.
+Heron.options.map.statusbar = [
+	{type: "any", options:{xtype: 'tbtext', text: 'Location'}},
+	{type: "-"},
+  {type: "xcoord"},
+  {type: "ycoord"}
+];
+
+
 Ext.namespace("Heron.options.map.settings");
 Heron.options.map.settings = {
     projection: prj3857,
-    displayProjection: prj4326,
+    displayProjection: prj4326, //prj32647
     units: 'm',
     maxExtent: '-20037508, -20037508,20037508, 20037508.34',
     center: center,
@@ -61,7 +70,7 @@ var ip = 'www.map.nu.ac.th';
 var hosturl = 'http://' + ip + '/geoserver-hgis/ows?';
 
 
-////////// 
+//////////
 var gTerrain = new OpenLayers.Layer.Google(
     "Google Terrain", {
         type: google.maps.MapTypeId.TERRAIN,
@@ -401,7 +410,7 @@ var wshd_cl = new OpenLayers.Layer.WMS(
     }
 );
 
-//////// landuse    
+//////// landuse
 var dwrlu = new OpenLayers.Layer.WMS(
     "การใช้ประโยชน์ที่ดิน (กรมทรัพยากรน้ำ)",
     Heron.scratch.urls.OwsMapNU, { layers: "trfgdb:dwrlu", transparent: true, format: 'image/png' }, {
@@ -908,13 +917,13 @@ while (mapLayer[i]) {
     } else if (mapLayer[i] == 'lyrBase') {
         selectedLayers.push(dem, basin, wshd_cl, dwrlu, spklu, p10_evap_tff, p10_rain_tff, L08_DS_HV_CONDUETOR, trans, forestc);
         layersGroup['baseLayers'] = {};
-        layersGroup.baseLayers['title'] = "ข้อมูลพื้นฐาน";    
+        layersGroup.baseLayers['title'] = "ข้อมูลพื้นฐาน";
 
     } else if (mapLayer[i] == 'lyrWater') {
         selectedLayers.push(watbody, stream);
         layersGroup['waterResource'] = {};
         layersGroup.waterResource['title'] = "แหล่งน้ำ";
-		
+
     }else if (mapLayer[i] == 'lyrSoil') {
         selectedLayers.push(suiteCasava, suiteCorn, suiteRice, suiteSugar, suitePara);
         layersGroup['soilsuite'] = {};
@@ -963,6 +972,3 @@ layersGroup.background['title'] = "แผนที่ฐาน";
 layersGroup.background['exclusive'] = true;
 
 Heron.options.map.layers = selectedLayers;
-
-
-
