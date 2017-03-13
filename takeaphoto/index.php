@@ -20,7 +20,7 @@ $alrcode = $_GET["alrcode"];
     if (!is_dir($file))
     {
         //echo '<h3>'.$file.'</h3>';
-      echo '<div class="panel"> <img src="uploads/'.$file.'" class="img-rounded" style="width: 400px;"/></div>';
+      echo '<div class="panel"> <img src="uploads/'.$alrcode.'/'.$file.'" class="img-rounded" style="width: 400px;"/></div>';
     }
   }
 ?>
