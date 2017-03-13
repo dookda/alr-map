@@ -183,6 +183,32 @@ var x=Heron.examples.searchPanelConfig = {
                 }
             }
         }, //End search with combobox
+        {
+         searchPanel: {
+                        xtype: 'hr_gxpquerypanel',
+                        name: "สร้างการค้นหาของคุณเอง",
+                        description: 'This search uses both search within Map extent and/or your own attribute criteria',
+                        header: false,
+                        border: false,
+                        caseInsensitiveMatch: true,
+                        autoWildCardAttach: true
+                    },
+                    resultPanel: {
+                        xtype: 'hr_featuregridpanel',
+                        id: 'hr-featuregridpanel',
+                        header: false,
+                        border: false,
+                        autoConfig: true,
+                        exportFormats: Heron.options.exportFormats,
+                        gridCellRenderers: Heron.options.gridCellRenderers,
+                        hropts: {
+                            zoomOnRowDoubleClick: true,
+                            zoomOnFeatureSelect: false,
+                            zoomLevelPointSelect: 8,
+                            zoomToDataExtent: true
+                        }
+                }
+        },
        {
         searchPanel: {
             xtype: "hr_formsearchpanel",
