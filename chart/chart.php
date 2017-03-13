@@ -49,7 +49,7 @@ conndb();
         <div class="col-md-12">
             <div class="panel">
                 <div class="panel-heading-white panel-heading">
-                    <h4>จำนวนแปลง ส.ป.ก. ของแต่ละพื้นที่</h4>
+                    <h4>จำนวนแปลง ส.ป.ก. ของแต่ละพื้นที่<small> หน่วยเป็นจำนวนแปลง</small></h4>
                 </div>
                 <div class="panel-body">
                     <div class="col-md-12">
@@ -61,12 +61,11 @@ conndb();
         <?php if ($sel_parcel == '1'){}else{echo "-->";} ?>
 
 
-
         <?php if ($sel_plant == '1'){}else{echo "<!--";} ?>
         <div class="col-md-12">
             <div class="panel">
                 <div class="panel-heading-white panel-heading">
-                    <h4>จำนวนแปลงที่ปลูกพืชแต่ละชนิดของ ส.ป.ก.</h4>
+                    <h4>จำนวนแปลงที่ปลูกพืชแต่ละชนิดของ ส.ป.ก.<small> หน่วยเป็นจำนวนแปลง</small></h4>
                 </div>
                 <div class="panel-body">
                     <div class="col-md-12">
@@ -81,8 +80,8 @@ conndb();
         <?php if ($sel_lu == '1'){}else{echo "<!--";} ?>
         <div class="col-md-12">
             <div class="panel">
-                <div class="panel-heading-white panel-heading text-center">
-                    <h4>การใช้ประโยชน์ที่ดิน</h4>
+                <div class="panel-heading-white panel-heading">
+                    <h4>การใช้ประโยชน์ที่ดิน<small> หน่วยเป็นจำนวนแปลง</small></h4>
                 </div>
                 <div class="panel-body">
                     <center>
@@ -94,12 +93,11 @@ conndb();
         <?php if ($sel_lu == '1'){}else{echo "-->";} ?>
 
 
-
         <?php if ($sel_r == '1'){}else{echo "<!--";} ?>
         <div class="col-md-12">
             <div class="panel">
-                <div class="panel-heading-white panel-heading text-center">
-                    <h4>สัดส่วนพื้นที่เหมาะสมในการปลูกข้าว</h4>
+                <div class="panel-heading-white panel-heading">
+                    <h4>สัดส่วนพื้นที่เหมาะสมในการปลูกข้าว<small> หน่วยเป็นจำนวนแปลง</small></h4>
                 </div>
                 <div class="panel-body">
                     <center>
@@ -110,11 +108,12 @@ conndb();
         </div>
         <?php if ($sel_r == '1'){}else{echo "-->";} ?>
 
+		
         <?php if ($sel_m == '1'){}else{echo "<!--";} ?>
         <div class="col-md-12">
             <div class="panel">
-                <div class="panel-heading-white panel-heading text-center">
-                    <h4>สัดส่วนพื้นที่เหมาะสมในการปลูกข้าวโพด</h4>
+                <div class="panel-heading-white panel-heading">
+                    <h4>สัดส่วนพื้นที่เหมาะสมในการปลูกข้าวโพด<small> หน่วยเป็นจำนวนแปลง</small></h4>
                 </div>
                 <div class="panel-body">
                     <center>
@@ -125,11 +124,12 @@ conndb();
         </div>
         <?php if ($sel_m == '1'){}else{echo "-->";} ?>
 
+		
         <?php if ($sel_c == '1'){}else{echo "<!--";} ?>
         <div class="col-md-12">
             <div class="panel">
-                <div class="panel-heading-white panel-heading text-center">
-                    <h4>สัดส่วนพื้นที่เหมาะสมในการปลูกมันสำปะหลัง</h4>
+                <div class="panel-heading-white panel-heading">
+                    <h4>สัดส่วนพื้นที่เหมาะสมในการปลูกมันสำปะหลัง<small> หน่วยเป็นจำนวนแปลง</small></h4>
                 </div>
                 <div class="panel-body">
                     <center>
@@ -140,11 +140,12 @@ conndb();
         </div>
         <?php if ($sel_c == '1'){}else{echo "-->";} ?>
 
+		
         <?php if ($sel_s == '1'){}else{echo "<!--";} ?>
         <div class="col-md-12">
             <div class="panel">
-                <div class="panel-heading-white panel-heading text-center">
-                    <h4>สัดส่วนพื้นที่เหมาะสมในการปลูกอ้อย</h4>
+                <div class="panel-heading-white panel-heading">
+                    <h4>สัดส่วนพื้นที่เหมาะสมในการปลูกอ้อย<small> หน่วยเป็นจำนวนแปลง</small></h4>
                 </div>
                 <div class="panel-body">
                     <center>
@@ -155,11 +156,12 @@ conndb();
         </div>
         <?php if ($sel_s == '1'){}else{echo "-->";} ?>
 
+		
         <?php if ($sel_dru == '1'){}else{echo "<!--";} ?>
         <div class="col-md-12">
             <div class="panel">
-                <div class="panel-heading-white panel-heading text-center">
-                    <h4>พื้นที่เสี่ยงแล้ง</h4>
+                <div class="panel-heading-white panel-heading">
+                    <h4>พื้นที่เสี่ยงแล้ง<small> หน่วยเป็นจำนวนแปลง</small></h4>
                 </div>
                 <div class="panel-body">
                     <center>
@@ -170,11 +172,12 @@ conndb();
         </div>
         <?php if ($sel_dru == '1'){}else{echo "-->";} ?>
 
+		
         <?php if ($sel_flo == '1'){}else{echo "<!--";} ?>
         <div class="col-md-12">
             <div class="panel">
-                <div class="panel-heading-white panel-heading text-center">
-                    <h4>พื้นที่น้ำท่วมซ้ำซาก</h4>
+                <div class="panel-heading-white panel-heading">
+                    <h4>พื้นที่น้ำท่วมซ้ำซาก<small> หน่วยเป็นจำนวนแปลง</small></h4>
                 </div>
                 <div class="panel-body">
                     <center>
@@ -185,11 +188,12 @@ conndb();
         </div>
         <?php if ($sel_flo == '1'){}else{echo "-->";} ?>
 
+		
         <?php if ($sel_hcr == '1'){}else{echo "<!--";} ?>
         <div class="col-md-12">
             <div class="panel">
-                <div class="panel-heading-white panel-heading text-center">
-                    <h4>ระยะห่างจาก รพ.สต.</h4>
+                <div class="panel-heading-white panel-heading">
+                    <h4>ระยะห่างจาก โรงพยาบาลส่งเสริมสุขภาพตำบล<small> หน่วยเป็นจำนวนแปลง</small></h4>
                 </div>
                 <div class="panel-body">
                     <center>
@@ -1386,7 +1390,7 @@ order by s_suit desc;");
 SELECT dru as name_bar ,count(*) as sumpoint 
 FROM alr_parcel 
 group by dru
-order by dru DESC;");
+order by dru ASC;");
 					   
 				   }if ($prov_name != '0' and $amphoe_name == '0'){
 					   
@@ -1395,7 +1399,7 @@ SELECT dru as name_bar ,count(*) as sumpoint
 FROM alr_parcel 
 where prov_code = '$prov_name' 
 group by dru
-order by dru DESC;");
+order by dru ASC;");
 						 
 				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
 					   
@@ -1404,7 +1408,7 @@ SELECT dru as name_bar ,count(*) as sumpoint
 FROM alr_parcel 
 where prov_code = '$prov_name' and amp_code = '$amphoe_name'  
 group by dru
-order by dru DESC;");
+order by dru ASC;");
 						 
 				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
 						
@@ -1413,7 +1417,7 @@ SELECT dru as name_bar ,count(*) as sumpoint
 FROM alr_parcel 
 where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  
 group by dru
-order by dru DESC;");
+order by dru ASC;");
 						 
 				   }
 			}
@@ -1439,7 +1443,7 @@ order by dru DESC;");
 SELECT dru as name_bar ,count(*) as sumpoint 
 FROM alr_parcel 
 group by dru
-order by dru DESC;");
+order by dru ASC;");
 					   
 				   }if ($prov_name != '0' and $amphoe_name == '0'){
 					   
@@ -1448,7 +1452,7 @@ SELECT dru as name_bar ,count(*) as sumpoint
 FROM alr_parcel 
 where prov_code = '$prov_name' 
 group by dru
-order by dru DESC;");
+order by dru ASC;");
 						 
 				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
 					   
@@ -1457,7 +1461,7 @@ SELECT dru as name_bar ,count(*) as sumpoint
 FROM alr_parcel 
 where prov_code = '$prov_name' and amp_code = '$amphoe_name' 
 group by dru
-order by dru DESC;");
+order by dru ASC;");
 						 
 				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
 						
@@ -1466,7 +1470,7 @@ SELECT dru as name_bar ,count(*) as sumpoint
 FROM alr_parcel 
 where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  
 group by dru
-order by dru DESC;");
+order by dru ASC;");
 						 
 				   }
 			}
