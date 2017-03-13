@@ -19,6 +19,17 @@ conndb();
 	$sel_dru = $_GET[sel_dru];
 	$sel_flo = $_GET[sel_flo];
 	$sel_hcr = $_GET[sel_hcr];
+	$sel_tst = $_GET[sel_tst];
+	$sel_mun = $_GET[sel_mun];
+	$sel_roa = $_GET[sel_roa];
+	$sel_rai = $_GET[sel_rai];
+	$sel_str = $_GET[sel_str];
+	$sel_wbn = $_GET[sel_wbn];
+	$sel_wbm = $_GET[sel_wbm];
+	$sel_irr = $_GET[sel_irr];
+	$sel_nfp = $_GET[sel_nfp];
+	$sel_rfp = $_GET[sel_rfp];
+	$sel_ofr = $_GET[sel_ofr];
 	
 	
 	
@@ -193,7 +204,7 @@ conndb();
         <div class="col-md-12">
             <div class="panel">
                 <div class="panel-heading-white panel-heading">
-                    <h4>ระยะห่างจาก โรงพยาบาลส่งเสริมสุขภาพตำบล<small> หน่วยเป็นจำนวนแปลง</small></h4>
+                    <h4>ระยะห่างจากสถานพยาบาล<small> หน่วยเป็นจำนวนแปลง</small></h4>
                 </div>
                 <div class="panel-body">
                     <center>
@@ -203,6 +214,171 @@ conndb();
             </div>
         </div>
         <?php if ($sel_hcr == '1'){}else{echo "-->";} ?>
+		
+		<?php if ($sel_tst == '1'){}else{echo "<!--";} ?>
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading-white panel-heading">
+                    <h4>ระยะห่างจากสถานีรถไฟ<small> หน่วยเป็นจำนวนแปลง</small></h4>
+                </div>
+                <div class="panel-body">
+                    <center>
+                        <canvas class="line-chart4"></canvas>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <?php if ($sel_tst == '1'){}else{echo "-->";} ?>
+
+        <?php if ($sel_mun == '1'){}else{echo "<!--";} ?>
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading-white panel-heading">
+                    <h4>ระยะห่างจากเทศบาล <small> หน่วยเป็นจำนวนแปลง</small></h4>
+                </div>
+                <div class="panel-body">
+                    <center>
+                        <canvas class="line-chart5"></canvas>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <?php if ($sel_mun == '1'){}else{echo "-->";} ?>
+
+        <?php if ($sel_roa == '1'){}else{echo "<!--";} ?>
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading-white panel-heading">
+                    <h4>ระยะห่างจากถนน<small> หน่วยเป็นจำนวนแปลง</small></h4>
+                </div>
+                <div class="panel-body">
+                    <center>
+                        <canvas class="line-chart6"></canvas>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <?php if ($sel_roa == '1'){}else{echo "-->";} ?>
+
+        <?php if ($sel_rai == '1'){}else{echo "<!--";} ?>
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading-white panel-heading">
+                    <h4>ระยะห่างจากทางรถไฟ<small> หน่วยเป็นจำนวนแปลง</small></h4>
+                </div>
+                <div class="panel-body">
+                    <center>
+                        <canvas class="line-chart7"></canvas>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <?php if ($sel_rai == '1'){}else{echo "-->";} ?>
+
+        <?php if ($sel_str == '1'){}else{echo "<!--";} ?>
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading-white panel-heading">
+                    <h4>ระยะห่างจากแม่น้ำสายหลัก และแม่น้ำสายรอง <small> หน่วยเป็นจำนวนแปลง</small></h4>
+                </div>
+                <div class="panel-body">
+                    <center>
+                        <canvas class="line-chart8"></canvas>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <?php if ($sel_str == '1'){}else{echo "-->";} ?>
+
+        <?php if ($sel_wbn == '1'){}else{echo "<!--";} ?>
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading-white panel-heading">
+                    <h4>ระยะห่างจากแหล่งน้ำธรรมชาติ <small> หน่วยเป็นจำนวนแปลง</small></h4>
+                </div>
+                <div class="panel-body">
+                    <center>
+                        <canvas class="line-chart9"></canvas>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <?php if ($sel_wbn == '1'){}else{echo "-->";} ?>
+
+        <?php if ($sel_wbm == '1'){}else{echo "<!--";} ?>
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading-white panel-heading">
+                    <h4>ระยะห่างจากแหล่งน้ำที่ถูกสร้างขึ้น <small> หน่วยเป็นจำนวนแปลง</small></h4>
+                </div>
+                <div class="panel-body">
+                    <center>
+                        <canvas class="line-chart10"></canvas>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <?php if ($sel_wbm == '1'){}else{echo "-->";} ?>
+
+        <?php if ($sel_irr == '1'){}else{echo "<!--";} ?>
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading-white panel-heading">
+                    <h4>ระยะห่างจากชลประทาน <small> หน่วยเป็นจำนวนแปลง</small></h4>
+                </div>
+                <div class="panel-body">
+                    <center>
+                        <canvas class="line-chart11"></canvas>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <?php if ($sel_irr == '1'){}else{echo "-->";} ?>
+
+        <?php if ($sel_nfp == '1'){}else{echo "<!--";} ?>
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading-white panel-heading">
+                    <h4>ระยะห่างจากป่าอุทยานแห่งชาติ <small> หน่วยเป็นจำนวนแปลง</small></h4>
+                </div>
+                <div class="panel-body">
+                    <center>
+                        <canvas class="line-chart12"></canvas>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <?php if ($sel_nfp == '1'){}else{echo "-->";} ?>
+
+        <?php if ($sel_rfp == '1'){}else{echo "<!--";} ?>
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading-white panel-heading">
+                    <h4>ระยะห่างจากป่าสงวนแห่งชาติ และเขตอนุรักษ์พันธุ์สัตว์ป่า <small> หน่วยเป็นจำนวนแปลง</small></h4>
+                </div>
+                <div class="panel-body">
+                    <center>
+                        <canvas class="line-chart13"></canvas>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <?php if ($sel_rfp == '1'){}else{echo "-->";} ?>
+
+        <?php if ($sel_ofr == '1'){}else{echo "<!--";} ?>
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading-white panel-heading">
+                    <h4>ระยะห่างจากป่าอื่น ๆ <small> หน่วยเป็นจำนวนแปลง</small></h4>
+                </div>
+                <div class="panel-body">
+                    <center>
+                        <canvas class="line-chart14"></canvas>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <?php if ($sel_ofr == '1'){}else{echo "-->";} ?>
 
 
 
@@ -1789,6 +1965,2151 @@ where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$ta
 
 
 
+            <?php if ($sel_tst == '1'){}else{echo "/*";} ?>
+
+            var lineChartData4 = {
+                labels: ["0-30 กิโลเมตร", "30-60 กิโลเมตร", "60-90 กิโลเมตร", "90-120 กิโลเมตร", "120 กิโลเมตรขึ้นไป", ],
+                datasets: [{
+                    label: "My First dataset",
+                    fillColor: "rgba(21,186,103,0.5)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(220,220,220,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [<?php 
+				
+		  	if($sel_tst == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					  $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where tst_km between 0 and 29.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and tst_km between 0 and 29.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and tst_km between 0 and 29.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and tst_km between 0 and 29.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_tst == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					     $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where tst_km between 30 and 59.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and tst_km between 30 and 59.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and tst_km between 30 and 59.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and tst_km between 30 and 59.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_tst == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					   $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where tst_km between 60 and 89.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and tst_km between 60 and 89.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and tst_km between 60 and 89.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and tst_km between 60 and 89.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_tst == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where tst_km between 90 and 119.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and tst_km between 90 and 119.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and tst_km between 90 and 119.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and tst_km between 90 and 119.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_tst == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where tst_km >= 120;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and tst_km >= 120;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and tst_km >= 120;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and tst_km >= 120;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>]
+                }]
+            };
+
+            <?php if ($sel_tst == '1'){}else{echo "*/";} ?>
+
+
+
+            <?php if ($sel_mun == '1'){}else{echo "/*";} ?>
+
+            var lineChartData5 = {
+                labels: ["0-10 กิโลเมตร", "10-20 กิโลเมตร", "20-30 กิโลเมตร", "30-40 กิโลเมตร", "40 กิโลเมตรขึ้นไป", ],
+                datasets: [{
+                    label: "My First dataset",
+                    fillColor: "rgba(21,186,103,0.5)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(220,220,220,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [<?php 
+				
+		  	if($sel_mun == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					  $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where mun_km between 0 and 9.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and mun_km between 0 and 9.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and mun_km between 0 and 9.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and mun_km between 0 and 9.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_mun == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					     $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where mun_km between 10 and 19.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and mun_km between 10 and 19.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and mun_km between 10 and 19.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and mun_km between 10 and 19.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_mun == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					   $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where mun_km between 20 and 29.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and mun_km between 20 and 29.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and mun_km between 20 and 29.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and mun_km between 20 and 29.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_mun == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where mun_km between 30 and 39.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and mun_km between 30 and 39.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and mun_km between 30 and 39.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and mun_km between 30 and 39.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_mun == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where mun_km >= 40;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and mun_km >= 40;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and mun_km >= 40;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and mun_km >= 40;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>]
+                }]
+            };
+
+            <?php if ($sel_mun == '1'){}else{echo "*/";} ?>
+
+
+
+            <?php if ($sel_roa == '1'){}else{echo "/*";} ?>
+
+            var lineChartData6 = {
+                labels: ["0-2 กิโลเมตร", "2-4 กิโลเมตร", "4-6 กิโลเมตร", "6-8 กิโลเมตร", "8 กิโลเมตรขึ้นไป", ],
+                datasets: [{
+                    label: "My First dataset",
+                    fillColor: "rgba(21,186,103,0.5)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(220,220,220,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [<?php 
+				
+		  	if($sel_roa == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					  $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where roa_km between 0 and 1.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and roa_km between 0 and 1.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and roa_km between 0 and 1.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and roa_km between 0 and 1.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_roa == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					     $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where roa_km between 2 and 3.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and roa_km between 2 and 3.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and roa_km between 2 and 3.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and roa_km between 2 and 3.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_roa == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					   $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where roa_km between 4 and 5.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and roa_km between 4 and 5.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and roa_km between 4 and 5.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and roa_km between 4 and 5.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_roa == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where roa_km between 6 and 7.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and roa_km between 6 and 7.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and roa_km between 6 and 7.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and roa_km between 6 and 7.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_roa == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where roa_km >= 8;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and roa_km >= 8;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and roa_km >= 8;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and roa_km >= 8;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>]
+                }]
+            };
+
+            <?php if ($sel_roa == '1'){}else{echo "*/";} ?>
+
+
+
+            <?php if ($sel_rai == '1'){}else{echo "/*";} ?>
+
+            var lineChartData7 = {
+                labels: ["0-30 กิโลเมตร", "30-60 กิโลเมตร", "60-90 กิโลเมตร", "90-120 กิโลเมตร", "120 กิโลเมตรขึ้นไป", ],
+                datasets: [{
+                    label: "My First dataset",
+                    fillColor: "rgba(21,186,103,0.5)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(220,220,220,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [<?php 
+				
+		  	if($sel_rai == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					  $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where rai_km between 0 and 29.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and rai_km between 0 and 29.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and rai_km between 0 and 29.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and rai_km between 0 and 29.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_rai == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					     $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where rai_km between 30 and 59.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and rai_km between 30 and 59.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and rai_km between 30 and 59.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and rai_km between 30 and 59.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_rai == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					   $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where rai_km between 60 and 89.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and rai_km between 60 and 89.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and rai_km between 60 and 89.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and rai_km between 60 and 89.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_rai == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where rai_km between 90 and 119.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and rai_km between 90 and 119.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and rai_km between 90 and 119.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and rai_km between 90 and 119.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_rai == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where rai_km >= 120;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and rai_km >= 120;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and rai_km >= 120;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and rai_km >= 120;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>]
+                }]
+            };
+
+            <?php if ($sel_rai == '1'){}else{echo "*/";} ?>
+
+
+
+            <?php if ($sel_str == '1'){}else{echo "/*";} ?>
+
+            var lineChartData8 = {
+                labels: ["0-3 กิโลเมตร", "3-6 กิโลเมตร", "6-9 กิโลเมตร", "9-12 กิโลเมตร", "12 กิโลเมตรขึ้นไป", ],
+                datasets: [{
+                    label: "My First dataset",
+                    fillColor: "rgba(21,186,103,0.5)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(220,220,220,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [<?php 
+				
+		  	if($sel_str == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					  $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where str_km between 0 and 2.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and str_km between 0 and 2.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and str_km between 0 and 2.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and str_km between 0 and 2.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_str == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					     $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where str_km between 3 and 5.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and str_km between 3 and 5.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and str_km between 3 and 5.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and str_km between 3 and 5.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_str == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					   $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where str_km between 6 and 8.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and str_km between 6 and 8.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and str_km between 6 and 8.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and str_km between 6 and 8.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_str == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where str_km between 9 and 11.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and str_km between 9 and 11.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and str_km between 9 and 11.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and str_km between 9 and 11.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_str == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where str_km >= 12;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and str_km >= 12;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and str_km >= 12;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and str_km >= 12;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>]
+                }]
+            };
+
+            <?php if ($sel_str == '1'){}else{echo "*/";} ?>
+
+
+
+            <?php if ($sel_wbn == '1'){}else{echo "/*";} ?>
+
+            var lineChartData9 = {
+                labels: ["0-15 กิโลเมตร", "15-30 กิโลเมตร", "30-45 กิโลเมตร", "45-60 กิโลเมตร", "60 กิโลเมตรขึ้นไป", ],
+                datasets: [{
+                    label: "My First dataset",
+                    fillColor: "rgba(21,186,103,0.5)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(220,220,220,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [<?php 
+				
+		  	if($sel_wbn == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					  $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where wbn_km between 0 and 14.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and wbn_km between 0 and 14.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and wbn_km between 0 and 14.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and wbn_km between 0 and 14.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_wbn == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					     $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where wbn_km between 15 and 29.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and wbn_km between 15 and 29.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and wbn_km between 15 and 29.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and wbn_km between 15 and 29.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_wbn == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					   $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where wbn_km between 30 and 44.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and wbn_km between 30 and 44.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and wbn_km between 30 and 44.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and wbn_km between 30 and 44.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_wbn == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where wbn_km between 45 and 59.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and wbn_km between 45 and 59.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and wbn_km between 45 and 59.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and wbn_km between 45 and 59.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_wbn == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where wbn_km >= 60;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and wbn_km >= 60;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and wbn_km >= 60;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and wbn_km >= 60;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>]
+                }]
+            };
+
+            <?php if ($sel_wbn == '1'){}else{echo "*/";} ?>
+
+
+
+            <?php if ($sel_wbm == '1'){}else{echo "/*";} ?>
+
+            var lineChartData10 = {
+                labels: ["0-30 กิโลเมตร", "30-60 กิโลเมตร", "60-90 กิโลเมตร", "90-120 กิโลเมตร", "120 กิโลเมตรขึ้นไป", ],
+                datasets: [{
+                    label: "My First dataset",
+                    fillColor: "rgba(21,186,103,0.5)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(220,220,220,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [<?php 
+				
+		  	if($sel_wbm == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					  $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where wbm_km between 0 and 29.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and wbm_km between 0 and 29.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and wbm_km between 0 and 29.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and wbm_km between 0 and 29.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_wbm == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					     $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where wbm_km between 30 and 59.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and wbm_km between 30 and 59.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and wbm_km between 30 and 59.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and wbm_km between 30 and 59.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_wbm == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					   $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where wbm_km between 60 and 89.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and wbm_km between 60 and 89.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and wbm_km between 60 and 89.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and wbm_km between 60 and 89.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_wbm == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where wbm_km between 90 and 119.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and wbm_km between 90 and 119.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and wbm_km between 90 and 119.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and wbm_km between 90 and 119.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_wbm == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where wbm_km >= 120;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and wbm_km >= 120;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and wbm_km >= 120;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and wbm_km >= 120;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>]
+                }]
+            };
+
+            <?php if ($sel_wbm == '1'){}else{echo "*/";} ?>
+
+
+
+            <?php if ($sel_irr == '1'){}else{echo "/*";} ?>
+
+            var lineChartData11 = {
+                labels: ["0-40กิโลเมตร", "40-80 กิโลเมตร", "80-120 กิโลเมตร", "120-160 กิโลเมตร", "160 กิโลเมตรขึ้นไป", ],
+                datasets: [{
+                    label: "My First dataset",
+                    fillColor: "rgba(21,186,103,0.5)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(220,220,220,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [<?php 
+				
+		  	if($sel_irr == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					  $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where irr_km between 0 and 39.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and irr_km between 0 and 39.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and irr_km between 0 and 39.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and irr_km between 0 and 39.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_irr == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					     $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where irr_km between 40 and 79.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and irr_km between 40 and 79.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and irr_km between 40 and 79.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and irr_km between 40 and 79.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_irr == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					   $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where irr_km between 80 and 119.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and irr_km between 80 and 119.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and irr_km between 80 and 119.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and irr_km between 80 and 119.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_irr == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where irr_km between 120 and 159.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and irr_km between 120 and 159.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and irr_km between 120 and 159.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and irr_km between 120 and 159.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_irr == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where irr_km >= 160;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and irr_km >= 160;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and irr_km >= 160;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and irr_km >= 160;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>]
+                }]
+            };
+
+            <?php if ($sel_irr == '1'){}else{echo "*/";} ?>
+
+
+
+            <?php if ($sel_nfp == '1'){}else{echo "/*";} ?>
+
+            var lineChartData12 = {
+                labels: ["0-30กิโลเมตร", "30-60 กิโลเมตร", "60-90 กิโลเมตร", "90-120 กิโลเมตร", "120 กิโลเมตรขึ้นไป", ],
+                datasets: [{
+                    label: "My First dataset",
+                    fillColor: "rgba(21,186,103,0.5)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(220,220,220,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [<?php 
+				
+		  	if($sel_nfp == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					  $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where nfp_km between 0 and 29.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and nfp_km between 0 and 29.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and nfp_km between 0 and 29.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and nfp_km between 0 and 29.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_nfp == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					     $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where nfp_km between 30 and 59.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and nfp_km between 30 and 59.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and nfp_km between 30 and 59.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and nfp_km between 30 and 59.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_nfp == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					   $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where nfp_km between 60 and 89.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and nfp_km between 60 and 89.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and nfp_km between 60 and 89.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and nfp_km between 60 and 89.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_nfp == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where nfp_km between 90 and 119.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and nfp_km between 90 and 119.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and nfp_km between 90 and 119.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and nfp_km between 90 and 119.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_nfp == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where nfp_km >= 120;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and nfp_km >= 120;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and nfp_km >= 120;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and nfp_km >= 120;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>]
+                }]
+            };
+
+            <?php if ($sel_nfp == '1'){}else{echo "*/";} ?>
+
+
+
+            <?php if ($sel_rfp == '1'){}else{echo "/*";} ?>
+
+            var lineChartData13 = {
+                labels: ["0-30กิโลเมตร", "30-60 กิโลเมตร", "60-90 กิโลเมตร", "90-120 กิโลเมตร", "120 กิโลเมตรขึ้นไป", ],
+                datasets: [{
+                    label: "My First dataset",
+                    fillColor: "rgba(21,186,103,0.5)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(220,220,220,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [<?php 
+				
+		  	if($sel_rfp == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					  $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where rfp_km between 0 and 29.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and rfp_km between 0 and 29.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and rfp_km between 0 and 29.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and rfp_km between 0 and 29.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_rfp == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					     $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where rfp_km between 30 and 59.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and rfp_km between 30 and 59.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and rfp_km between 30 and 59.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and rfp_km between 30 and 59.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_rfp == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					   $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where rfp_km between 60 and 89.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and rfp_km between 60 and 89.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and rfp_km between 60 and 89.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and rfp_km between 60 and 89.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_rfp == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where rfp_km between 90 and 119.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and rfp_km between 90 and 119.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and rfp_km between 90 and 119.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and rfp_km between 90 and 119.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_rfp == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where rfp_km >= 120;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and rfp_km >= 120;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and rfp_km >= 120;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and rfp_km >= 120;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>]
+                }]
+            };
+
+            <?php if ($sel_rfp == '1'){}else{echo "*/";} ?>
+
+
+
+            <?php if ($sel_ofr == '1'){}else{echo "/*";} ?>
+
+            var lineChartData14 = {
+                labels: ["0-5 กิโลเมตร", "5-10 กิโลเมตร", "10-15 กิโลเมตร", "15-20 กิโลเมตร", "20 กิโลเมตรขึ้นไป", ],
+                datasets: [{
+                    label: "My First dataset",
+                    fillColor: "rgba(21,186,103,0.5)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(220,220,220,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [<?php 
+				
+		  	if($sel_ofr == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					  $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where ofr_km between 0 and 4.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and ofr_km between 0 and 4.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and ofr_km between 0 and 4.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and ofr_km between 0 and 4.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_ofr == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					     $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where ofr_km between 5 and 9.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and ofr_km between 5 and 9.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and ofr_km between 5 and 9.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and ofr_km between 5 and 9.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_ofr == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					   $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where ofr_km between 10 and 14.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and ofr_km between 10 and 14.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and ofr_km between 10 and 14.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and ofr_km between 10 and 14.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_ofr == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where ofr_km between 15 and 19.99;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and ofr_km between 15 and 19.99;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and ofr_km between 15 and 19.99;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and ofr_km between 15 and 19.99;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>, <?php 
+				
+		  	if($sel_ofr == '1'){ 
+					if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+						
+					    $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where ofr_km >= 20;");
+					   
+				   }if ($prov_name != '0' and $amphoe_name == '0'){
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and ofr_km >= 20;");
+						 
+				   }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+					   
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'  and ofr_km >= 20;");
+						 
+				    }if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+						
+					      $result = pg_query( "
+SELECT count(*) as sumpoint 
+FROM alr_parcel 
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'  and ofr_km >= 20;");
+						 
+				   }
+			}
+				$arr = pg_fetch_array($result); 
+				echo $arr[sumpoint];
+				?>]
+                }]
+            };
+
+            <?php if ($sel_ofr == '1'){}else{echo "*/";} ?>
+
+
+
 
             window.onload = function() {
 
@@ -1887,6 +4208,115 @@ where prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$ta
                     showTooltips: true
                 });
                 <?php if ($sel_hcr == '1'){}else{echo "*/";} ?>
+				
+				
+				<?php if ($sel_tst == '1'){}else{echo "/*";} ?>
+                var ctx11 = $(".line-chart4")[0].getContext("2d");
+                window.myLine = new Chart(ctx11).Line(lineChartData4, {
+                    responsive: true,
+                    showTooltips: true
+                });
+                <?php if ($sel_tst == '1'){}else{echo "*/";} ?>
+
+
+
+                <?php if ($sel_mun == '1'){}else{echo "/*";} ?>
+                var ctx12 = $(".line-chart5")[0].getContext("2d");
+                window.myLine = new Chart(ctx12).Line(lineChartData5, {
+                    responsive: true,
+                    showTooltips: true
+                });
+                <?php if ($sel_mun == '1'){}else{echo "*/";} ?>
+
+
+
+                <?php if ($sel_roa == '1'){}else{echo "/*";} ?>
+                var ctx13 = $(".line-chart6")[0].getContext("2d");
+                window.myLine = new Chart(ctx13).Line(lineChartData6, {
+                    responsive: true,
+                    showTooltips: true
+                });
+                <?php if ($sel_roa == '1'){}else{echo "*/";} ?>
+
+
+
+                <?php if ($sel_rai == '1'){}else{echo "/*";} ?>
+                var ctx14 = $(".line-chart7")[0].getContext("2d");
+                window.myLine = new Chart(ctx14).Line(lineChartData7, {
+                    responsive: true,
+                    showTooltips: true
+                });
+                <?php if ($sel_rai == '1'){}else{echo "*/";} ?>
+
+
+
+                <?php if ($sel_str == '1'){}else{echo "/*";} ?>
+                var ctx15 = $(".line-chart8")[0].getContext("2d");
+                window.myLine = new Chart(ctx15).Line(lineChartData8, {
+                    responsive: true,
+                    showTooltips: true
+                });
+                <?php if ($sel_str == '1'){}else{echo "*/";} ?>
+
+
+
+                <?php if ($sel_wbn == '1'){}else{echo "/*";} ?>
+                var ctx16 = $(".line-chart9")[0].getContext("2d");
+                window.myLine = new Chart(ctx16).Line(lineChartData9, {
+                    responsive: true,
+                    showTooltips: true
+                });
+                <?php if ($sel_wbn == '1'){}else{echo "*/";} ?>
+
+
+
+                <?php if ($sel_wbm == '1'){}else{echo "/*";} ?>
+                var ctx17 = $(".line-chart10")[0].getContext("2d");
+                window.myLine = new Chart(ctx17).Line(lineChartData10, {
+                    responsive: true,
+                    showTooltips: true
+                });
+                <?php if ($sel_wbm == '1'){}else{echo "*/";} ?>
+
+
+
+                <?php if ($sel_irr == '1'){}else{echo "/*";} ?>
+                var ctx18 = $(".line-chart11")[0].getContext("2d");
+                window.myLine = new Chart(ctx18).Line(lineChartData11, {
+                    responsive: true,
+                    showTooltips: true
+                });
+                <?php if ($sel_irr == '1'){}else{echo "*/";} ?>
+
+
+
+                <?php if ($sel_nfp == '1'){}else{echo "/*";} ?>
+                var ctx19 = $(".line-chart12")[0].getContext("2d");
+                window.myLine = new Chart(ctx19).Line(lineChartData12, {
+                    responsive: true,
+                    showTooltips: true
+                });
+                <?php if ($sel_nfp == '1'){}else{echo "*/";} ?>
+
+
+
+                <?php if ($sel_rfp == '1'){}else{echo "/*";} ?>
+                var ctx20 = $(".line-chart13")[0].getContext("2d");
+                window.myLine = new Chart(ctx20).Line(lineChartData13, {
+                    responsive: true,
+                    showTooltips: true
+                });
+                <?php if ($sel_rfp == '1'){}else{echo "*/";} ?>
+
+
+
+                <?php if ($sel_ofr == '1'){}else{echo "/*";} ?>
+                var ctx21 = $(".line-chart14")[0].getContext("2d");
+                window.myLine = new Chart(ctx21).Line(lineChartData14, {
+                    responsive: true,
+                    showTooltips: true
+                });
+                <?php if ($sel_ofr == '1'){}else{echo "*/";} ?>
 
 
 
