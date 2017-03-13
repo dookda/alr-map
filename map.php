@@ -10,32 +10,36 @@
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/ext-all.js"></script>
 	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/resources/css/ext-all.css"/>
     <link rel="stylesheet" type="text/css" title="gray" href="http://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/resources/css/xtheme-gray.css" />
-	
+
 	<!-- External lib: Proj4JS (reproject lib) -->
-   	<script src="http://cdnjs.cloudflare.com/ajax/libs/proj4js/1.1.0/proj4js-compressed.js" type="text/javascript"></script>
+   	<!--script src="http://cdnjs.cloudflare.com/ajax/libs/proj4js/1.1.0/proj4js-compressed.js" type="text/javascript"></script-->
+		<script type="text/javascript" src="resources/proj4js/lib/proj4js-compressed.js"></script>
+		<script type="text/javascript" src="resources/proj4js/lib/defs/EPSG3857.js"></script>
+		<script type="text/javascript" src="resources/proj4js/lib/defs/EPSG4326.js"></script>
+		<script type="text/javascript" src="resources/proj4js/lib/defs/EPSG32647.js"></script>
 	<!-- script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script -->
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB2EX6KhAr-gvvFzBLpF4OZ1zY8edGyc1s"></script>
-	
+
 	<!-- External lib: OpenLayers -->
 	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/openlayers/2.12/theme/default/style.css"/>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/openlayers/2.12/OpenLayers.js"></script>
 
 	<!-- External lib: GeoExt -->
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/geoext/1.1/script/GeoExt.js"></script>
-	<script type="text/javascript" src="../heron-1.0.6/ux/gxp/gxp.js"></script>	
+	<script type="text/javascript" src="../heron-1.0.6/ux/gxp/gxp.js"></script>
 
 	<!-- application -->
 	<link rel="stylesheet" type="text/css" href="../heron-1.0.6/resources/css/default.css"/>
     <link rel="stylesheet" type="text/css" href="../heron-1.0.6/resources/css/default-theme-gray.css"/>
     <link rel="stylesheet" type="text/css" href="../heron-1.0.6/ux/gxp/git/src/theme/all.css"/>
-	<link rel="stylesheet" type="text/css" href="../heron-1.0.6/resources/css/portal.css"/>	
+	<link rel="stylesheet" type="text/css" href="../heron-1.0.6/resources/css/portal.css"/>
 	<script type="text/javascript" src="../heron-1.0.6/lib/i18n/en_US.js"></script>
 	<!--[if IE]>
 	<link rel="stylesheet" type="text/css" href="../heron-1.0.3/resources/css/portal-ie.css"/>
 	<![endif]-->
-	
+
 	<link rel="stylesheet" type="text/css" href="resources/App.css"/>
-	
+
 </head>
 <style type="text/css">
 	.x-slider-vert, .x-slider-vert .x-slider-end, .x-slider-vert .x-slider-inner {
@@ -57,15 +61,15 @@
 <body>
 <?php
 
-$setDefault = '<script>var center = "11140015,1901789"; 
-		var zoom = 8; 
-		var filter_pro = null; 
-		var filter_amp = null; 
-		var filter_tam = null;	
-		var lyrvisible_pro = true; 
-		var lyrvisible_amp = true; 
-		var lyrvisible_tam = true; 
-		var lyrvisible_vill = true; 
+$setDefault = '<script>var center = "11140015,1901789";
+		var zoom = 8;
+		var filter_pro = null;
+		var filter_amp = null;
+		var filter_tam = null;
+		var lyrvisible_pro = true;
+		var lyrvisible_amp = true;
+		var lyrvisible_tam = true;
+		var lyrvisible_vill = true;
 		var lyrvisible_alr = true; </script>';
 
 include "../lib/sel_config.php";
@@ -100,7 +104,7 @@ function getbound($fetArr) {
     $bbox = array($xyMin, $xyMax);
     return $bbox;
 };
-	
+
 function dataLoad($prov_id, $amp_id, $tam_id){
     $prov_n = getdat($prov_id, 'n');
     $prov_x = getdat($prov_id, 'x');
@@ -118,7 +122,7 @@ function dataLoad($prov_id, $amp_id, $tam_id){
     $tam_y = getdat($tam_id, 'y');
     //$tam_bb = getbound(getdat('tam_4326','tam_nam_t', 'tam_code',$tam_id,'b'));
 
-    //echo $prov_n.'-'.$prov_x.'-'.$prov_y.'-'.$prov_b.'-'.$prov_bb[0].'-'.$prov_bb[1];    
+    //echo $prov_n.'-'.$prov_x.'-'.$prov_y.'-'.$prov_b.'-'.$prov_bb[0].'-'.$prov_bb[1];
 
     //echo '<script>var selectSource = "http://map.nu.ac.th/gs-alr2/ows?";</script>';
     // select area
@@ -160,7 +164,7 @@ function dataLoad($prov_id, $amp_id, $tam_id){
     } else {
         echo $setDefault;
     }
-};	
+};
 
 if (!isset($_GET) || empty($_GET)) {
     echo $setDefault;
@@ -175,11 +179,11 @@ if (!isset($_GET) || empty($_GET)) {
                 $amp_id = $_GET['amphoe'];
                 $tam_id = $_GET['tambon'];
                 //echo "$key: $value<br/>";
-                dataLoad($prov_id,$amp_id,$tam_id); 
-            }    		 
+                dataLoad($prov_id,$amp_id,$tam_id);
+            }
 
     	}elseif($key == 'province2'){
-    		
+
             if($value==0){
                 echo $setDefault;
             }else{
@@ -187,10 +191,10 @@ if (!isset($_GET) || empty($_GET)) {
                 $amp_id = $_GET['amphoe2'];
                 $tam_id = $_GET['tambon2'];
                 //echo "$key: $value<br/>";
-                dataLoad($prov_id,$amp_id,$tam_id); 
-            } 
+                dataLoad($prov_id,$amp_id,$tam_id);
+            }
     	}
-	}	   
+	}
 };
 
 echo '<script>var mapLayer = [];</script>';
@@ -223,7 +227,7 @@ foreach($_GET as $key => $value) {
 };
 closedb();
 ?>
-		
+
 <script type="text/javascript" src="Heron-alr.js"></script>
 <script type="text/javascript" src="layers.js"></script>
 <script type="text/javascript" src="plugin.js"></script>
@@ -231,4 +235,3 @@ closedb();
 <script type="text/javascript" src="layout.js"></script>
 
 </html>
-
