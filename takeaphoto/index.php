@@ -14,14 +14,18 @@
 <?php
 $alrcode = $_GET["alrcode"];
   echo '<h6>สภาพการใช้ประโยน์ที่ดินของแปลง '.$alrcode.'</h6>';
-  $scan = scandir('uploads');
+  $photoDir = 'uploads/'.$alrcode;
+  //echo $photoDir;
+  $scan = scandir($photoDir);
+  $i = 1;
   foreach($scan as $file)
   {
     if (!is_dir($file))
     {
-        //echo '<h3>'.$file.'</h3>';
-      echo '<div class="panel"> <img src="uploads/'.$alrcode.'/'.$file.'" class="img-rounded" style="width: 400px;"/></div>';
+      echo 'ภาพ '.$file;
+      echo '<div class="panel"> <img src="'.$photoDir.'/'.$file.'" class="img-rounded" style="width: 400px;"/></div>';
     }
+    $i+=1;
   }
 ?>
   </div>
