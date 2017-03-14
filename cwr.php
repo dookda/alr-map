@@ -189,7 +189,7 @@ if($active_land_cwr1==1){
     echo "<script>land_cwr.push('cwr1'); </script>";
     //echo "<script>var a ='a'; </script>";
     //echo "<script>var a1 =[1,2,3,4,5,6,7]; </script>";
-    echo "<script>var a = 'ความต้องการน้ำของ".$cwr->cwrType($alrCode, 'active_land_cwr').";'</script>";
+    echo "<script>var a = 'ความต้องการน้ำของ".$cwr->cwrType($alrCode, 'active_land_cwr')."'</script>";
     echo "<script>var a1 = [".join($cwr->cwrWk($alrCode, 'active_land_cwr'), ',')."];</script>";
 
 }
@@ -200,7 +200,7 @@ if ($active_land_cwr2==1) {
 
     //echo "<script>var b1 =[5,6,7,8,9,3,4]; </script>";
 
-    echo "<script>var b = 'ความต้องการน้ำของ".$cwr->cwrType($alrCode, 'active_land_cwr2').";'</script>";
+    echo "<script>var b = 'ความต้องการน้ำของ".$cwr->cwrType($alrCode, 'active_land_cwr2')."'</script>";
     echo "<script>var b1 = [".join($cwr->cwrWk($alrCode, 'active_land_cwr2'), ',')."];</script>";
 }
 
@@ -209,7 +209,7 @@ if ($active_land_cwr3==1) {
     //echo "<script>var c ='c'; </script>";
 
     //echo "<script>var c1 =[5,4,6,7,8,9,2]; </script>";
-    echo "<script>var c = 'ความต้องการน้ำของ".$cwr->cwrType($alrCode, 'active_land_cwr3').";'</script>";
+    echo "<script>var c = 'ความต้องการน้ำของ".$cwr->cwrType($alrCode, 'active_land_cwr3')."'</script>";
     echo "<script>var c1 = [".join($cwr->cwrWk($alrCode, 'active_land_cwr3'), ',')."];</script>";
 }
 
