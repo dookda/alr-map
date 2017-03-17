@@ -134,6 +134,20 @@ $app->get('/cwr3/{alrCode}', function($request, $response){
     $newResponse = $response->withJson($result);
     return $newResponse;
 });
+$app->get('/rain_now/{tamcode}', function($request, $response){  
+    $tamCode = $request->getAttribute('tamcode');  
+    $sql = "select * from rain_now where tam_code = '$tamCode'";
+    $rs = pg_query($sql);
+    
+    $result = array();
+
+    while($row = pg_fetch_array($rs)){
+      array_push($result, $row);
+    }
+
+    $newResponse = $response->withJson($result);
+    return $newResponse;
+});
 
 $app->get('/rain30y/{tamcode}', function($request, $response){  
     $tamCode = $request->getAttribute('tamcode');  
