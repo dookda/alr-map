@@ -96,8 +96,8 @@ Heron.gridColumns = [{
         //colModule,
 		//addEtc,
         { header: 'ลำดับ', dataIndex: 'Gid' },
-        { header: 'ปริมาณน้ำท่า', dataIndex: 'gwater' },
+        { header: 'ปริมาณน้ำใต้ดิน', dataIndex: 'gwater'},
 
-
+        
     ]
 }];
