@@ -89,4 +89,15 @@ Heron.gridColumns = [{
 
 
     ]
+},
+{
+    featureType: 'wsupply_gwat',
+    columns: [
+        //colModule,
+		//addEtc,
+        { header: 'ลำดับ', dataIndex: 'Gid' },
+        { header: 'ปริมาณน้ำท่า', dataIndex: 'gwater' },
+
+
+    ]
 }];
