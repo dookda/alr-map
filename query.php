@@ -49,6 +49,7 @@
 
    if($type !='เลือกชั้นข้อมูล...'){
         $sql="";
+        if($type=='แปลง ส.ป.ก. ที่เหมาะสมปลูกข้าว'){
             $sql="SELECT json_build_object(
                 'type','Feature',
                 'properties',
