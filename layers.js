@@ -497,7 +497,7 @@ var flow_accum = new OpenLayers.Layer.WMS(
 
 var yield_4326 = new OpenLayers.Layer.WMS(
     "ปริมาณน้ำใต้ดิน (ลบ.ม./ไร่/ปี)",
-    Heron.scratch.urls.wmsAlr2, { layers: "alr:yield_alr", transparent: true, format: 'image/png' }, {
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:wsupply_gwat", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
         isBaseLayer: false,
