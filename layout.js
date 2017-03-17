@@ -116,7 +116,7 @@ var x=Heron.examples.searchPanelConfig = {
                 xtype: "combo",
                 id:"lyrType",
                 //store:['ระวางภาพ ortho 1:4,000','ระวางภาพ ortho 1:25,000','ระวางเส้นชั้นความสูง','ระวางแบบจำลองระดับสูงเชิงเลข','หมุดหลักฐานภาคพื้นดิน'],
-                store:['แปลง ส.ป.ก. ที่ผ่านเกณฑ์ GAP'],
+                store:['แปลง ส.ป.ก. ที่เหมาะสมปลูกข้าว'],
                 forceSelection: false,
                 emptyText: 'เลือกชั้นข้อมูล...',
                 triggerAction: 'all',

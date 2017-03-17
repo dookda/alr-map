@@ -49,7 +49,6 @@
 
    if($type !='เลือกชั้นข้อมูล...'){
         $sql="";
-        if($type=='แปลง ส.ป.ก. ที่ผ่านเกณฑ์ GAP'){
             $sql="SELECT json_build_object(
                 'type','Feature',
                 'properties',
