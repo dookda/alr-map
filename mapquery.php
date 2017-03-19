@@ -229,9 +229,9 @@ closedb();
 ?>
 
 <script type="text/javascript" src="Heron-alr.js"></script>
-<script type="text/javascript" src="layers.js"></script>
+<script type="text/javascript" src="layersQuery.js"></script>
 <script type="text/javascript" src="plugin.js"></script>
 <script type="text/javascript" src="field.js"></script>
-<script type="text/javascript" src="layout.js"></script>
+<script type="text/javascript" src="layoutQuery.js"></script>
 
 </html>
