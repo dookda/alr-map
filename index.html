@@ -6,20 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
+
 <head>
-<!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 Latest compiled and minified CSS
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 Optional theme
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 Latest compiled and minified JavaScript
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
-
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-route.js"></script>
-
-    
-
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom Fonts -->
@@ -30,23 +27,18 @@ Latest compiled and minified JavaScript
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
     <!-- Theme CSS -->
     <link href="css/creative.css" rel="stylesheet">
-        <!-- jQuery -->
+    <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
     <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
-
     <!-- Alr -->
     <script type="text/javascript" src="sel_location.js"></script>
-
 </head>
 <script>
 $(document).ready(function() {
@@ -57,7 +49,6 @@ $(document).ready(function() {
 </script>
 
 <body id="page-top">
-
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -67,7 +58,6 @@ $(document).ready(function() {
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">ALR web app</a>
             </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -77,62 +67,59 @@ $(document).ready(function() {
                     <li>
                         <a class="page-scroll" href="#manual">คู่มือการใช้</a>
                     </li>
-						<li>
+                    <li>
                         <a class="page-scroll" href="#app">App</a>
-                    </li>			
-					<li>
-						<a class="page-scroll" href="#contact">ติดต่อ</a>
-					</li>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">ติดต่อ</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
-
     <header>
         <div class="header-content">
             <div class="header-content-inner">
                 <h1 id="homeHeading">วางแผนจัดการน้ำ ส.ป.ก.</h1>
-                
                 <p>ระบบสนับสนุนการพัฒนาแหล่งน้ำในพื้นที่ ส.ป.ก. 9 จังหวัดภาคเหนือตอนล่าง</p>
                 <a href="#portfolio" class="btn btn-primary btn-xl page-scroll">เข้าใช้งาน</a>
             </div>
         </div>
     </header>
-
     <section class="no-padding" id="portfolio">
-    <div class="container">
-        <div>
-            <h3 for="Select">ระบบสนับสนุนสำหรับการพัฒนาแหล่งน้ำในพื้นที่ ส.ป.ก.</h3>
-        </div>
-        <div class="header clearfix">
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#home">พื้นที่เหมาะสมพัฒนาแหล่งน้ำ</a></li>
-                <li><a href="#menu1">ข้อมูล ส.ป.ก. รายแปลง</a></li>
-                <li><a href="#menu2">สรุปข้อมูล ส.ป.ก.</a></li>
-            </ul>
-        </div>
-        <div class="tab-content">
-            <div id="home" class="tab-pane fade in active">
-                <h3 class="text-muted">ที่ตั้งพื้นที่เหมาะสมพัฒนาแหล่งน้ำ</h3>
-                <p>เลือกพื้นที่และชั้นข้อมูลที่ต้องการเพื่อใช้สำหรับสนับสนุนตัดสินใจพัฒนาแหล่งน้ำ</p>
-                <div class="jumbotron">
-                    <form method="GET" action="map.php" target="_top">
-                        <div class="form-group">
-                            <div>
-                                <label for="Select">เลือกพื้นที่:</label>
-                            </div>
-                            <label for="province">จังหวัด</label>
-                            <div class="form-group" id="province"></div>
-                            <label for="province">อำเภอ</label>
-                            <div class="form-group" id="amphoe"></div>
-                            <label for="province">ตำบล</label>
-                            <div class="form-group" id="tambon"></div>
-                            <div>
-                                <label for="Select">เลือกชั้นข้อมูลที่ต้องการแสดงร่วม:</label>
-                            </div>
-                             <div class="container">
+        <div class="container">
+            <div>
+                <h3 for="Select">ระบบสนับสนุนสำหรับการพัฒนาแหล่งน้ำในพื้นที่ ส.ป.ก.</h3>
+            </div>
+            <div class="header clearfix">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#home">พื้นที่เหมาะสมพัฒนาแหล่งน้ำ</a></li>
+                    <li><a href="#menu1">ข้อมูล ส.ป.ก. รายแปลง</a></li>
+                    <li><a href="#menu2">สรุปข้อมูล ส.ป.ก.</a></li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <h3 class="text-muted">ที่ตั้งพื้นที่เหมาะสมพัฒนาแหล่งน้ำ</h3>
+                    <p>เลือกพื้นที่และชั้นข้อมูลที่ต้องการเพื่อใช้สำหรับสนับสนุนตัดสินใจพัฒนาแหล่งน้ำ</p>
+                    <div class="jumbotron">
+                        <form method="GET" action="map.php" target="_top">
+                            <div class="form-group">
+                                <div>
+                                    <label for="Select">เลือกพื้นที่:</label>
+                                </div>
+                                <label for="province">จังหวัด</label>
+                                <div class="form-group" id="province"></div>
+                                <label for="province">อำเภอ</label>
+                                <div class="form-group" id="amphoe"></div>
+                                <label for="province">ตำบล</label>
+                                <div class="form-group" id="tambon"></div>
+                                <div>
+                                    <label for="Select">เลือกชั้นข้อมูลที่ต้องการแสดงร่วม:</label>
+                                </div>
+                                <div class="container">
                                     <div class="col-xs-6 col-md-4">
                                         <input type="hidden" name="module" value="siteSelection">
                                         <div class="checkbox">
@@ -173,169 +160,194 @@ $(document).ready(function() {
                                         </div>
                                     </div>
                                 </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">ตกลง</button>
-                    </form>
-                </div>
-            </div>
-            
-            <div id="menu1" class="tab-pane fade">
-                <h3 class="text-muted">ข้อมูล ส.ป.ก. รายแปลง</h3>
-                <p>ข้อมูลการเพาะปลูกพืชรายแปลง </p>
-                <div class="jumbotron">
-                    <form method="GET" action="mapquery.php" target="_top">
-                        <div class="form-group">
-                            <label for="province">จังหวัด</label>
-                            <div class="form-group" id="province2"></div>
-                            <label for="province">อำเภอ</label>
-                            <div class="form-group" id="amphoe2"></div>
-                            <label for="province">ตำบล</label>
-                            <div class="form-group" id="tambon2"></div>
-                            <div>
-                                <label for="Select">เลือกชั้นข้อมูลที่ต้องการแสดงร่วม:</label>
                             </div>
-                            <div class="container">
-                                                <div class="col-xs-6 col-md-4">
-                                        <input type="hidden" name="module" value="siteRegister">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" checked="checked" name="lyrAlr" value="1" disabled>แปลง สปก.</label>
+                            <button type="submit" class="btn btn-primary">ตกลง</button>
+                        </form>
+                    </div>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                    <h3 class="text-muted">ข้อมูล ส.ป.ก. รายแปลง</h3>
+                    <p>ข้อมูลการเพาะปลูกพืชรายแปลง </p>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="jumbotron">
+                                add alr stat here
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="jumbotron">
+                                <form method="GET" action="mapquery.php" target="_top">
+                                    <div class="form-group">
+                                        <label for="province">จังหวัด</label>
+                                        <div class="form-group" id="province2"></div>
+                                        <label for="province">อำเภอ</label>
+                                        <div class="form-group" id="amphoe2"></div>
+                                        <label for="province">ตำบล</label>
+                                        <div class="form-group" id="tambon2"></div>
+                                        <div>
+                                            <label for="Select">เลือกชั้นข้อมูลที่ต้องการแสดงร่วม:</label>
+                                        </div>
+                                        <div class="container">
+                                            <div class="col-xs-6 col-md-4">
+                                                <input type="hidden" name="module" value="siteRegister">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" checked="checked" name="lyrAlr" value="1" disabled>แปลง สปก.</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-md-4">
+                                                <input type="hidden" name="module" value="siteRegister">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="lyrWater" value="1">แหล่งน้ำ</label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="lyrSoil" value="1">ความเหมาะสมของดิน</label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="lyrDisaster" value="1">ภัยธรรมชาติ</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-md-4">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="lyrBase" value="1">สภาพแวดล้อม</label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="lyrPlace" value="1">สถานที่สำคัญ</label>
+                                                </div>
+                                                <div class="checkbox disabled">
+                                                    <label>
+                                                        <input type="checkbox" checked="checked" name="lyrAdmin" value="1">ขอบเขตการปกครอง</label>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+                                    <button type="submit" class="btn btn-primary">ตกลง</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                    <h3 class="text-muted">สรุปข้อมูล ส.ป.ก.</h3>
+                    <p>เลือกพื้นที่</p>
+                    <div class="jumbotron">
+                        <form method="get" action="chart/chart.php" target="chart_php">
+                            <div class="form-group">
+                                <div>
+                                    <label for="Select">เลือกพื้นที่:</label>
+                                </div>
+                                <label for="province">จังหวัด</label>
+                                <div class="form-group" id="province3"></div>
+                                <label for="province">อำเภอ</label>
+                                <div class="form-group" id="amphoe3"></div>
+                                <label for="province">ตำบล</label>
+                                <div class="form-group" id="tambon3"></div>
+                                <br>
+                                <div>
+                                    <label for="Select">เลือกข้อมูลที่ต้องการแสดง : </label>
+                                </div>
+                                <div class="container">
                                     <div class="col-xs-6 col-md-4">
-                                        <input type="hidden" name="module" value="siteRegister">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" name="lyrWater" value="1">แหล่งน้ำ</label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" name="lyrSoil" value="1">ความเหมาะสมของดิน</label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" name="lyrDisaster" value="1">ภัยธรรมชาติ</label>
-                                        </div>
+                                        <input type="checkbox" name="sel_parcel" value="1" checked> ข้อมูลจำนวนแปลง ส.ป.ก.
+                                        <br>
+                                        <input type="checkbox" name="sel_plant" value="1"> ข้อมูลการปลูกพืช
+                                        <br>
+                                        <input type="checkbox" name="sel_r" value="1"> ข้าว
+                                        <br>
+                                        <input type="checkbox" name="sel_m" value="1"> ข้าวโพด
+                                        <br>
+                                        <input type="checkbox" name="sel_c" value="1"> มันสำปะหลัง
+                                        <br>
+                                        <input type="checkbox" name="sel_s" value="1"> อ้อย
+                                        <br>
                                     </div>
                                     <div class="col-xs-6 col-md-4">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" name="lyrBase" value="1">สภาพแวดล้อม</label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" name="lyrPlace" value="1">สถานที่สำคัญ</label>
-                                        </div>
-                                        <div class="checkbox disabled">
-                                            <label>
-                                                <input type="checkbox" checked="checked" name="lyrAdmin" value="1">ขอบเขตการปกครอง</label>
-                                        </div>
+                                        <input type="checkbox" name="sel_lu" value="1">การใช้ประโยชน์ที่ดิน
+                                        <br>
+                                        <input type="checkbox" name="sel_dru" value="1">พื้นที่เสี่ยงแล้ง
+                                        <br>
+                                        <input type="checkbox" name="sel_flo" value="1">พื้นที่น้ำท่วมซ้ำซาก
+                                        <br>
+                                    </div>
+                                    <div class="col-xs-6 col-md-4">
+                                        <!-- เพิ่มข้อมูลการเลือกแสดงกราฟ 13/3/2560 -->
+                                        <input type="checkbox" name="sel_hcr" value="1"> ระยะห่างจากสถานพยาบาล
+                                        <br>
+                                        <input type="checkbox" name="sel_tst" value="1"> ระยะห่างจากสถานีรถไฟ
+                                        <br>
+                                        <input type="checkbox" name="sel_mun" value="1"> ระยะห่างจากเทศบาล
+                                        <br>
+                                        <input type="checkbox" name="sel_roa" value="1"> ระยะห่างจากถนน
+                                        <br>
+                                        <input type="checkbox" name="sel_rai" value="1"> ระยะห่างจากทางรถไฟ
+                                        <br>
+                                        <input type="checkbox" name="sel_str" value="1"> ระยะห่างจากแม่น้ำสายหลัก และแม่น้ำสายรอง
+                                        <br>
+                                        <input type="checkbox" name="sel_wbn" value="1"> ระยะห่างจากแหล่งน้ำธรรมชาติ
+                                        <br>
+                                        <input type="checkbox" name="sel_wbm" value="1"> ระยะห่างจากแหล่งน้ำที่ถูกสร้างขึ้น
+                                        <br>
+                                        <input type="checkbox" name="sel_irr" value="1"> ระยะห่างจากชลประทาน
+                                        <br>
+                                        <input type="checkbox" name="sel_nfp" value="1"> ระยะห่างจากป่าอุทยานแห่งชาติ
+                                        <br>
+                                        <input type="checkbox" name="sel_rfp" value="1"> ระยะห่างจากป่าสงวนแห่งชาติ และเขตอนุรักษ์พันธุ์สัตว์ป่า
+                                        <br>
+                                        <input type="checkbox" name="sel_ofr" value="1"> ระยะห่างจากป่าอื่นๆ
+                                        <br>
                                     </div>
                                 </div>
-                            </div> <button type="submit" class="btn btn-primary">ตกลง</button>
-                    </form>
-                        </div>
-                       
-                </div> 
-
-				
-	    <div id="menu2" class="tab-pane fade">
-                <h3 class="text-muted">สรุปข้อมูล ส.ป.ก.</h3>
-                <p>เลือกพื้นที่</p>
-                <div class="jumbotron">
-                    <form method="get" action="chart/chart.php" target="chart_php">
-                        <div class="form-group">
-                            <div>
-                                <label for="Select">เลือกพื้นที่:</label>
                             </div>
-                            <label for="province">จังหวัด</label>
-                            <div class="form-group" id="province3"></div>
-                            <label for="province">อำเภอ</label>
-                            <div class="form-group" id="amphoe3"></div>
-                            <label for="province">ตำบล</label>
-                            <div class="form-group" id="tambon3"></div><br>
-							
-							<div>
-                                <label for="Select">เลือกข้อมูลที่ต้องการแสดง : </label>
-                            </div>
-							 <div class="container">
-								<div class="col-xs-6 col-md-4">
-									<input type="checkbox" name="sel_parcel" value="1" checked> ข้อมูลจำนวนแปลง ส.ป.ก.<br>
-									<input type="checkbox" name="sel_plant" value="1"> ข้อมูลการปลูกพืช<br>
-									<input type="checkbox" name="sel_r" value="1"> ข้าว<br>
-									<input type="checkbox" name="sel_m" value="1"> ข้าวโพด<br>
-									<input type="checkbox" name="sel_c" value="1"> มันสำปะหลัง<br>
-									<input type="checkbox" name="sel_s" value="1"> อ้อย<br>
-								</div>
-								<div class="col-xs-6 col-md-4">
-									<input type="checkbox" name="sel_lu" value="1">การใช้ประโยชน์ที่ดิน<br>
-									<input type="checkbox" name="sel_dru" value="1">พื้นที่เสี่ยงแล้ง<br>
-									<input type="checkbox" name="sel_flo" value="1">พื้นที่น้ำท่วมซ้ำซาก<br>
-								</div>
-								<div class="col-xs-6 col-md-4"><!-- เพิ่มข้อมูลการเลือกแสดงกราฟ 13/3/2560 -->
-									<input type="checkbox" name="sel_hcr" value="1"> ระยะห่างจากสถานพยาบาล<br>
-									<input type="checkbox" name="sel_tst" value="1"> ระยะห่างจากสถานีรถไฟ<br>
-									<input type="checkbox" name="sel_mun" value="1"> ระยะห่างจากเทศบาล<br>
-									<input type="checkbox" name="sel_roa" value="1"> ระยะห่างจากถนน<br>
-									<input type="checkbox" name="sel_rai" value="1"> ระยะห่างจากทางรถไฟ<br>
-									<input type="checkbox" name="sel_str" value="1"> ระยะห่างจากแม่น้ำสายหลัก และแม่น้ำสายรอง <br>
-									<input type="checkbox" name="sel_wbn" value="1"> ระยะห่างจากแหล่งน้ำธรรมชาติ<br>
-									<input type="checkbox" name="sel_wbm" value="1"> ระยะห่างจากแหล่งน้ำที่ถูกสร้างขึ้น<br>
-									<input type="checkbox" name="sel_irr" value="1"> ระยะห่างจากชลประทาน<br> 
-									<input type="checkbox" name="sel_nfp" value="1"> ระยะห่างจากป่าอุทยานแห่งชาติ<br>
-									<input type="checkbox" name="sel_rfp" value="1"> ระยะห่างจากป่าสงวนแห่งชาติ และเขตอนุรักษ์พันธุ์สัตว์ป่า<br>
-									<input type="checkbox" name="sel_ofr" value="1"> ระยะห่างจากป่าอื่นๆ<br>
-								</div>
-							</div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">ตกลง</button>
-                    </form>
+                            <button type="submit" class="btn btn-primary">ตกลง</button>
+                        </form>
+                    </div>
+                    <iframe name="chart_php" src="" style="width: 100%;" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
                 </div>
-				
-		<iframe name="chart_php" src="" style="width: 100%;" frameborder="0" scrolling="no" onload="resizeIframe(this)"  ></iframe>
-				
             </div>
-
-            </div>
-           
         </div>
-
-    </div>
-    <!-- /container -->
+        </div>
+        <!-- /container -->
     </section>
-
-	<section id="manual">
+    <section id="manual">
         <div class="container">
-			<div class="row">
-			                <div class="col-lg-8 col-lg-offset-2 text-center">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">คู่มือการใช้</h2>
-					<p><a href="img/alr_document.pdf" target="_blank"><img src="img/pdf.png" alt="android apk" height="200" width="200"></a> </p>
+                    <p>
+                        <a href="img/alr_document.pdf" target="_blank"><img src="img/pdf.png" alt="android apk" height="200" width="200"></a>
+                    </p>
                 </div>
-			</div>
-	        </div>
+            </div>
+        </div>
     </section>
-	
-		<section id="app">
+    <section id="app">
         <div class="container">
-			<div class="row">
-			                <div class="col-lg-8 col-lg-offset-2 text-center">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">App Moibile (android)</h2>
-                    <p><a href="https://goo.gl/TCyCV3" target="_blank"><img src="img/apk_downloader_logo.png" alt="android apk" height="100" width="270"></a> <a href="https://goo.gl/TCyCV3" target="_blank"><img src="img/icon2.png" alt="android apk" height="100" width="100"></a>  </p>
-					<!--<h2><a href="https://goo.gl/TCyCV3">แอพพลิเคชั่นสำหรับเก็บข้อมูล</a></h2>-->
-					<p> </p>
+                    <p>
+                        <a href="https://goo.gl/TCyCV3" target="_blank"><img src="img/apk_downloader_logo.png" alt="android apk" height="100" width="270"></a>
+                        <a href="https://goo.gl/TCyCV3" target="_blank"><img src="img/icon2.png" alt="android apk" height="100" width="100"></a>
+                    </p>
+                    <!--<h2><a href="https://goo.gl/TCyCV3">แอพพลิเคชั่นสำหรับเก็บข้อมูล</a></h2>-->
+                    <p> </p>
                 </div>
-				<center><img src="img/Picture1.png"></center>
-			</div>
-	        </div>
+                <center><img src="img/Picture1.png"></center>
+            </div>
+        </div>
     </section>
-	
     <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">สอบถามรายละเอียดเพิ่มเติม</h2>
                     <p></p>
-                    <p>"สถานภูมิภาคเทคโนโลยีอวกาศและภูมิสารสนเทศภาคเหนือตอนล่าง  มหาวิทยาลัยนเรศวร" </p>
+                    <p>"สถานภูมิภาคเทคโนโลยีอวกาศและภูมิสารสนเทศภาคเหนือตอนล่าง มหาวิทยาลัยนเรศวร" </p>
                     <p>"Regional Center of Geo-Informatics and Space Technology, Lower Northern Region, Naresuan University"</p>
                 </div>
                 <div class="col-lg-4 col-lg-offset-2 text-center">
@@ -347,30 +359,26 @@ $(document).ready(function() {
                     <p><a href="mailto:cgistln@nu.ac.th">cgistln@nu.ac.th</a></p>
                 </div>
             </div>
-                    <footer class="footer">
-            <p>&copy; 2017 gistnu lab</p>
-        </footer>
+            <footer class="footer">
+                <p>&copy; 2017 gistnu lab</p>
+            </footer>
         </div>
     </section>
-
-        <!-- jQuery -->
+    <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
     <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
- <script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-</script> 
+    <script>
+    function resizeIframe(obj) {
+        obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+    }
+    </script>
 </body>
 
 </html>
