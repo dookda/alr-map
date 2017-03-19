@@ -58,12 +58,116 @@ Heron.options.map.toolbar = [{
                 }
             }
         }
-    }, {
-        type: "coordinatesearch",
-        options: {
-            onSearchCompleteZoom: 8
-        }
-    },{
+    }, {type: "coordinatesearch", options: {
+
+		// === Full demo configuration ===
+
+				// see ToolbarBuilder.js
+					  formWidth: 420
+					, formPageX: 15
+					, formPageY: 100
+				// see CoordSearchPanel.js
+					// , title: 'My title'
+					, titleDescription: 'โปรดเลือกระบบเส้นโครงแผนที่ที่ต้องการ...<br><br>จากนั้นให้กรอกค่าพิกัด ลองจิจูด / ละติจูด หรือ<br>พิกัดยูทีเอ็มทางตะวันออก / พิกัดยูทีเอ็มทางทางเหนือ.<br>&nbsp;<br>'
+					, titleDescriptionStyle: 'font-size:11px; color:dimgrey;'
+					, bodyBaseCls: 'x-form-back'
+					, bodyItemCls: 'hr-html-panel-font-size-11'
+					, bodyCls: 'hr-html-panel-font-size-11'
+					, fieldMaxWidth: 250
+					, fieldLabelWidth: 80
+					, fieldStyle: 'color: blue;'
+					, fieldLabelStyle: 'color: darkblue'
+					//, layerName: 'Location Thailand - Lon/Lat'
+					, onProjectionIndex: 1
+					, onZoomLevel: -1
+					, showProjection: true
+					, showZoom: true
+					, showAddMarkers: true
+					, checkAddMarkers: true
+					, showHideMarkers: true
+					, checkHideMarkers: false
+					, showResultMarker: true
+					, fieldResultMarkerStyle: 'color: darkblue;' // green
+					, fieldResultMarkerText: 'Marker position: '
+					, fieldResultMarkerSeparator: ' | '
+					, fieldResultMarkerPrecision: 4
+					, removeMarkersOnClose: true
+					, showRemoveMarkersBtn: true
+					, buttonAlign: 'center'		// left, center, right
+						/*
+							http://spatialreference.org/ref/epsg/4326/
+							EPSG:4326
+							WGS 84
+						    WGS84 Bounds: -180.0000, -90.0000, 180.0000, 90.0000
+						    Projected Bounds: -180.0000, -90.0000, 180.0000, 90.0000
+
+							http://spatialreference.org/ref/epsg/28992/    
+							EPSG:28992
+							Amersfoort / RD New
+						    WGS84 Bounds: 3.3700, 50.7500, 7.2100, 53.4700
+						    Projected Bounds: 12628.0541, 308179.0423, 283594.4779, 611063.1429
+						*/
+				, hropts: [
+						{
+							  projEpsg: 'EPSG:4326'
+							, projDesc: 'EPSG:4326 - WGS 84'
+							, fieldLabelX: 'Lon [ลองจิจูด]'
+							, fieldLabelY: 'Lat [ละติจูด]'
+							, fieldEmptyTextX: 'กรุณาระบุพิกัดลองจิจูด...'
+							, fieldEmptyTextY: 'กรุณาระบุพิกัดละติจูด...'
+							, fieldMinX: -180
+							, fieldMinY: -90
+							, fieldMaxX: 180
+							, fieldMaxY: 90
+							, fieldDecPrecision: 6
+							, iconWidth: 32
+							, iconHeight: 32
+							, localIconFile: 'bluepin.png'
+							, iconUrl: null
+						}
+						,
+						{
+							 projEpsg: 'EPSG:32647'
+							, projDesc: 'EPSG:32647 - WGS 1984/UTM zone 47N'
+							, fieldLabelX: 'E [meters]'
+							, fieldLabelY: 'N [meters]'
+							, fieldEmptyTextX: 'กรุณาระบุพิกัดยูทีเอ็มทางตะวันออก...'
+							, fieldEmptyTextY: 'กรุณาระบุพิกัดยูทีเอ็มทางทางเหนือ...'
+							, fieldMinX: 166021.4431
+							, fieldMinY: 0.0000
+							, fieldMaxX: 833978.5569
+							, fieldMaxY: 9329005.1825
+							, fieldDecPrecision: 2
+							, iconWidth: 32
+							, iconHeight: 32
+							, localIconFile: 'redpin.png'
+							, iconUrl: null
+							
+						}
+						
+						,
+						{
+							 projEpsg: 'EPSG:32648'
+							, projDesc: 'EPSG:32648 - WGS 1984/UTM zone 48N'
+							, fieldLabelX: 'E [meters]'
+							, fieldLabelY: 'N [meters]'
+							, fieldEmptyTextX: 'กรุณาระบุพิกัดยูทีเอ็มทางตะวันออก...'
+							, fieldEmptyTextY: 'กรุณาระบุพิกัดยูทีเอ็มทางทางเหนือ...'
+							, fieldMinX: 166021.4431
+							, fieldMinY: 0.0000
+							, fieldMaxX: 833978.5569
+							, fieldMaxY: 9329005.1825
+							, fieldDecPrecision: 2
+							, iconWidth: 32
+							, iconHeight: 32
+							, localIconFile: 'redpin.png'
+							, iconUrl: null
+							
+						}
+						
+				]
+		}
+	},{
         type: "-"
     },{
         type: "pan"
