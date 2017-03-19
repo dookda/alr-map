@@ -3,7 +3,7 @@ Ext.namespace("Heron.examples");
 
 var mainStore = new Ext.data.JsonStore({
     autoLoad: true,
-    url: 'getjson.php',
+    url: 'getson2.php',
     baseParams: {type:'p'},
     fields: ['item','value']
 });
