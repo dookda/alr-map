@@ -171,7 +171,19 @@ $(document).ready(function() {
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="jumbotron">
-                                add alr statistics here
+                                <form method="GET" action="chart/progress.php" target="_top"  target="progress_php">
+                                    <div class="form-group">
+                                        <label for="province">จังหวัด</label>
+                                        <div class="form-group" id="province2"></div>
+                                        <label for="province">อำเภอ</label>
+                                        <div class="form-group" id="amphoe2"></div>
+                                        <label for="province">ตำบล</label>
+                                        <div class="form-group" id="tambon2"></div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">ตกลง</button>
+                                </form>
+								
+							<iframe name="progress_php" src="" style="width: 100%;" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>	
                             </div>
                         </div>
                         <div class="col-sm-6">
