@@ -82,8 +82,8 @@ $(document).ready(function() {
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">วางแผนจัดการน้ำ ส.ป.ก.</h1>
-                <p>ระบบสนับสนุนการพัฒนาแหล่งน้ำในพื้นที่ ส.ป.ก. 9 จังหวัดภาคเหนือตอนล่าง</p>
+                <h1 id="homeHeading">Smart OFFICE smart farmer</h1>
+                <p>ส.ป.ก. 4.0 "ระบบสนับสนุนการวางแผนพัฒนาพื้นที่ ส.ป.ก. ใน 9 จังหวัดภาคเหนือตอนล่าง"</p>
                 <a href="#portfolio" class="btn btn-primary btn-xl page-scroll">เข้าใช้งาน</a>
             </div>
         </div>
@@ -91,19 +91,19 @@ $(document).ready(function() {
     <section class="no-padding" id="portfolio">
         <div class="container">
             <div>
-                <h3 for="Select">ระบบสนับสนุนสำหรับการพัฒนาแหล่งน้ำในพื้นที่ ส.ป.ก.</h3>
+                <h3 for="Select">ส.ป.ก. 4.0 "ระบบสนับสนุนการวางแผนพัฒนาพื้นที่ ส.ป.ก. ใน 9 จังหวัดภาคเหนือตอนล่าง"</h3>
             </div>
             <div class="header clearfix">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#home">พื้นที่เหมาะสมพัฒนาแหล่งน้ำ</a></li>
-                    <li><a href="#menu1">ข้อมูล ส.ป.ก. รายแปลง</a></li>
+                    <li class="active"><a href="#home">พัฒนาแหล่งน้ำ</a></li>
+                    <li><a href="#menu1">สำรวจรายแปลง</a></li>
                     <li><a href="#menu2">สรุปข้อมูล ส.ป.ก.</a></li>
                 </ul>
             </div>
             <div class="tab-content">
                 <div id="home" class="tab-pane fade in active">
                     <h3 class="text-muted">ที่ตั้งพื้นที่เหมาะสมพัฒนาแหล่งน้ำ</h3>
-                    <p>เลือกพื้นที่และชั้นข้อมูลที่ต้องการเพื่อใช้สำหรับสนับสนุนตัดสินใจพัฒนาแหล่งน้ำ</p>
+                    <p>เลือกพื้นที่และชั้นข้อมูลที่ต้องการแสดงร่วม</p>
                     <div class="jumbotron">
                         <form method="GET" action="map.php" target="_top">
                             <div class="form-group">
@@ -128,7 +128,7 @@ $(document).ready(function() {
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" checked="checked" name="lyrAlr" value="1" disabled>แปลง ส.ป.ก.</label>
+                                                <input type="checkbox" checked="checked" name="lyrAlr" value="1" disabled>แปลงที่ดิน ส.ป.ก.</label>
                                         </div>
                                     </div>
                                     <div class="col-xs-6 col-md-4">
@@ -138,7 +138,7 @@ $(document).ready(function() {
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="lyrSoil" value="1">ความเหมาะสมของดิน</label>
+                                                <input type="checkbox" name="lyrSoil" value="1">ดินและความเหมาะสมของดิน</label>
                                         </div>
                                         <div class="checkbox">
                                             <label>
@@ -167,7 +167,7 @@ $(document).ready(function() {
                 </div>
                 <div id="menu1" class="tab-pane fade">
                     <h3 class="text-muted">ข้อมูล ส.ป.ก. รายแปลง</h3>
-                    <p>ข้อมูลการเพาะปลูกพืชรายแปลง </p>
+                    <p>เลือกพื้นที่และชั้นข้อมูลที่ต้องการแสดงร่วม</p>
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="jumbotron">
@@ -192,7 +192,7 @@ $(document).ready(function() {
                                                 <input type="hidden" name="module" value="siteRegister">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input type="checkbox" checked="checked" name="lyrAlr" value="1" disabled>แปลง สปก.</label>
+                                                        <input type="checkbox" checked="checked" name="lyrAlr" value="1" disabled>แปลงที่ดิน สปก.</label>
                                                 </div>
                                             </div>
                                             <div class="col-xs-6 col-md-4">
@@ -203,7 +203,7 @@ $(document).ready(function() {
                                                 </div>
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input type="checkbox" name="lyrSoil" value="1">ความเหมาะสมของดิน</label>
+                                                        <input type="checkbox" name="lyrSoil" value="1">ดินและความเหมาะสมของดิน</label>
                                                 </div>
                                                 <div class="checkbox">
                                                     <label>
@@ -234,7 +234,7 @@ $(document).ready(function() {
                 </div>
                 <div id="menu2" class="tab-pane fade">
                     <h3 class="text-muted">สรุปข้อมูล ส.ป.ก.</h3>
-                    <p>เลือกพื้นที่</p>
+                    <p>เลือกพื้นที่และชั้นข้อมูลที่ต้องการแสดงร่วม</p>
                     <div class="jumbotron">
                         <form method="get" action="chart/chart.php" target="chart_php">
                             <div class="form-group">
