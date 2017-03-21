@@ -31,3 +31,7 @@
         window.onLoad=dochange('province3', -1);     
         window.onLoad=dochange('amphoe3', -1); 
         window.onLoad=dochange('tambon3', -1); 
+        //parcel summary
+        window.onLoad=dochange('province4', -1);     
+        window.onLoad=dochange('amphoe4', -1); 
+        window.onLoad=dochange('tambon4', -1); 

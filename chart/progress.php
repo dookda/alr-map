@@ -6,9 +6,9 @@
 include "../../lib/sel_config.php";
 conndb();
 
-	$prov_name = $_GET[province2];
-	$amphoe_name = $_GET[amphoe2];
-	$tambon_name = $_GET[tambon2];
+	$prov_name = $_GET[province4];
+	$amphoe_name = $_GET[amphoe4];
+	$tambon_name = $_GET[tambon4];
 	
 ?>
   <meta charset="utf-8">
