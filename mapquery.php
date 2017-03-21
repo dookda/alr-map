@@ -57,9 +57,7 @@
 	    width: 30px !important;
 	    height: 16px !important;
 	}
-    .two-column-form .x-form-item.x-clear-left {
-    margin-left: 0px;
-    }
+
 </style>
 <body>
 <?php
@@ -130,6 +128,8 @@ function dataLoad($prov_id, $amp_id, $tam_id){
     //echo '<script>var selectSource = "http://map.nu.ac.th/gs-alr2/ows?";</script>';
     // select area
     if ($tam_id > 0) {
+        echo "<script>var queryTool='query_test3.php?pro=$prov_id&amp=$amp_id&tam=$tam_id'</script>";
+
         echo '<script>var filter_pro = "prov_code='.$prov_id.'";</script>';
         echo '<script>var filter_amp = "amp_code='.$amp_id.'";</script>';
         echo '<script>var filter_tam = "tam_code='.$tam_id.'";</script>';
@@ -142,6 +142,8 @@ function dataLoad($prov_id, $amp_id, $tam_id){
         echo '<script>var lyrvisible_alr = true;</script>';
     }
     elseif($amp_id > 0) {
+        echo "<script>var queryTool='query_test3.php?pro=$prov_id&amp=$amp_id'</script>";
+
         echo '<script>var filter_pro = "prov_code='.$prov_id.'";</script>';
         echo '<script>var filter_amp = "amp_code='.$amp_id.'";</script>';
         echo '<script>var filter_tam = "amp_code='.$amp_id.'";</script>';
@@ -154,6 +156,8 @@ function dataLoad($prov_id, $amp_id, $tam_id){
         echo '<script>var lyrvisible_alr = true;</script>';
     }
     elseif($prov_id > 0) {
+        echo "<script>var queryTool='query_test3.php?pro=$prov_id'</script>";
+
         echo '<script>var filter_pro = "prov_code='.$prov_id.'";</script>';
         echo '<script>var filter_amp = "prov_code='.$prov_id.'";</script>';
         echo '<script>var filter_tam = "prov_code='.$prov_id.'";</script>';

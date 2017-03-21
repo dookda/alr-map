@@ -53,13 +53,13 @@ var mainStore4 = new Ext.data.JsonStore({
 
 Heron.examples.searchPanelConfig = {
     xtype: 'hr_multisearchcenterpanel',
-    height: 600,
+    height: 650,
     hropts: [{
             searchPanel: {
                 xtype: "hr_formsearchpanel",
                 name: "ค้นหาแปลง ส.ป.ก. สำหรับปลูกพืชทางเลือก",
                 protocol: new OpenLayers.Protocol.HTTP({
-                    url: 'query_test3.php',
+                    url: queryTool,
                     format: new OpenLayers.Format.GeoJSON()
                 }),
                 // downloadFormats: Heron.options.wfs.downloadFormats,
@@ -68,11 +68,10 @@ Heron.examples.searchPanelConfig = {
 
                 items: [{
                     xtype: 'compositefield',
-                    items: [
-                    {
+                    items: [{
                         xtype: 'displayfield',
                         value: 'พืช 1'
-                    },{ 
+                    }, {
                         xtype: "combo",
                         id: 't1',
                         name: "typec1",
@@ -87,10 +86,10 @@ Heron.examples.searchPanelConfig = {
                         valueField: 'value',
                         displayField: 'item',
                         triggerAction: 'all'
-                    },{ 
-                        xtype: 'displayfield', 
+                    }, {
+                        xtype: 'displayfield',
                         value: 'ความเหมาะสม'
-                    },{ 
+                    }, {
                         xtype: "combo",
                         id: 's1',
                         name: "suite1",
@@ -108,11 +107,10 @@ Heron.examples.searchPanelConfig = {
                 }, {
                     xtype: 'compositefield',
                     bodyStyle: 'padding: 5px',
-                    items: [
-                    {
+                    items: [{
                         xtype: 'displayfield',
                         value: 'พืช 2'
-                    },{ 
+                    }, {
                         xtype: "combo",
                         id: "t2",
                         name: "typec2",
@@ -127,9 +125,9 @@ Heron.examples.searchPanelConfig = {
                         displayField: 'item',
                         triggerAction: 'all'
                     }, {
-                        xtype: 'displayfield', 
+                        xtype: 'displayfield',
                         value: 'ความเหมาะสม'
-                    },{ 
+                    }, {
                         xtype: "combo",
                         id: 's2',
                         name: "suite2",
@@ -154,11 +152,10 @@ Heron.examples.searchPanelConfig = {
                 }, {
                     xtype: 'compositefield',
                     bodyStyle: 'padding: 5px',
-                    items: [
-                    {
+                    items: [{
                         xtype: 'displayfield',
                         value: 'พืช 3'
-                    },{ 
+                    }, {
                         xtype: "combo",
                         id: "t3",
                         name: "typec3",
@@ -173,9 +170,9 @@ Heron.examples.searchPanelConfig = {
                         displayField: 'item',
                         triggerAction: 'all'
                     }, {
-                        xtype: 'displayfield', 
+                        xtype: 'displayfield',
                         value: 'ความเหมาะสม'
-                    },{ 
+                    }, {
                         xtype: "combo",
                         id: 's3',
                         name: "suite3",
@@ -197,6 +194,188 @@ Heron.examples.searchPanelConfig = {
                             color: "#6666BB"
                         }
                     }]
+
+                }, {
+                    xtype: 'compositefield',
+                    bodyStyle: 'padding: 5px',
+                    items: [{
+                        xtype: 'displayfield',
+                        value: 'พืช 4'
+                    }, {
+                        xtype: "combo",
+                        id: "t4",
+                        name: "typec4",
+                        store: mainStore4,
+                        width: 120,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        loadingText: 'Loading...',
+                        triggerAction: 'all',
+                        lazyRender: true,
+                        valueField: 'value',
+                        displayField: 'item',
+                        triggerAction: 'all'
+                    }, {
+                        xtype: 'displayfield',
+                        value: 'ความเหมาะสม'
+                    }, {
+                        xtype: "combo",
+                        id: 's4',
+                        name: "suite4",
+                        store: mainStore3,
+                        width: 100,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        triggerAction: 'all',
+                        editable: false,
+                        valueField: 'value',
+                        //displayField: 'display',
+                        displayField: 'item'
+                    }, {
+                        xtype: "label",
+                        id: "helplabel",
+                        //html: "To search fill in one or more fields.<br>",
+                        style: {
+                            fontSize: "10px",
+                            color: "#6666BB"
+                        }
+                    }]
+                }, {
+                    xtype: 'compositefield',
+                    bodyStyle: 'padding: 5px',
+                    items: [{
+                        xtype: 'displayfield',
+                        value: 'พืช 5'
+                    }, {
+                        xtype: "combo",
+                        id: "t5",
+                        name: "typec5",
+                        store: mainStore4,
+                        width: 120,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        loadingText: 'Loading...',
+                        triggerAction: 'all',
+                        lazyRender: true,
+                        valueField: 'value',
+                        displayField: 'item',
+                        triggerAction: 'all'
+                    }, {
+                        xtype: 'displayfield',
+                        value: 'ความเหมาะสม'
+                    }, {
+                        xtype: "combo",
+                        id: 's5',
+                        name: "suite5",
+                        store: mainStore3,
+                        width: 100,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        triggerAction: 'all',
+                        editable: false,
+                        valueField: 'value',
+                        //displayField: 'display',
+                        displayField: 'item'
+                    }, {
+                        xtype: "label",
+                        id: "helplabel",
+                        //html: "To search fill in one or more fields.<br>",
+                        style: {
+                            fontSize: "10px",
+                            color: "#6666BB"
+                        }
+                    }]
+                }, {
+                    xtype: 'compositefield',
+                    bodyStyle: 'padding: 5px',
+                    items: [{
+                        xtype: 'displayfield',
+                        value: 'พืช 6'
+                    }, {
+                        xtype: "combo",
+                        id: "t6",
+                        name: "typec6",
+                        store: mainStore4,
+                        width: 120,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        loadingText: 'Loading...',
+                        triggerAction: 'all',
+                        lazyRender: true,
+                        valueField: 'value',
+                        displayField: 'item',
+                        triggerAction: 'all'
+                    }, {
+                        xtype: 'displayfield',
+                        value: 'ความเหมาะสม'
+                    }, {
+                        xtype: "combo",
+                        id: 's6',
+                        name: "suite6",
+                        store: mainStore3,
+                        width: 100,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        triggerAction: 'all',
+                        editable: false,
+                        valueField: 'value',
+                        //displayField: 'display',
+                        displayField: 'item'
+                    }, {
+                        xtype: "label",
+                        id: "helplabel",
+                        //html: "To search fill in one or more fields.<br>",
+                        style: {
+                            fontSize: "10px",
+                            color: "#6666BB"
+                        }
+                    }]
+                }, {
+                    xtype: 'compositefield',
+                    bodyStyle: 'padding: 5px',
+                    items: [{
+                        xtype: 'displayfield',
+                        value: 'พืช 7'
+                    }, {
+                        xtype: "combo",
+                        id: "t7",
+                        name: "typec7",
+                        store: mainStore4,
+                        width: 120,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        loadingText: 'Loading...',
+                        triggerAction: 'all',
+                        lazyRender: true,
+                        valueField: 'value',
+                        displayField: 'item',
+                        triggerAction: 'all'
+                    }, {
+                        xtype: 'displayfield',
+                        value: 'ความเหมาะสม'
+                    }, {
+                        xtype: "combo",
+                        id: 's7',
+                        name: "suite7",
+                        store: mainStore3,
+                        width: 100,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        triggerAction: 'all',
+                        editable: false,
+                        valueField: 'value',
+                        //displayField: 'display',
+                        displayField: 'item'
+                    }, {
+                        xtype: "label",
+                        id: "helplabel",
+                        //html: "To search fill in one or more fields.<br>",
+                        style: {
+                            fontSize: "10px",
+                            color: "#6666BB"
+                        }
+                    }]
+
                 }],
                 hropts: {
                     onSearchCompleteZoom: 11,
@@ -214,61 +393,61 @@ Heron.examples.searchPanelConfig = {
                 exportFormats: ['XLS', 'GMLv2', 'GeoJSON', 'WellKnownText', 'Shapefile'],
                 gridCellRenderers: Heron.options.gridCellRenderers,
                 columns: [{
-                    header: "รหัสแปลง",
-                    width: 100,
-                    dataIndex: "alrcode",
-                    type: 'numeric'
-                }, {
-                    header: "ความสูงของแปลง",
-                    width: 100,
-                    dataIndex: "ele",
-                    type: 'numeric'
-                }, {
-                    header: "ความลาดชัน",
-                    width: 100,
-                    dataIndex: "slp",
-                    type: 'numeric'
-                }
+                        header: "รหัสแปลง",
+                        width: 100,
+                        dataIndex: "alrcode",
+                        type: 'numeric'
+                    }, {
+                        header: "ความสูงของแปลง",
+                        width: 100,
+                        dataIndex: "ele",
+                        type: 'numeric'
+                    }, {
+                        header: "ความลาดชัน",
+                        width: 100,
+                        dataIndex: "slp",
+                        type: 'numeric'
+                    }
 
 
 
 
-                /*{
-                    header: "ข้าว",
-                    width: 100,
-                    dataIndex: "r_suit",
-                    type: 'string'
-                }, {
-                    header: "ข้าวโพด",
-                    width: 100,
-                    dataIndex: "m_suit",
-                    type: 'string'
-                }, {
-                    header: "มันสำปะหลัง",
-                    width: 100,
-                    dataIndex: "c_suit",
-                    type: 'string'
-                }, {
-                    header: "อ้อย",
-                    width: 100,
-                    dataIndex: "s_suit",
-                    type: 'string'
-                }, {
-                    header: "พืชผัก",
-                    width: 100,
-                    dataIndex: "v_suit",
-                    type: 'string'
-                }, {
-                    header: "ไม้ผล",
-                    width: 100,
-                    dataIndex: "f_suit",
-                    type: 'string'
-                }, {
-                    header: "ทุ่งหญ้าเลี้ยงสัตว์",
-                    width: 100,
-                    dataIndex: "p_suit",
-                    type: 'string'
-                }*/
+                    /*{
+                        header: "ข้าว",
+                        width: 100,
+                        dataIndex: "r_suit",
+                        type: 'string'
+                    }, {
+                        header: "ข้าวโพด",
+                        width: 100,
+                        dataIndex: "m_suit",
+                        type: 'string'
+                    }, {
+                        header: "มันสำปะหลัง",
+                        width: 100,
+                        dataIndex: "c_suit",
+                        type: 'string'
+                    }, {
+                        header: "อ้อย",
+                        width: 100,
+                        dataIndex: "s_suit",
+                        type: 'string'
+                    }, {
+                        header: "พืชผัก",
+                        width: 100,
+                        dataIndex: "v_suit",
+                        type: 'string'
+                    }, {
+                        header: "ไม้ผล",
+                        width: 100,
+                        dataIndex: "f_suit",
+                        type: 'string'
+                    }, {
+                        header: "ทุ่งหญ้าเลี้ยงสัตว์",
+                        width: 100,
+                        dataIndex: "p_suit",
+                        type: 'string'
+                    }*/
 
 
                 ],
@@ -646,10 +825,10 @@ Heron.options.map.toolbar = [{
 
         searchWindow: {
             title: __('เครื่องมือค้นหา'),
-            x: 500,
+            x: 100,
             y: undefined,
             width: 600,
-            height: 440,
+            height: 480,
             items: [
                 Heron.examples.searchPanelConfig
             ]

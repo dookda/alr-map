@@ -1,90 +1,151 @@
 <?php
-  header('Content-Type: application/json');
-   $host        = "host=localhost";
-   $port        = "port=5432";
-   $dbname      = "dbname=alr";
-   $credentials = "user=postgres password=1234";
-   $db = pg_connect( "$host $port $dbname $credentials"  );
-   if(!$db){
-      echo "Error : Unable to open database\n";
-   }
+    header("content-type: text/html; charset=utf-8");
+    header ("Expires: Wed, 21 Aug 2013 13:13:13 GMT");
+    header ("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+    header ("Cache-Control: no-cache, must-revalidate");
+    header ("Pragma: no-cache");
+
+    include "../lib/sel_config.php";
+    conndb();
 
 
    $suit1=$_GET["suite1__eq"];
-   $typc1=$_GET["typec1__eq"];
-   $suit2=$_GET["suite2__eq"];
-   $typc2=$_GET["typec2__eq"];
-   $suit3=$_GET["suite3__eq"];
-   $typc3=$_GET["typec3__eq"];
+   $suit2=$_GET["suite2__eq"];   
+   $suit3=$_GET["suite3__eq"];   
+   $suit4=$_GET["suite4__eq"];
+   $suit5=$_GET["suite5__eq"];
+   $suit6=$_GET["suite6__eq"];
+   $suit7=$_GET["suite7__eq"];
+
+if(!empty( $_GET['typec1__eq'] )){
+  $typc1=checkType($_GET['typec1__eq']);
+};
+
+if(!empty( $_GET['typec2__eq'])){
+  $typc2=checkType($_GET['typec2__eq']);
+};
+
+if(!empty( $_GET['typec3__eq'])){
+  $typc3=checkType($_GET['typec3__eq']);
+};
+
+if(!empty( $_GET['typec4__eq'])){
+  $typc4=checkType($_GET['typec4__eq']);
+};
+
+if(!empty( $_GET['typec5__eq'])){
+  $typc5=checkType($_GET['typec5__eq']);
+};
+
+if(!empty( $_GET['typec6__eq'])){
+  $typc6=checkType($_GET['typec6__eq']);
+};
+
+if(!empty( $_GET['typec7__eq'])){
+  $typc7=checkType($_GET['typec7__eq']);
+};
+
+function checkType($dataGet){
+  if ($dataGet == "ข้าว"){
+    $cropType = "r_suit";
+  }elseif ($dataGet == "ข้าวโพด") {
+    $cropType = "m_suit";
+  }elseif ($dataGet == "มันสำปะหลัง") {
+    $cropType = "c_suit";
+  }elseif ($dataGet == "พืชผัก") {
+    $cropType = "v_suit";
+  }elseif ($dataGet == "ไม้ผล") {
+    $cropType = "f_suit";
+  }elseif ($dataGet == "ทุ่งหญ้าเลี้ยงสัตว์") {
+    $cropType = "p_suit";
+  }elseif ($dataGet == "อ้อย") {
+    $cropType = "s_suit";
+  }else{
+    $cropType = "เลือก...";
+  }
+  return $cropType;
+};
 
 
-   //get BBOX
-/*   if($tam !='เลือกตำบล...'){ //get bbox from tambon
-      $sql="SELECT ST_AsText(ST_SimplifyPreserveTopology(geom,0.01)) AS geom FROM ln9p_tam WHERE prov_nam_t='$prov' AND amp_nam_t='$amp' AND tam_nam_t='$tam'";
-      $ret = pg_query($db, $sql);
+function loadJsonData($sql){
+  if(!empty($sql)){
+    $ret = pg_query($sql);
       if(!$ret){
         exit;
       }
-      while($row = pg_fetch_array($ret)){
-        $geom=$row["geom"];
-     }
-   }else if($amp !='เลือกอำเภอ...'){
-      $sql="SELECT ST_AsText(ST_SimplifyPreserveTopology(geom,0.01)) AS geom FROM ln9p_amp WHERE prov_nam_t='$prov' AND amp_nam_t='$amp'";
-      $ret = pg_query($db, $sql);
-      if(!$ret){
-        exit;
-      }
-      while($row = pg_fetch_array($ret)){
-        $geom=$row["geom"];
-      }
-   }else{
-      $sql="SELECT ST_AsText(ST_SimplifyPreserveTopology(geom,0.01)) AS geom FROM ln9p_prov WHERE prov_nam_t='$prov'";
-      $ret = pg_query($db, $sql);
-      if(!$ret){
-        exit;
-      }
-      while($row = pg_fetch_array($ret)){
-        $geom=$row["geom"];
-      }
-   }*/
-  function loadJsonData($db, $sql){
-    if(!empty($sql)){
-               $ret = pg_query($db, $sql);
-               if(!$ret){
-                  exit;
-               }
-               $i=0;
-               
-         $z = "";
-               while($row = pg_fetch_array($ret)){
-                if($i==0){
-                      $z.=$row["geojson"];
-                }else{
-                      $z.=",".$row["geojson"];
-                }
-                $i++;
-               }
-            echo '{
-            "type": "FeatureCollection",
-            "features": [';
-            echo $z;
-            echo ']}';
-        }
-  };      
 
-   // echo $sql;
+  $i=0;
+  $z = "";
+  
+  while($row = pg_fetch_array($ret)){
+    if($i==0){
+      $z.=$row["geojson"];
+    }else{
+      $z.=",".$row["geojson"];
+    }
+      $i++;
+  }
 
-   if($typc3 != 'เลือก...'){
-        $sql="SELECT json_build_object('type','Feature','properties',json_build_object('r_suit',r_suit,'m_suit',m_suit,'c_suit',c_suit,'s_suit',s_suit,'v_suit',v_suit,'f_suit',f_suit,'p_suit',p_suit),'geometry',ST_AsGeoJSON(ST_Transform(geom,3857))::json) as geojson FROM alr_parcel where $typc1 = '$suit1' and $typc2 = '$suit2' and $typc3 = '$suit3' and amp_code = '6503'";
-        loadJsonData($db, $sql);
+  echo '{"type": "FeatureCollection","features": [';
+  echo $z;
+  echo ']}';
+  }
+};      
+
+
+
+//create where sqql
+
+  if($typc7 != 'เลือก...'){
+  
+      $typSuit = "$typc1 = '$suit1' and $typc2 = '$suit2' and $typc3 = '$suit3' and $typc4 = '$suit4' and $typc5 = '$suit5' and $typc6 = '$suit6' and $typc7 = '$suit7'";
+
+   } elseif ($typc6 != 'เลือก...'){ 
+
+      $typSuit = "$typc1 = '$suit1' and $typc2 = '$suit2' and $typc3 = '$suit3' and $typc4 = '$suit4' and $typc5 = '$suit5' and $typc6 = '$suit6'";
+
+   } elseif ($typc5 != 'เลือก...'){
+
+      $typSuit = "$typc1 = '$suit1' and $typc2 = '$suit2' and $typc3 = '$suit3' and $typc4 = '$suit4' and $typc5 = '$suit5'";
+
+   } elseif ($typc4 != 'เลือก...'){  
+
+      $typSuit = "$typc1 = '$suit1' and $typc2 = '$suit2' and $typc3 = '$suit3' and $typc4 = '$suit4'";
+
+   } elseif ($typc3 != 'เลือก...'){ 
+
+       $typSuit = "$typc1 = '$suit1' and $typc2 = '$suit2' and $typc3 = '$suit3'";
 
    } elseif ($typc2 != 'เลือก...'){
-        $sql="SELECT json_build_object('type','Feature','properties',json_build_object('r_suit',r_suit,'m_suit',m_suit,'c_suit',c_suit,'s_suit',s_suit,'v_suit',v_suit,'f_suit',f_suit,'p_suit',p_suit),'geometry',ST_AsGeoJSON(ST_Transform(geom,3857))::json) as geojson FROM alr_parcel where $typc1 = '$suit1' and $typc2 = '$suit2' and amp_code = '6503'";
-        loadJsonData($db, $sql);
+
+      $typSuit = "$typc1 = '$suit1' and $typc2 = '$suit2'";
 
    } elseif ($typc1 != 'เลือก...'){
-        $sql="SELECT json_build_object('type','Feature','properties',json_build_object('r_suit',r_suit,'m_suit',m_suit,'c_suit',c_suit,'s_suit',s_suit,'v_suit',v_suit,'f_suit',f_suit,'p_suit',p_suit),'geometry',ST_AsGeoJSON(ST_Transform(geom,3857))::json) as geojson FROM alr_parcel where $typc1 = '$suit1' and amp_code = '6503'";
-        loadJsonData($db, $sql);
-   }
-pg_close($db);
+
+      $typSuit = "$typc1 = '$suit1'";
+
+   };
+
+if(!empty( $_GET['tam'] )){
+  $tam = $_GET['tam'];
+  $admCode = "tam_code = '$tam'";
+}elseif(!empty( $_GET['amp'])){
+  $amp = $_GET['amp'];
+  $admCode = "amp_code = '$amp'";
+}elseif(!empty( $_GET['pro'])){
+  $pro = $_GET['pro'];
+  $admCode = "prov_code = '$pro'";
+};
+
+
+//echo $typc1;
+
+
+  $sql = "select json_build_object('type','Feature','properties',json_build_object('alrcode',alrcode,'ele',ele,'slp',slp,'s_suit',s_suit,'v_suit',v_suit,'f_suit',f_suit,'p_suit',p_suit),'geometry',ST_AsGeoJSON(ST_Transform(geom,3857))::json) as geojson FROM alr_parcel where $typSuit and $admCode";
+  
+  //echo $sql;
+
+  loadJsonData($sql);
+
+closedb();
 ?>
