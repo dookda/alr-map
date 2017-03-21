@@ -129,6 +129,7 @@ function dataLoad($prov_id, $amp_id, $tam_id){
     // select area
     if ($tam_id > 0) {
         echo "<script>var queryTool='query_test3.php?pro=$prov_id&amp=$amp_id&tam=$tam_id'</script>";
+        echo "<script>var queryLu='query_lu.php?pro=$prov_id&amp=$amp_id&tam=$tam_id'</script>";
 
         echo '<script>var filter_pro = "prov_code='.$prov_id.'";</script>';
         echo '<script>var filter_amp = "amp_code='.$amp_id.'";</script>';
@@ -143,6 +144,7 @@ function dataLoad($prov_id, $amp_id, $tam_id){
     }
     elseif($amp_id > 0) {
         echo "<script>var queryTool='query_test3.php?pro=$prov_id&amp=$amp_id'</script>";
+        echo "<script>var queryLu='query_lu.php?pro=$prov_id&amp=$amp_id'</script>";
 
         echo '<script>var filter_pro = "prov_code='.$prov_id.'";</script>';
         echo '<script>var filter_amp = "amp_code='.$amp_id.'";</script>';
@@ -157,6 +159,7 @@ function dataLoad($prov_id, $amp_id, $tam_id){
     }
     elseif($prov_id > 0) {
         echo "<script>var queryTool='query_test3.php?pro=$prov_id'</script>";
+        echo "<script>var queryLu='query_lu.php?pro=$prov_id'</script>";
 
         echo '<script>var filter_pro = "prov_code='.$prov_id.'";</script>';
         echo '<script>var filter_amp = "prov_code='.$prov_id.'";</script>';

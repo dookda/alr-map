@@ -22,34 +22,26 @@ var mainStore2 = new Ext.data.JsonStore({
 });
 
 
-var mainStore3 = new Ext.data.JsonStore({
+var suitStore = new Ext.data.JsonStore({
     url: 'getjson_test3.php',
     autoLoad: false,
     baseParams: { type: 's2' },
-    //baseParams: {type:'s2','code':''},
-    /*listeners: {
-                    beforeload: function(store,opts) {
-                        amphoe = Ext.getCmp('a_cb');
-                        store.setBaseParam('code',amphoe.value);
-                    }
-                }, */
     fields: ['item', 'value']
 });
 
-var mainStore4 = new Ext.data.JsonStore({
+var typeStore = new Ext.data.JsonStore({
     url: 'getjson_test3.php',
     autoLoad: false,
     baseParams: { type: 't2' },
-    //baseParams: {type:'t','code':''},
-    /*listeners: {
-                    beforeload: function(store,opts) {
-                        amphoe = Ext.getCmp('a_cb');
-                        store.setBaseParam('code',amphoe.value);
-                    }
-                },*/
     fields: ['item', 'value']
 });
 
+var luStore = new Ext.data.JsonStore({
+    url: 'getjson_test3.php',
+    autoLoad: false,
+    baseParams: { type: 'lu' },
+    fields: ['item', 'value']
+});
 
 Heron.examples.searchPanelConfig = {
     xtype: 'hr_multisearchcenterpanel',
@@ -57,7 +49,7 @@ Heron.examples.searchPanelConfig = {
     hropts: [{
             searchPanel: {
                 xtype: "hr_formsearchpanel",
-                name: "ค้นหาแปลง ส.ป.ก. สำหรับปลูกพืชทางเลือก",
+                name: "วิเคราะห์พื้นที่เหมาะสมปลูกพืชชนิดต่างๆ",
                 protocol: new OpenLayers.Protocol.HTTP({
                     url: queryTool,
                     format: new OpenLayers.Format.GeoJSON()
@@ -114,7 +106,7 @@ Heron.examples.searchPanelConfig = {
                         xtype: "combo",
                         id: "t2",
                         name: "typec2",
-                        store: mainStore4,
+                        store: mainStore2,
                         width: 120,
                         forceSelection: false,
                         emptyText: 'เลือก...',
@@ -131,7 +123,7 @@ Heron.examples.searchPanelConfig = {
                         xtype: "combo",
                         id: 's2',
                         name: "suite2",
-                        store: mainStore3,
+                        store: mainStore,
                         width: 100,
                         forceSelection: false,
                         emptyText: 'เลือก...',
@@ -159,7 +151,7 @@ Heron.examples.searchPanelConfig = {
                         xtype: "combo",
                         id: "t3",
                         name: "typec3",
-                        store: mainStore4,
+                        store: mainStore2,
                         width: 120,
                         forceSelection: false,
                         emptyText: 'เลือก...',
@@ -176,7 +168,7 @@ Heron.examples.searchPanelConfig = {
                         xtype: "combo",
                         id: 's3',
                         name: "suite3",
-                        store: mainStore3,
+                        store: mainStore,
                         width: 100,
                         forceSelection: false,
                         emptyText: 'เลือก...',
@@ -205,7 +197,7 @@ Heron.examples.searchPanelConfig = {
                         xtype: "combo",
                         id: "t4",
                         name: "typec4",
-                        store: mainStore4,
+                        store: mainStore2,
                         width: 120,
                         forceSelection: false,
                         emptyText: 'เลือก...',
@@ -222,7 +214,7 @@ Heron.examples.searchPanelConfig = {
                         xtype: "combo",
                         id: 's4',
                         name: "suite4",
-                        store: mainStore3,
+                        store: mainStore,
                         width: 100,
                         forceSelection: false,
                         emptyText: 'เลือก...',
@@ -250,7 +242,7 @@ Heron.examples.searchPanelConfig = {
                         xtype: "combo",
                         id: "t5",
                         name: "typec5",
-                        store: mainStore4,
+                        store: mainStore2,
                         width: 120,
                         forceSelection: false,
                         emptyText: 'เลือก...',
@@ -267,7 +259,7 @@ Heron.examples.searchPanelConfig = {
                         xtype: "combo",
                         id: 's5',
                         name: "suite5",
-                        store: mainStore3,
+                        store: mainStore,
                         width: 100,
                         forceSelection: false,
                         emptyText: 'เลือก...',
@@ -295,7 +287,7 @@ Heron.examples.searchPanelConfig = {
                         xtype: "combo",
                         id: "t6",
                         name: "typec6",
-                        store: mainStore4,
+                        store: mainStore2,
                         width: 120,
                         forceSelection: false,
                         emptyText: 'เลือก...',
@@ -312,7 +304,7 @@ Heron.examples.searchPanelConfig = {
                         xtype: "combo",
                         id: 's6',
                         name: "suite6",
-                        store: mainStore3,
+                        store: mainStore,
                         width: 100,
                         forceSelection: false,
                         emptyText: 'เลือก...',
@@ -340,7 +332,7 @@ Heron.examples.searchPanelConfig = {
                         xtype: "combo",
                         id: "t7",
                         name: "typec7",
-                        store: mainStore4,
+                        store: mainStore2,
                         width: 120,
                         forceSelection: false,
                         emptyText: 'เลือก...',
@@ -357,7 +349,7 @@ Heron.examples.searchPanelConfig = {
                         xtype: "combo",
                         id: 's7',
                         name: "suite7",
-                        store: mainStore3,
+                        store: mainStore,
                         width: 100,
                         forceSelection: false,
                         emptyText: 'เลือก...',
@@ -458,7 +450,117 @@ Heron.examples.searchPanelConfig = {
                     zoomToDataExtent: false
                 }
             }
-        }, //End search with combobox
+        }, {
+            searchPanel: {
+               // xtype: 'hr_searchbyfeaturepanel',
+                xtype: "hr_formsearchpanel",
+                name: "ค้นหาแปลงที่เหมาะสมต่อการปลูกในอนาคต",
+                description: 'Select feature-geometries from one layer and use these to perform a spatial search in another layer.',
+                header: false,
+                border: false,
+                bodyStyle: 'padding: 6px',
+                style: {
+                    fontFamily: 'Verdana, Arial, Helvetica, sans-serif',
+                    fontSize: '12px'
+                },
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: queryLu,
+                    format: new OpenLayers.Format.GeoJSON()
+                }),
+                items: [{
+                        xtype: 'displayfield',
+                        value: 'เลือกประเภทการใช้ประโยชน์ที่ดินปัจจุบัน (ข้อมูล 2557)'
+                    },{
+                        xtype: "combo",
+                        id: 'lu',
+                        name: "luType",
+                        store: luStore,
+                        width: 120,
+                        allowBlank: false,
+                        forceSelection: true,
+                        emptyText: 'เลือก...',
+                        loadingText: 'Loading...',
+                        triggerAction: 'all',
+                        lazyRender: true,
+                        valueField: 'value',
+                        displayField: 'item',
+                        triggerAction: 'all'
+                    },{
+                        xtype: 'displayfield',
+                        value: 'เลือกชนิดพืชที่ต้องการปลูกในอนาคต และระดับความเหมาะสม'
+                    
+                },{
+                    xtype: 'compositefield',
+                    items: [
+                    {
+                        xtype: 'displayfield',
+                        value: 'พืช'
+                    }, {
+                        xtype: "combo",
+                        id: 'st',
+                        name: "suitType",
+                        store: typeStore,
+                        width: 100,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        loadingText: 'Loading...',
+                        triggerAction: 'all',
+                        lazyRender: true,
+                        valueField: 'value',
+                        displayField: 'item',
+                        triggerAction: 'all'
+                    }, {
+                        xtype: 'displayfield',
+                        value: 'ความเหมาะสม'
+                    }, {
+                        xtype: "combo",
+                        id: 'sc',
+                        name: "suitCrop",
+                        store: suitStore,
+                        width: 100,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        loadingText: 'Loading...',
+                        triggerAction: 'all',
+                        lazyRender: true,
+                        valueField: 'value',
+                        displayField: 'item',
+                        triggerAction: 'all'
+                    }]
+                }]
+            },
+            resultPanel: {
+                xtype: 'hr_featuregridpanel',
+                id: 'hr-featuregridpanel',
+                header: false,
+                border: false,
+                autoConfig: true,
+                exportFormats: ['XLS', 'GMLv2', 'GeoJSON', 'WellKnownText', 'Shapefile'],
+                gridCellRenderers: Heron.options.gridCellRenderers,
+                columns: [{
+                        header: "รหัสแปลง",
+                        width: 100,
+                        dataIndex: "alrcode",
+                        type: 'numeric'
+                    }, {
+                        header: "ความสูงของแปลง",
+                        width: 100,
+                        dataIndex: "ele",
+                        type: 'numeric'
+                    }, {
+                        header: "ความลาดชัน",
+                        width: 100,
+                        dataIndex: "slp",
+                        type: 'numeric'
+                    }],
+                hropts: {
+                    zoomOnRowDoubleClick: true,
+                    zoomOnFeatureSelect: false,
+                    zoomLevelPointSelect: 8,
+                    zoomToDataExtent: false
+                }
+            }
+        },//End search with combobox
         {
             searchPanel: {
                 xtype: 'hr_gxpquerypanel',
@@ -816,7 +918,9 @@ Heron.options.map.toolbar = [{
 }, {
     type: "-"
 }, {
-    type: "featurechart" // CWR
+    type: "featurechart"
+}, {
+    type: "-"
 }, {
     type: "searchcenter",
     // Options for SearchPanel window

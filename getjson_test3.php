@@ -10,7 +10,7 @@
 
 
     $type=$_POST["type"];
-    
+
     if($type=='s1'){
         $sql="select gid AS id, s_desc as name from query_suit  ORDER BY gid"; // suit type
     }else if($type=='t1'){
@@ -22,6 +22,8 @@
     }else if($type=='t2'){
         $id=$_POST["code"];
         $sql="select c_type AS id, c_desc as name from query_crop  ORDER BY gid"; // crop type 2
+    }else if($type=='lu'){
+        $sql="select gid AS id, lu_desc as name from query_lu  ORDER BY gid"; // crop type 2
     }
 
     //echo $sql;
