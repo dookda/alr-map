@@ -179,6 +179,24 @@ $app->get('/evap30y/{tamcode}', function($request, $response){
     return $newResponse;
 });
 
+
+
+$app->get('/quest_q/{id}', function($request, $response){  
+    $tamCode = $request->getAttribute('id');  
+    $sql = "select * from quest_mobile where gid = '$id'";
+    $rs = pg_query($sql);
+    
+    $result = array();
+
+    while($row = pg_fetch_array($rs)){
+      array_push($result, $row);
+    }
+
+    $newResponse = $response->withJson($result);
+    return $newResponse;
+});
+
+
 $app->post('/signin', function($request, $response){
 
 	$username = $request->getParam('username');
