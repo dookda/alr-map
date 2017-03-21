@@ -902,7 +902,7 @@ while (mapLayer[i]) {
     if (mapLayer[i] == 'lyrSiteselection') {
         selectedLayers.push(flow_accum, yield_4326, wsupply_runoff, wsupply_rain, expertSiteselection);
         layersGroup['siteselection'] = {};
-        layersGroup.siteselection['title'] = "พื้นที่เหมาะสมพัฒนาแหล่งน้ำ";
+        layersGroup.siteselection['title'] = "ตำแหน่งเหมาะสมพัฒนาแหล่งน้ำ";
 
     } else if (mapLayer[i] == 'lyrPlace') {
         selectedLayers.push(anamai, factory, hospital2, school, staairport, stabus, p10_evap, p10_rain);

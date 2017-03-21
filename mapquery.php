@@ -57,6 +57,9 @@
 	    width: 30px !important;
 	    height: 16px !important;
 	}
+    .two-column-form .x-form-item.x-clear-left {
+    margin-left: 0px;
+    }
 </style>
 <body>
 <?php
@@ -232,6 +235,6 @@ closedb();
 <script type="text/javascript" src="layersQuery.js"></script>
 <script type="text/javascript" src="plugin.js"></script>
 <script type="text/javascript" src="field.js"></script>
-<script type="text/javascript" src="layoutQuery.js"></script>
+<script type="text/javascript" src="layoutQuery3.js"></script>
 
 </html>

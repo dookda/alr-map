@@ -743,7 +743,7 @@ var trans = new OpenLayers.Layer.WMS(
 );
 
 var expertSiteselection = new OpenLayers.Layer.WMS(
-    "ตำแหน่งเหมาะสมต่อการพัฒนาแหล่งน้ำจากผู้เชี่ยวชาญ",
+    "จากผู้เชี่ยวชาญ",
     Heron.scratch.urls.wmsAlr2, { layers: "alr:expert_site_selected_4326", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
@@ -756,6 +756,7 @@ var expertSiteselection = new OpenLayers.Layer.WMS(
         group: 'siteselection'
     }
 );
+
 var anamai = new OpenLayers.Layer.WMS(
     "สถานีอนามัย",
     Heron.scratch.urls.OwsMapNU, { layers: "trfgdb:anamai", transparent: true, format: 'image/png' }, {
@@ -902,7 +903,7 @@ while (mapLayer[i]) {
     if (mapLayer[i] == 'lyrSiteselection') {
         selectedLayers.push(flow_accum, yield_4326, wsupply_runoff, wsupply_rain, expertSiteselection);
         layersGroup['siteselection'] = {};
-        layersGroup.siteselection['title'] = "พื้นที่เหมาะสมพัฒนาแหล่งน้ำ";
+        layersGroup.siteselection['title'] = "ตำแหน่งเหมาะสมพัฒนาแหล่งน้ำ";
 
     } else if (mapLayer[i] == 'lyrPlace') {
         selectedLayers.push(anamai, factory, hospital2, school, staairport, stabus, p10_evap, p10_rain);
