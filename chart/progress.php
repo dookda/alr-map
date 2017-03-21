@@ -31,7 +31,7 @@ conndb();
 			 $sum_all = $sum_a[sum_alr];
 			}
 			
-			if ($prov_name != '0' and $amphoe_name == '0'){
+			else if ($prov_name != '0' and $amphoe_name == '0'){
 			 $result1 = pg_query( "
 			 SELECT count(*) as sum_alr
 			 FROM alr_parcel
@@ -40,7 +40,7 @@ conndb();
 			 $sum_all = $sum_a[sum_alr];
 			}
 			
-			if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+			else if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
 			 $result1 = pg_query( "
 			 SELECT count(*) as sum_alr
 			 FROM alr_parcel
@@ -49,7 +49,7 @@ conndb();
 			 $sum_all = $sum_a[sum_alr];
 			}
 			
-			if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+			else if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
 			 $result1 = pg_query( "
 			 SELECT count(*) as sum_alr
 			 FROM alr_parcel
@@ -68,7 +68,7 @@ conndb();
 			 $sum_c = pg_fetch_array($result1); 
 			 $sum_chk = $sum_c[sum_chk];
 			}
-			if ($prov_name != '0' and $amphoe_name == '0'){
+			else if ($prov_name != '0' and $amphoe_name == '0'){
 			 $result1 = pg_query( "
 			 SELECT count(*) as sum_chk
 			 FROM alr_parcel
@@ -76,7 +76,7 @@ conndb();
 			 $sum_c = pg_fetch_array($result1); 
 			 $sum_chk = $sum_c[sum_chk];
 			}
-			if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+			else if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
 			 $result1 = pg_query( "
 			 SELECT count(*) as sum_chk
 			 FROM alr_parcel
@@ -84,7 +84,7 @@ conndb();
 			 $sum_c = pg_fetch_array($result1); 
 			 $sum_chk = $sum_c[sum_chk];
 			}
-			if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+			else if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
 			 $result1 = pg_query( "
 			 SELECT count(*) as sum_chk
 			 FROM alr_parcel
@@ -92,11 +92,10 @@ conndb();
 			 $sum_c = pg_fetch_array($result1); 
 			 $sum_chk = $sum_c[sum_chk];
 			}
-			
 			 $val =  round($sum_chk*100/$sum_all,2)  ;
 			?>
 	
-			<div class="container">
+			<div class="col-md-12">
 			  <h2>อัตราการกรอกข้อมูล</h2>
 			  <div class="progress">
 				<div class="progress-bar 
@@ -113,6 +112,83 @@ conndb();
 				</div>
 			  </div>
 			  
+				  <table class="table">
+					<thead>
+					  <tr>
+						<th>รายชื่อ</th>
+						<th><center>จำนวนแปลงที่กรอก</center></th>
+					  </tr>
+					</thead>
+					<tbody>
+					<?php 
+			if ($prov_name == '0' and $amphoe_name == '0' and $tambon_name == '0'){
+			 $result1 = pg_query( "with ss as (
+SELECT prov_code,prov_nam_t, count(*) as sum
+FROM alr_parcel 
+where chkdata = '1'
+group by prov_code,prov_nam_t
+)
+SELECT alr_parcel.prov_code,alr_parcel.prov_nam_t as name,ss.sum
+FROM alr_parcel
+left join ss ON alr_parcel.prov_code = ss.prov_code
+group by alr_parcel.prov_code,alr_parcel.prov_nam_t,ss.sum ;");
+			}
+			else if ($prov_name != '0' and $amphoe_name == '0'){
+			 $result1 = pg_query( "with ss as (
+SELECT amp_code,amp_nam_t , count(*) as sum
+FROM alr_parcel 
+where chkdata = '1' and prov_code = '$prov_name'
+group by amp_code,amp_nam_t
+)
+SELECT alr_parcel.amp_nam_t  as name,alr_parcel.amp_code,ss.sum
+FROM alr_parcel
+left join ss ON alr_parcel.amp_code = ss.amp_code
+where prov_code = '$prov_name'
+group by alr_parcel.amp_nam_t,alr_parcel.amp_code,ss.sum;");
+			}
+			else if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name == '0') {  
+			 $result1 = pg_query( "with ss as (
+SELECT tam_code,tam_nam_t   , count(*) as sum
+FROM alr_parcel 
+where chkdata = '1' and prov_code = '$prov_name' and amp_code = '$amphoe_name'
+group by  tam_code,tam_nam_t
+)
+SELECT alr_parcel.tam_nam_t as name,alr_parcel.tam_code,ss.sum
+FROM alr_parcel
+left join ss ON alr_parcel.tam_code = ss.tam_code
+where prov_code = '$prov_name' and amp_code = '$amphoe_name'
+group by alr_parcel.tam_nam_t,alr_parcel.tam_code,ss.sum;");
+			}
+			else if ($prov_name != '0' and $amphoe_name != '0' and $tambon_name != '0') {
+			 $result1 = pg_query( "with ss as (
+SELECT tam_code,tam_nam_t   , count(*) as sum
+FROM alr_parcel 
+where chkdata = '1' and prov_code = '$prov_name' and amp_code = '$amphoe_name' and tam_code = '$tambon_name'
+group by  tam_code,tam_nam_t
+)
+SELECT alr_parcel.tam_nam_t as name,alr_parcel.tam_code,ss.sum
+FROM alr_parcel
+left join ss ON alr_parcel.tam_code = ss.tam_code
+where prov_code = '$prov_name' and amp_code = '$amphoe_name' and alr_parcel.tam_code = '$tambon_name'
+group by alr_parcel.tam_nam_t,alr_parcel.tam_code,ss.sum;");
+			}
+			while ($arr = pg_fetch_array($result1))
+										
+										{ ?>
+					  <tr>
+						<td><?php echo $arr[name]; ?></td>
+						<td><center><?php echo $arr[sum]; ?></center></td>
+					  </tr>
+										<?php } ?>
+							
+					</tbody>
+					<thead>
+					  <tr>
+						<th>จำนวนแปลงทั้งหมดในพื้นที่</th>
+						<th><center><?php echo $sum_all; ?></center></th>
+					  </tr>
+					</thead>
+				  </table>
 			</div>
 	
     <!-- end: content -->
