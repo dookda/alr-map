@@ -182,7 +182,7 @@ $app->get('/evap30y/{tamcode}', function($request, $response){
 
 
 $app->get('/quest_q/{id}', function($request, $response){  
-    $tamCode = $request->getAttribute('id');  
+    $id = $request->getAttribute('id');  
     $sql = "select * from quest_mobile where gid = '$id'";
     $rs = pg_query($sql);
     
