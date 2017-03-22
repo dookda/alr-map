@@ -195,14 +195,14 @@ Heron.options.map.toolbar = [{
         }
     }, {
         type: "-"
-    }, {
+    }/*, {
         type: "printdialog",
         options: {
             url: 'http://kademo.nl/print/pdf28992.kadviewer'
         }
     }, {
         type: "-"
-    }
+    } */
 ];
 
 Heron.options.menuItems = [{
