@@ -13,7 +13,7 @@
   <div class="text-center">
 <?php
 $alrcode = $_GET["alrcode"];
-  echo '<h6>สภาพการใช้ประโยน์ที่ดินของแปลง '.$alrcode.'</h6>';
+  echo '<h6>แปลง '.$alrcode.'</h6>';
   $photoDir = 'uploads/'.$alrcode;
   //echo $photoDir;
   $scan = scandir($photoDir);
