@@ -400,10 +400,6 @@ Heron.examples.searchPanelConfig = {
                         dataIndex: "slp",
                         type: 'numeric'
                     }
-
-
-
-
                     /*{
                         header: "ข้าว",
                         width: 100,
@@ -440,8 +436,6 @@ Heron.examples.searchPanelConfig = {
                         dataIndex: "p_suit",
                         type: 'string'
                     }*/
-
-
                 ],
                 hropts: {
                     zoomOnRowDoubleClick: true,
@@ -543,12 +537,12 @@ Heron.examples.searchPanelConfig = {
                         dataIndex: "alrcode",
                         type: 'numeric'
                     }, {
-                        header: "ความสูงของแปลง",
+                        header: "ความสูงของแปลง(เมตร)",
                         width: 100,
                         dataIndex: "ele",
                         type: 'numeric'
                     }, {
-                        header: "ความลาดชัน",
+                        header: "ความลาดชัน(เปอร์เซนต์)",
                         width: 100,
                         dataIndex: "slp",
                         type: 'numeric'
@@ -560,8 +554,8 @@ Heron.examples.searchPanelConfig = {
                     zoomToDataExtent: false
                 }
             }
-        },//End search with combobox
-        {
+        }//End search with combobox
+ /*       {
             searchPanel: {
                 xtype: 'hr_gxpquerypanel',
                 name: "สร้างการค้นหาของคุณเอง",
@@ -594,7 +588,7 @@ Heron.examples.searchPanelConfig = {
                     version: "1.1.0",
                     url: "http://www.map.nu.ac.th/gs-alr2/ows?",
                     srsName: "EPSG:3857",
-                    featureType: "ln9p_prov", //gisldd:admin_tambon
+                    featureType: "ln9p_prov",
                     //outputFormat: 'GML2',
                     maxFeatures: 1000
                 }),
@@ -710,7 +704,7 @@ Heron.examples.searchPanelConfig = {
                     zoomToDataExtent: false
                 }
             }
-        }
+        } */
 
     ]
 };
