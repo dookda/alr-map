@@ -17,16 +17,29 @@ Heron.gridColumns = [{
         { header: 'ประเภทการใช้ประโยชน์ที่ดิน', dataIndex: 'active_type' },
         { header: 'เนื้อที่ที่ดำเนินกิจกรรม', dataIndex: 'active_rai' },
         { header: 'วันที่เริ่มดำเนินการ', dataIndex: 'active_date' },
-        { header: 'รหัสตำบล', dataIndex: 'tam_code' },
+        //{ header: 'รหัสตำบล', dataIndex: 'tam_code' },
         { header: 'ชื่อตำบล', dataIndex: 'tam_nam_t' },
-        { header: 'รหัสอำเภอ', dataIndex: 'amp_code' },
+        //{ header: 'รหัสอำเภอ', dataIndex: 'amp_code' },
         { header: 'ชื่ออำเภอ', dataIndex: 'amp_nam_t' },
-        { header: 'รหัสจังหวัด', dataIndex: 'prov_code' },
+        //{ header: 'รหัสจังหวัด', dataIndex: 'prov_code' },
         { header: 'ชื่อจังหวัด', dataIndex: 'prov_nam_t' },
         { header: 'รหัสชั้นคุณภาพลุ่มน้ำ', dataIndex: 'swh' },
         { header: 'ชื่อชั้นคุณภาพลุ่มน้ำ', dataIndex: 'swh_name' },
         { header: 'ความสูงเฉลี่ย (เมตร)', dataIndex: 'ele' },
         { header: 'ความลาดชัน (เปอร์เซ็นต์)', dataIndex: 'slp' },
+        { header: 'ความเสี่ยงภัยแล้ง', dataIndex: 'dru' },
+        { header: 'ความเสี่ยงน้ำท่วมซ้ำซาก (ปี)', dataIndex: 'flo' },
+        //{ header: 'รหัสการใช้ประโยชน์ที่ดินปี 48 ', dataIndex: 'lu48' },
+        //{ header: 'คำอธิบายการใช้ประโยชน์ที่ดินปี 48', dataIndex: 'lu48_t' },
+        { header: 'รหัสการใช้ประโยชน์ที่ดินปี 57', dataIndex: 'lu57' },
+        { header: 'คำอธิบายการใช้ประโยชน์ที่ดินปี 57', dataIndex: 'lu57_t' },
+        { header: 'ความเหมาะสมในการปลูกข้าว', dataIndex: 'r_suit' },
+        { header: 'ความเหมาะสมในการปลูกข้าวโพดเลี้ยงสัตว์', dataIndex: 'm_suit' },
+        { header: 'ความเหมาะสมในการปลูกมัน', dataIndex: 'c_suit' },
+        { header: 'ความเหมาะสมในการปลูกอ้อย', dataIndex: 's_suit' },
+        { header: 'ความเหมาะสมในการปลูกพืชผัก', dataIndex: 'v_suit' },
+        { header: 'ความเหมาะสมในการปลูกผลไม้', dataIndex: 'f_suit' },
+        { header: 'ความเหมาะสมในการปลูกทุ่งหญ้าเลี้ยงสัตว์', dataIndex: 'p_suit' },
         { header: 'ระยะห่างจากหมู่บ้าน (กม.)', dataIndex: 'vill_km' },
         { header: 'ชื่อหมู่บ้าน', dataIndex: 'vill_nam_t' },
         { header: 'ระยะห่างจากสถานพยาบาล (กม.)', dataIndex: 'hcr_km' },
@@ -52,20 +65,7 @@ Heron.gridColumns = [{
         { header: 'ระยะห่างจากป่าสงวนแห่งชาติ และเขตอนุรักษ์พันธุ์สัตว์ป่า (กม.)', dataIndex: 'rfp_km' },
         { header: 'ชื่อป่าสงวนแห่งชาติ และเขตอนุรักษ์พันธุ์สัตว์ป่า', dataIndex: 'rfp_name' },
         { header: 'ระยะห่างจากป่าอื่นๆ (กม.)', dataIndex: 'ofr_km' },
-        { header: 'ชื่อป่าอื่นๆ', dataIndex: 'ofr_name' },
-        { header: 'รหัสการใช้ประโยชน์ที่ดินปี 48 ', dataIndex: 'lu48' },
-        { header: 'คำอธิบายการใช้ประโยชน์ที่ดินปี 48', dataIndex: 'lu48_t' },
-        { header: 'รหัสการใช้ประโยชน์ที่ดินปี 57', dataIndex: 'lu57' },
-        { header: 'คำอธิบายการใช้ประโยชน์ที่ดินปี 57', dataIndex: 'lu57_t' },
-        { header: 'ความเหมาะสมในการปลูกข้าว', dataIndex: 'r_suit' },
-        { header: 'ความเหมาะสมในการปลูกข้าวโพดเลี้ยงสัตว์', dataIndex: 'm_suit' },
-        { header: 'ความเหมาะสมในการปลูกมัน', dataIndex: 'c_suit' },
-        { header: 'ความเหมาะสมในการปลูกอ้อย', dataIndex: 's_suit' },
-        { header: 'ความเหมาะสมในการปลูกพืชผัก', dataIndex: 'v_suit' },
-        { header: 'ความเหมาะสมในการปลูกผลไม้', dataIndex: 'f_suit' },
-        { header: 'ความเหมาะสมในการปลูกทุ่งหญ้าเลี้ยงสัตว์', dataIndex: 'p_suit' },
-        { header: 'ความเสี่ยงภัยแล้ง', dataIndex: 'dru' },
-        { header: 'ความเสี่ยงน้ำท่วมซ้ำซาก (ปี)', dataIndex: 'flo' }
+        { header: 'ชื่อป่าอื่นๆ', dataIndex: 'ofr_name' }
     ]
 },
 {
@@ -98,6 +98,6 @@ Heron.gridColumns = [{
         { header: 'ลำดับ', dataIndex: 'Gid' },
         { header: 'ปริมาณน้ำใต้ดิน', dataIndex: 'gwater'},
 
-        
+
     ]
 }];
