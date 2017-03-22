@@ -49,7 +49,7 @@ Heron.examples.searchPanelConfig = {
     hropts: [{
             searchPanel: {
                 xtype: "hr_formsearchpanel",
-                name: "วิเคราะห์พื้นที่เหมาะสมปลูกพืชชนิดต่างๆ",
+                name: "ค้นหาแปลงที่เหมาะสมปลูกพืชชนิดต่างๆ และพืชทางเลือก",
                 protocol: new OpenLayers.Protocol.HTTP({
                     url: queryTool,
                     format: new OpenLayers.Format.GeoJSON()
@@ -391,13 +391,23 @@ Heron.examples.searchPanelConfig = {
                         type: 'numeric'
                     }, {
                         header: "ความสูงของแปลง(เมตร)",
-                        width: 100,
+                        width: 120,
                         dataIndex: "ele",
                         type: 'numeric'
                     }, {
                         header: "ความลาดชัน(เปอร์เซนต์)",
-                        width: 100,
+                        width: 120,
                         dataIndex: "slp",
+                        type: 'numeric'
+                    }, {
+                        header: "เสี่ยงแล้ง",
+                        width: 120,
+                        dataIndex: "dru",
+                        type: 'numeric'
+                    }, {
+                        header: "เสี่ยงน้ำท่วม",
+                        width: 120,
+                        dataIndex: "flo",
                         type: 'numeric'
                     }
                     /*{
@@ -463,7 +473,7 @@ Heron.examples.searchPanelConfig = {
                 }),
                 items: [{
                         xtype: 'displayfield',
-                        value: 'เลือกประเภทการใช้ประโยชน์ที่ดินปัจจุบัน (ข้อมูล 2557)'
+                        value: 'เลือกประเภทการใช้ประโยชน์ที่ดินปัจจุบัน (ข้อมูลปีพ.ศ. 2557)'
                     },{
                         xtype: "combo",
                         id: 'lu',
@@ -538,13 +548,23 @@ Heron.examples.searchPanelConfig = {
                         type: 'numeric'
                     }, {
                         header: "ความสูงของแปลง(เมตร)",
-                        width: 100,
+                        width: 120,
                         dataIndex: "ele",
                         type: 'numeric'
                     }, {
                         header: "ความลาดชัน(เปอร์เซนต์)",
-                        width: 100,
+                        width: 120,
                         dataIndex: "slp",
+                        type: 'numeric'
+                    }, {
+                        header: "เสี่ยงแล้ง",
+                        width: 120,
+                        dataIndex: "dru",
+                        type: 'numeric'
+                    }, {
+                        header: "เสี่ยงน้ำท่วม",
+                        width: 120,
+                        dataIndex: "flo",
                         type: 'numeric'
                     }],
                 hropts: {
