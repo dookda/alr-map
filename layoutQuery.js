@@ -3,251 +3,379 @@ Ext.namespace("Heron.examples");
 
 var mainStore = new Ext.data.JsonStore({
     autoLoad: true,
-    url: 'getson2.php',
-    baseParams: {type:'p'},
-    fields: ['item','value']
+    url: 'getjson_test3.php',
+    baseParams: { type: 's1' },
+    fields: ['item', 'value']
 });
 
 var mainStore2 = new Ext.data.JsonStore({
     autoLoad: false,
-    url: 'getjson.php',
-    baseParams: {type:'a','code':''},
-    listeners: {
+    url: 'getjson_test3.php',
+    baseParams: { type: 't1' },
+    /*listeners: {
                     beforeload: function(store,opts) {
                         province = Ext.getCmp('p_cb');
                         store.setBaseParam('code',province.value);
                     }
-                },
-    fields: ['item','value']
+                }, */
+    fields: ['item', 'value']
 });
 
 
-var mainStore3 = new Ext.data.JsonStore({
-    url: 'getjson.php',
+var suitStore = new Ext.data.JsonStore({
+    url: 'getjson_test3.php',
     autoLoad: false,
-    baseParams: {type:'t','code':''},
-    listeners: {
-                    beforeload: function(store,opts) {
-                        amphoe = Ext.getCmp('a_cb');
-                        store.setBaseParam('code',amphoe.value);
-                    }
-                },
-    fields: ['item','value']
+    baseParams: { type: 's2' },
+    fields: ['item', 'value']
 });
 
-var x=Heron.examples.searchPanelConfig = {
+var typeStore = new Ext.data.JsonStore({
+    url: 'getjson_test3.php',
+    autoLoad: false,
+    baseParams: { type: 't2' },
+    fields: ['item', 'value']
+});
+
+var luStore = new Ext.data.JsonStore({
+    url: 'getjson_test3.php',
+    autoLoad: false,
+    baseParams: { type: 'lu' },
+    fields: ['item', 'value']
+});
+
+Heron.examples.searchPanelConfig = {
     xtype: 'hr_multisearchcenterpanel',
-    height: 600,
-    hropts: [
-       {
-        searchPanel: {
-            xtype: "hr_formsearchpanel",
-            name: "ขอบเขตการปกครอง",
-            protocol: new OpenLayers.Protocol.HTTP({
-                                url: 'query.php',
-                                format: new OpenLayers.Format.GeoJSON()
-                            }),
-            // downloadFormats: Heron.options.wfs.downloadFormats,
-            items: [{
-                xtype: "combo",
-                id:'p_cb',
-                name: "prov",
-                store: mainStore,
-                allowBlank: false,
-                forceSelection: true,
-                emptyText: 'เลือกจังหวัด...',
-                loadingText: 'Loading...',
-                triggerAction: 'all',
-                lazyRender: true,
-                valueField: 'value',
-                displayField: 'item',
-                triggerAction: 'all',
-                fieldLabel: "ชื่อจังหวัด",
-                listeners: {
-                    select: function(combo, records, eOpts) {
-                        amphoe = Ext.getCmp('a_cb');
-                        tambon = Ext.getCmp('t_cb');
-                        amphoe.clearValue();
-                        tambon.clearValue();
-                        amphoe.store.load({
-                            params: {'code': records.data.value }
-                         });
-                    }
-                }
-            }, {
-                xtype: "combo",
-                id:'a_cb',
-                name: "amphoe",
-                store: mainStore2,
-                forceSelection: false,
-                emptyText: 'เลือกอำเภอ...',
-                loadingText: 'Loading...',
-                triggerAction: 'all',
-                lazyRender: true,
-                valueField: 'value',
-                displayField: 'item',
-                triggerAction: 'all',
-                fieldLabel: "ชื่ออำเภอ",
-                listeners: {
-                    select: function(combo, records, eOpts) {
-                        tambon = Ext.getCmp('t_cb');
-                        tambon.clearValue();
-                        tambon.store.load({
-                            params: {'code': records.data.value }
-                         });
-                    }
-                }
-            }, {
-                xtype: "combo",
-                id:'t_cb',
-                name: "tambon",
-                store: mainStore3,
-                forceSelection: false,
-                emptyText: 'เลือกตำบล...',
-                loadingText: 'Loading...',
-                triggerAction: 'all',
-                lazyRender: true,
-                valueField: 'value',
-                displayField: 'item',
-                triggerAction: 'all',
-                fieldLabel: "ชื่อตำบล"
-            }
-            , {
-                xtype: "combo",
-                id:"lyrType",
-                //store:['ระวางภาพ ortho 1:4,000','ระวางภาพ ortho 1:25,000','ระวางเส้นชั้นความสูง','ระวางแบบจำลองระดับสูงเชิงเลข','หมุดหลักฐานภาคพื้นดิน'],
-                store:['แปลง ส.ป.ก. ที่เหมาะสมปลูกข้าว'],
-                forceSelection: false,
-                emptyText: 'เลือกชั้นข้อมูล...',
-                triggerAction: 'all',
-                editable: false,
-                valueField: 'value',
-                displayField: 'display',
-                name: "layerType",
-                fieldLabel: "ค้นหาชั้นข้อมูล"
-            },{
-                xtype: "label",
-                id: "helplabel",
-                html: "To search fill in one or more fields.<br>",
-                style: {
-                    fontSize: "10px",
-                    color: "#6666BB"
-                }
-            }],
-                hropts: {
-                    onSearchCompleteZoom: 11,
-                    autoWildCardAttach: true,
-                    caseInsensitiveMatch: false,
-                    logicalOperator: OpenLayers.Filter.Logical.AND
-                }
-        },
-            resultPanel: {
-                xtype: 'hr_featuregridpanel',
-                id: 'hr-featuregridpanel',
-                header: false,
-                autoConfig: true,
-                autoConfigMaxSniff: 100,
-                exportFormats: ['XLS', 'GMLv2', 'GeoJSON', 'WellKnownText', 'Shapefile'],
-                gridCellRenderers: Heron.options.gridCellRenderers,
-                columns:[
-                     {
-                        header:"ตำบล",
+    height: 650,
+    hropts: [{
+            searchPanel: {
+                xtype: "hr_formsearchpanel",
+                name: "ค้นหาแปลงที่เหมาะสมปลูกพืชชนิดต่างๆ และพืชทางเลือก",
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: queryTool,
+                    format: new OpenLayers.Format.GeoJSON()
+                }),
+                // downloadFormats: Heron.options.wfs.downloadFormats,
+                //items: [               
+
+
+                items: [{
+                    xtype: 'compositefield',
+                    items: [{
+                        xtype: 'displayfield',
+                        value: 'พืช 1'
+                    }, {
+                        xtype: "combo",
+                        id: 't1',
+                        name: "typec1",
+                        store: mainStore2,
+                        width: 120,
+                        allowBlank: false,
+                        forceSelection: true,
+                        emptyText: 'เลือก...',
+                        loadingText: 'Loading...',
+                        triggerAction: 'all',
+                        lazyRender: true,
+                        valueField: 'value',
+                        displayField: 'item',
+                        triggerAction: 'all'
+                    }, {
+                        xtype: 'displayfield',
+                        value: 'ความเหมาะสม'
+                    }, {
+                        xtype: "combo",
+                        id: 's1',
+                        name: "suite1",
+                        store: mainStore,
                         width: 100,
-                        dataIndex: "tam_nam_t",
-                        type: 'string'
-                    },
-                    {
-                        header:"อำเภอ",
-                        width: 80,
-                        dataIndex: "amp_nam_t",
-                        type: 'string'
-                    },
-                    {
-                        header:"จังหวัด",
-                        width: 80,
-                        dataIndex: "prov_nam_t",
-                        type: 'string'
-                    },
-                    {
-                        header:"การใช้ประโยชน์ที่ดิน",
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        loadingText: 'Loading...',
+                        triggerAction: 'all',
+                        lazyRender: true,
+                        valueField: 'value',
+                        displayField: 'item',
+                        triggerAction: 'all'
+                    }]
+                }, {
+                    xtype: 'compositefield',
+                    bodyStyle: 'padding: 5px',
+                    items: [{
+                        xtype: 'displayfield',
+                        value: 'พืช 2'
+                    }, {
+                        xtype: "combo",
+                        id: "t2",
+                        name: "typec2",
+                        store: mainStore2,
+                        width: 120,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        loadingText: 'Loading...',
+                        triggerAction: 'all',
+                        lazyRender: true,
+                        valueField: 'value',
+                        displayField: 'item',
+                        triggerAction: 'all'
+                    }, {
+                        xtype: 'displayfield',
+                        value: 'ความเหมาะสม'
+                    }, {
+                        xtype: "combo",
+                        id: 's2',
+                        name: "suite2",
+                        store: mainStore,
                         width: 100,
-                        dataIndex: "lu57_t",
-                        type: 'string'
-                    }
-                ],
-                hropts: {
-                    zoomOnRowDoubleClick: true,
-                    zoomOnFeatureSelect: false,
-                    zoomLevelPointSelect: 8,
-                    zoomToDataExtent: false
-                }
-            }
-        }, //End search with combobox
-        {
-         searchPanel: {
-                        xtype: 'hr_gxpquerypanel',
-                        name: "สร้างการค้นหาของคุณเอง",
-                        description: 'This search uses both search within Map extent and/or your own attribute criteria',
-                        header: false,
-                        border: false,
-                        caseInsensitiveMatch: true,
-                        autoWildCardAttach: true
-                    },
-                    resultPanel: {
-                        xtype: 'hr_featuregridpanel',
-                        id: 'hr-featuregridpanel',
-                        header: false,
-                        border: false,
-                        autoConfig: true,
-                        exportFormats: Heron.options.exportFormats,
-                        gridCellRenderers: Heron.options.gridCellRenderers,
-                        hropts: {
-                            zoomOnRowDoubleClick: true,
-                            zoomOnFeatureSelect: false,
-                            zoomLevelPointSelect: 8,
-                            zoomToDataExtent: true
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        triggerAction: 'all',
+                        editable: false,
+                        valueField: 'value',
+                        //displayField: 'display',
+                        displayField: 'item'
+                    }, {
+                        xtype: "label",
+                        id: "helplabel",
+                        //html: "To search fill in one or more fields.<br>",
+                        style: {
+                            fontSize: "10px",
+                            color: "#6666BB"
                         }
-                }
-        },
-       {
-        searchPanel: {
-            xtype: "hr_formsearchpanel",
-            name: "หมายเลขระวาง 1:50,000",
-            protocol: new OpenLayers.Protocol.WFS({
-                version: "1.1.0",
-                url: "http://www.map.nu.ac.th/gs-alr2/ows?",
-                srsName: "EPSG:3857",
-                featureType: "ln9p_prov", //gisldd:admin_tambon
-                //outputFormat: 'GML2',
-                maxFeatures: 1000
-            }),
-            downloadFormats: Heron.options.wfs.downloadFormats, //Heron.options.wfs.downloadFormats
-            items: [{
-                xtype: "textfield",
-                name: "prov_code__like",
-                value: "65",
-                fieldLabel: "Map Sheet"
-            }, {
-                xtype: "textfield",
-                name: "prov_nam_t__like",
-                value: "จ.พิษณุโลก",
-                fieldLabel: "UTM Zone"
-            },{
-                xtype: "label",
-                id: "helplabel",
-                html: "To search fill in one or more fields.<br>",
-                style: {
-                    fontSize: "10px",
-                    color: "#6666BB"
-                }
-            }],
+                    }]
+                }, {
+                    xtype: 'compositefield',
+                    bodyStyle: 'padding: 5px',
+                    items: [{
+                        xtype: 'displayfield',
+                        value: 'พืช 3'
+                    }, {
+                        xtype: "combo",
+                        id: "t3",
+                        name: "typec3",
+                        store: mainStore2,
+                        width: 120,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        loadingText: 'Loading...',
+                        triggerAction: 'all',
+                        lazyRender: true,
+                        valueField: 'value',
+                        displayField: 'item',
+                        triggerAction: 'all'
+                    }, {
+                        xtype: 'displayfield',
+                        value: 'ความเหมาะสม'
+                    }, {
+                        xtype: "combo",
+                        id: 's3',
+                        name: "suite3",
+                        store: mainStore,
+                        width: 100,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        triggerAction: 'all',
+                        editable: false,
+                        valueField: 'value',
+                        //displayField: 'display',
+                        displayField: 'item'
+                    }, {
+                        xtype: "label",
+                        id: "helplabel",
+                        //html: "To search fill in one or more fields.<br>",
+                        style: {
+                            fontSize: "10px",
+                            color: "#6666BB"
+                        }
+                    }]
+
+                }, {
+                    xtype: 'compositefield',
+                    bodyStyle: 'padding: 5px',
+                    items: [{
+                        xtype: 'displayfield',
+                        value: 'พืช 4'
+                    }, {
+                        xtype: "combo",
+                        id: "t4",
+                        name: "typec4",
+                        store: mainStore2,
+                        width: 120,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        loadingText: 'Loading...',
+                        triggerAction: 'all',
+                        lazyRender: true,
+                        valueField: 'value',
+                        displayField: 'item',
+                        triggerAction: 'all'
+                    }, {
+                        xtype: 'displayfield',
+                        value: 'ความเหมาะสม'
+                    }, {
+                        xtype: "combo",
+                        id: 's4',
+                        name: "suite4",
+                        store: mainStore,
+                        width: 100,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        triggerAction: 'all',
+                        editable: false,
+                        valueField: 'value',
+                        //displayField: 'display',
+                        displayField: 'item'
+                    }, {
+                        xtype: "label",
+                        id: "helplabel",
+                        //html: "To search fill in one or more fields.<br>",
+                        style: {
+                            fontSize: "10px",
+                            color: "#6666BB"
+                        }
+                    }]
+                }, {
+                    xtype: 'compositefield',
+                    bodyStyle: 'padding: 5px',
+                    items: [{
+                        xtype: 'displayfield',
+                        value: 'พืช 5'
+                    }, {
+                        xtype: "combo",
+                        id: "t5",
+                        name: "typec5",
+                        store: mainStore2,
+                        width: 120,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        loadingText: 'Loading...',
+                        triggerAction: 'all',
+                        lazyRender: true,
+                        valueField: 'value',
+                        displayField: 'item',
+                        triggerAction: 'all'
+                    }, {
+                        xtype: 'displayfield',
+                        value: 'ความเหมาะสม'
+                    }, {
+                        xtype: "combo",
+                        id: 's5',
+                        name: "suite5",
+                        store: mainStore,
+                        width: 100,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        triggerAction: 'all',
+                        editable: false,
+                        valueField: 'value',
+                        //displayField: 'display',
+                        displayField: 'item'
+                    }, {
+                        xtype: "label",
+                        id: "helplabel",
+                        //html: "To search fill in one or more fields.<br>",
+                        style: {
+                            fontSize: "10px",
+                            color: "#6666BB"
+                        }
+                    }]
+                }, {
+                    xtype: 'compositefield',
+                    bodyStyle: 'padding: 5px',
+                    items: [{
+                        xtype: 'displayfield',
+                        value: 'พืช 6'
+                    }, {
+                        xtype: "combo",
+                        id: "t6",
+                        name: "typec6",
+                        store: mainStore2,
+                        width: 120,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        loadingText: 'Loading...',
+                        triggerAction: 'all',
+                        lazyRender: true,
+                        valueField: 'value',
+                        displayField: 'item',
+                        triggerAction: 'all'
+                    }, {
+                        xtype: 'displayfield',
+                        value: 'ความเหมาะสม'
+                    }, {
+                        xtype: "combo",
+                        id: 's6',
+                        name: "suite6",
+                        store: mainStore,
+                        width: 100,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        triggerAction: 'all',
+                        editable: false,
+                        valueField: 'value',
+                        //displayField: 'display',
+                        displayField: 'item'
+                    }, {
+                        xtype: "label",
+                        id: "helplabel",
+                        //html: "To search fill in one or more fields.<br>",
+                        style: {
+                            fontSize: "10px",
+                            color: "#6666BB"
+                        }
+                    }]
+                }, {
+                    xtype: 'compositefield',
+                    bodyStyle: 'padding: 5px',
+                    items: [{
+                        xtype: 'displayfield',
+                        value: 'พืช 7'
+                    }, {
+                        xtype: "combo",
+                        id: "t7",
+                        name: "typec7",
+                        store: mainStore2,
+                        width: 120,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        loadingText: 'Loading...',
+                        triggerAction: 'all',
+                        lazyRender: true,
+                        valueField: 'value',
+                        displayField: 'item',
+                        triggerAction: 'all'
+                    }, {
+                        xtype: 'displayfield',
+                        value: 'ความเหมาะสม'
+                    }, {
+                        xtype: "combo",
+                        id: 's7',
+                        name: "suite7",
+                        store: mainStore,
+                        width: 100,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        triggerAction: 'all',
+                        editable: false,
+                        valueField: 'value',
+                        //displayField: 'display',
+                        displayField: 'item'
+                    }, {
+                        xtype: "label",
+                        id: "helplabel",
+                        //html: "To search fill in one or more fields.<br>",
+                        style: {
+                            fontSize: "10px",
+                            color: "#6666BB"
+                        }
+                    }]
+
+                }],
                 hropts: {
                     onSearchCompleteZoom: 11,
                     autoWildCardAttach: true,
                     caseInsensitiveMatch: false,
                     logicalOperator: OpenLayers.Filter.Logical.AND
                 }
-        },
+            },
             resultPanel: {
                 xtype: 'hr_featuregridpanel',
                 id: 'hr-featuregridpanel',
@@ -256,31 +384,68 @@ var x=Heron.examples.searchPanelConfig = {
                 autoConfigMaxSniff: 100,
                 exportFormats: ['XLS', 'GMLv2', 'GeoJSON', 'WellKnownText', 'Shapefile'],
                 gridCellRenderers: Heron.options.gridCellRenderers,
-                columns:[
-                     {
-                        header:"ระวาง",
+                columns: [{
+                        header: "รหัสแปลง",
                         width: 100,
-                        dataIndex: "mapsheet",
-                        type: 'string'
-                    },
-                    {
-                        header:"utm zone",
-                        width: 80,
-                        dataIndex: "utm_zone",
-                        type: 'string'
-                    },
-                    {
-                        header:"มาตราส่วน",
-                        width: 80,
-                        dataIndex: "scale",
-                        type: 'string'
-                    },
-                    {
-                        header:"",
-                        width: 200,
-                        dataIndex: "cart",
-                        type: 'string'
+                        dataIndex: "alrcode",
+                        type: 'numeric'
+                    }, {
+                        header: "ความสูงของแปลง(เมตร)",
+                        width: 120,
+                        dataIndex: "ele",
+                        type: 'numeric'
+                    }, {
+                        header: "ความลาดชัน(เปอร์เซนต์)",
+                        width: 120,
+                        dataIndex: "slp",
+                        type: 'numeric'
+                    }, {
+                        header: "เสี่ยงแล้ง",
+                        width: 120,
+                        dataIndex: "dru",
+                        type: 'numeric'
+                    }, {
+                        header: "เสี่ยงน้ำท่วม",
+                        width: 120,
+                        dataIndex: "flo",
+                        type: 'numeric'
                     }
+                    /*{
+                        header: "ข้าว",
+                        width: 100,
+                        dataIndex: "r_suit",
+                        type: 'string'
+                    }, {
+                        header: "ข้าวโพด",
+                        width: 100,
+                        dataIndex: "m_suit",
+                        type: 'string'
+                    }, {
+                        header: "มันสำปะหลัง",
+                        width: 100,
+                        dataIndex: "c_suit",
+                        type: 'string'
+                    }, {
+                        header: "อ้อย",
+                        width: 100,
+                        dataIndex: "s_suit",
+                        type: 'string'
+                    }, {
+                        header: "พืชผัก",
+                        width: 100,
+                        dataIndex: "v_suit",
+                        type: 'string'
+                    }, {
+                        header: "ไม้ผล",
+                        width: 100,
+                        dataIndex: "f_suit",
+                        type: 'string'
+                    }, {
+                        header: "ทุ่งหญ้าเลี้ยงสัตว์",
+                        width: 100,
+                        dataIndex: "p_suit",
+                        type: 'string'
+                    }*/
                 ],
                 hropts: {
                     zoomOnRowDoubleClick: true,
@@ -289,7 +454,228 @@ var x=Heron.examples.searchPanelConfig = {
                     zoomToDataExtent: false
                 }
             }
-        },{
+        }, {
+            searchPanel: {
+               // xtype: 'hr_searchbyfeaturepanel',
+                xtype: "hr_formsearchpanel",
+                name: "ค้นหาแปลงที่เหมาะสมต่อการปลูกในอนาคต",
+                description: 'Select feature-geometries from one layer and use these to perform a spatial search in another layer.',
+                header: false,
+                border: false,
+                bodyStyle: 'padding: 6px',
+                style: {
+                    fontFamily: 'Verdana, Arial, Helvetica, sans-serif',
+                    fontSize: '12px'
+                },
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: queryLu,
+                    format: new OpenLayers.Format.GeoJSON()
+                }),
+                items: [{
+                        xtype: 'displayfield',
+                        value: 'เลือกประเภทการใช้ประโยชน์ที่ดินปัจจุบัน (ข้อมูลปีพ.ศ. 2557)'
+                    },{
+                        xtype: "combo",
+                        id: 'lu',
+                        name: "luType",
+                        store: luStore,
+                        width: 120,
+                        allowBlank: false,
+                        forceSelection: true,
+                        emptyText: 'เลือก...',
+                        loadingText: 'Loading...',
+                        triggerAction: 'all',
+                        lazyRender: true,
+                        valueField: 'value',
+                        displayField: 'item',
+                        triggerAction: 'all'
+                    },{
+                        xtype: 'displayfield',
+                        value: 'เลือกชนิดพืชที่ต้องการปลูกในอนาคต และระดับความเหมาะสม'
+                    
+                },{
+                    xtype: 'compositefield',
+                    items: [
+                    {
+                        xtype: 'displayfield',
+                        value: 'พืช'
+                    }, {
+                        xtype: "combo",
+                        id: 'st',
+                        name: "suitType",
+                        store: typeStore,
+                        width: 100,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        loadingText: 'Loading...',
+                        triggerAction: 'all',
+                        lazyRender: true,
+                        valueField: 'value',
+                        displayField: 'item',
+                        triggerAction: 'all'
+                    }, {
+                        xtype: 'displayfield',
+                        value: 'ความเหมาะสม'
+                    }, {
+                        xtype: "combo",
+                        id: 'sc',
+                        name: "suitCrop",
+                        store: suitStore,
+                        width: 100,
+                        forceSelection: false,
+                        emptyText: 'เลือก...',
+                        loadingText: 'Loading...',
+                        triggerAction: 'all',
+                        lazyRender: true,
+                        valueField: 'value',
+                        displayField: 'item',
+                        triggerAction: 'all'
+                    }]
+                }]
+            },
+            resultPanel: {
+                xtype: 'hr_featuregridpanel',
+                id: 'hr-featuregridpanel',
+                header: false,
+                border: false,
+                autoConfig: true,
+                exportFormats: ['XLS', 'GMLv2', 'GeoJSON', 'WellKnownText', 'Shapefile'],
+                gridCellRenderers: Heron.options.gridCellRenderers,
+                columns: [{
+                        header: "รหัสแปลง",
+                        width: 100,
+                        dataIndex: "alrcode",
+                        type: 'numeric'
+                    }, {
+                        header: "ความสูงของแปลง(เมตร)",
+                        width: 120,
+                        dataIndex: "ele",
+                        type: 'numeric'
+                    }, {
+                        header: "ความลาดชัน(เปอร์เซนต์)",
+                        width: 120,
+                        dataIndex: "slp",
+                        type: 'numeric'
+                    }, {
+                        header: "เสี่ยงแล้ง",
+                        width: 120,
+                        dataIndex: "dru",
+                        type: 'numeric'
+                    }, {
+                        header: "เสี่ยงน้ำท่วม",
+                        width: 120,
+                        dataIndex: "flo",
+                        type: 'numeric'
+                    }],
+                hropts: {
+                    zoomOnRowDoubleClick: true,
+                    zoomOnFeatureSelect: false,
+                    zoomLevelPointSelect: 8,
+                    zoomToDataExtent: false
+                }
+            }
+        }//End search with combobox
+ /*       {
+            searchPanel: {
+                xtype: 'hr_gxpquerypanel',
+                name: "สร้างการค้นหาของคุณเอง",
+                description: 'This search uses both search within Map extent and/or your own attribute criteria',
+                header: false,
+                border: false,
+                caseInsensitiveMatch: true,
+                autoWildCardAttach: true
+            },
+            resultPanel: {
+                xtype: 'hr_featuregridpanel',
+                id: 'hr-featuregridpanel',
+                header: false,
+                border: false,
+                autoConfig: true,
+                exportFormats: Heron.options.exportFormats,
+                gridCellRenderers: Heron.options.gridCellRenderers,
+                hropts: {
+                    zoomOnRowDoubleClick: true,
+                    zoomOnFeatureSelect: false,
+                    zoomLevelPointSelect: 8,
+                    zoomToDataExtent: true
+                }
+            }
+        }, {
+            searchPanel: {
+                xtype: "hr_formsearchpanel",
+                name: "หมายเลขระวาง 1:50,000",
+                protocol: new OpenLayers.Protocol.WFS({
+                    version: "1.1.0",
+                    url: "http://www.map.nu.ac.th/gs-alr2/ows?",
+                    srsName: "EPSG:3857",
+                    featureType: "ln9p_prov",
+                    //outputFormat: 'GML2',
+                    maxFeatures: 1000
+                }),
+                downloadFormats: Heron.options.wfs.downloadFormats, //Heron.options.wfs.downloadFormats
+                items: [{
+                    xtype: "textfield",
+                    name: "prov_code__like",
+                    value: "65",
+                    fieldLabel: "Map Sheet"
+                }, {
+                    xtype: "textfield",
+                    name: "prov_nam_t__like",
+                    value: "จ.พิษณุโลก",
+                    fieldLabel: "UTM Zone"
+                }, {
+                    xtype: "label",
+                    id: "helplabel",
+                    html: "To search fill in one or more fields.<br>",
+                    style: {
+                        fontSize: "10px",
+                        color: "#6666BB"
+                    }
+                }],
+                hropts: {
+                    onSearchCompleteZoom: 11,
+                    autoWildCardAttach: true,
+                    caseInsensitiveMatch: false,
+                    logicalOperator: OpenLayers.Filter.Logical.AND
+                }
+            },
+            resultPanel: {
+                xtype: 'hr_featuregridpanel',
+                id: 'hr-featuregridpanel',
+                header: false,
+                autoConfig: true,
+                autoConfigMaxSniff: 100,
+                exportFormats: ['XLS', 'GMLv2', 'GeoJSON', 'WellKnownText', 'Shapefile'],
+                gridCellRenderers: Heron.options.gridCellRenderers,
+                columns: [{
+                    header: "ระวาง",
+                    width: 100,
+                    dataIndex: "mapsheet",
+                    type: 'string'
+                }, {
+                    header: "utm zone",
+                    width: 80,
+                    dataIndex: "utm_zone",
+                    type: 'string'
+                }, {
+                    header: "มาตราส่วน",
+                    width: 80,
+                    dataIndex: "scale",
+                    type: 'string'
+                }, {
+                    header: "",
+                    width: 200,
+                    dataIndex: "cart",
+                    type: 'string'
+                }],
+                hropts: {
+                    zoomOnRowDoubleClick: true,
+                    zoomOnFeatureSelect: false,
+                    zoomLevelPointSelect: 8,
+                    zoomToDataExtent: false
+                }
+            }
+        }, {
             searchPanel: {
                 xtype: 'hr_searchbydrawpanel',
                 name: __('การวาดขอบเขต'),
@@ -310,7 +696,7 @@ var x=Heron.examples.searchPanelConfig = {
                     zoomToDataExtent: false
                 }
             }
-        },{
+        }, {
             searchPanel: {
                 xtype: 'hr_searchbyfeaturepanel',
                 name: __('ค้นหาตามขอบเขต'),
@@ -338,236 +724,237 @@ var x=Heron.examples.searchPanelConfig = {
                     zoomToDataExtent: false
                 }
             }
-        }
+        } */
 
     ]
 };
 Heron.options.map.toolbar = [{
-        type: "featureinfo",
-        pressed: true,
-        options: {
-            popupWindow: {
-                width: 460,
-                height: 380,
-                featureInfoPanel: {
-                    showTopToolbar: true,
-                    //vertical feature info
-                    displayPanels: ['Detail', 'Table'],
+    type: "featureinfo",
+    pressed: true,
+    options: {
+        popupWindow: {
+            width: 460,
+            height: 380,
+            featureInfoPanel: {
+                showTopToolbar: true,
+                //vertical feature info
+                displayPanels: ['Detail', 'Table'],
 
-                    // Should column-names be capitalized? Default true.
-                    columnCapitalize: true,
+                // Should column-names be capitalized? Default true.
+                columnCapitalize: true,
 
-                    // Export to download file. Option values are 'CSV', 'XLS', or a Formatter object (see FeatureGridPanel) , default is no export (results in no export menu).
-                    exportFormats: ['CSV', 'XLS', 'GMLv2', 'Shapefile', {
-                            name: 'Esri Shapefile (WGS84)',
-                            formatter: 'OpenLayersFormatter',
-                            format: 'OpenLayers.Format.GeoJSON',
-                            targetFormat: 'ESRI Shapefile',
-                            targetSrs: 'EPSG:4326',
-                            fileExt: '.zip',
-                            mimeType: 'application/zip'
-                        }, {
-                            // Try this with PDOK Streekpaden and Fietsroutes :-)
-                            name: 'GPS File (GPX)',
-                            formatter: 'OpenLayersFormatter',
-                            format: 'OpenLayers.Format.GeoJSON',
-                            targetSrs: 'EPSG:4326',
-                            targetFormat: 'GPX',
-                            fileExt: '.gpx',
-                            mimeType: 'text/plain'
-                        },
-                        'GeoJSON', 'WellKnownText'
-                    ],
-                    // Export to download file. Option values are 'CSV', 'XLS', default is no export (results in no export menu).
-                    // exportFormats: ['CSV', 'XLS'],
-                    maxFeatures: 10,
+                // Export to download file. Option values are 'CSV', 'XLS', or a Formatter object (see FeatureGridPanel) , default is no export (results in no export menu).
+                exportFormats: ['CSV', 'XLS', 'GMLv2', 'Shapefile', {
+                        name: 'Esri Shapefile (WGS84)',
+                        formatter: 'OpenLayersFormatter',
+                        format: 'OpenLayers.Format.GeoJSON',
+                        targetFormat: 'ESRI Shapefile',
+                        targetSrs: 'EPSG:4326',
+                        fileExt: '.zip',
+                        mimeType: 'application/zip'
+                    }, {
+                        // Try this with PDOK Streekpaden and Fietsroutes :-)
+                        name: 'GPS File (GPX)',
+                        formatter: 'OpenLayersFormatter',
+                        format: 'OpenLayers.Format.GeoJSON',
+                        targetSrs: 'EPSG:4326',
+                        targetFormat: 'GPX',
+                        fileExt: '.gpx',
+                        mimeType: 'text/plain'
+                    },
+                    'GeoJSON', 'WellKnownText'
+                ],
+                // Export to download file. Option values are 'CSV', 'XLS', default is no export (results in no export menu).
+                // exportFormats: ['CSV', 'XLS'],
+                maxFeatures: 10,
 
-                    // In case that the same layer would be requested more than once: discard the styles
-                    //discardStylesForDups: true,
-                    gridCellRenderers: [{
-                        featureType: 'ln9p_prov',
-                        attrName: 'Prov_nam_e',
-                        renderer: {
-                            fn: Heron.widgets.GridCellRenderer.directLink,
-                            options: {
-                                url: 'http://en.wikipedia.org/wiki/{Prov_nam_e}',
-                                target: '_new'
-                            }
+                // In case that the same layer would be requested more than once: discard the styles
+                //discardStylesForDups: true,
+                gridCellRenderers: [{
+                    featureType: 'ln9p_prov',
+                    attrName: 'Prov_nam_e',
+                    renderer: {
+                        fn: Heron.widgets.GridCellRenderer.directLink,
+                        options: {
+                            url: 'http://en.wikipedia.org/wiki/{Prov_nam_e}',
+                            target: '_new'
                         }
-                    }],
-                    gridColumns: Heron.gridColumns
-                }
+                    }
+                }],
+                gridColumns: Heron.gridColumns
             }
         }
-    }, {type: "coordinatesearch", options: {
-
-		// === Full demo configuration ===
-
-				// see ToolbarBuilder.js
-					  formWidth: 420
-					, formPageX: 400
-					, formPageY: 100
-				// see CoordSearchPanel.js
-					// , title: 'My title'
-					, titleDescription: 'โปรดเลือกระบบเส้นโครงแผนที่ที่ต้องการ...<br><br>จากนั้นให้กรอกค่าพิกัด ลองจิจูด / ละติจูด หรือ<br>พิกัดยูทีเอ็มทางตะวันออก / พิกัดยูทีเอ็มทางทางเหนือ.<br>&nbsp;<br>'
-					, titleDescriptionStyle: 'font-size:11px; color:dimgrey;'
-					, bodyBaseCls: 'x-form-back'
-					, bodyItemCls: 'hr-html-panel-font-size-11'
-					, bodyCls: 'hr-html-panel-font-size-11'
-					, fieldMaxWidth: 250
-					, fieldLabelWidth: 80
-					, fieldStyle: 'color: blue;'
-					, fieldLabelStyle: 'color: darkblue'
-					//, layerName: 'Location Thailand - Lon/Lat'
-					, onProjectionIndex: 1
-					, onZoomLevel: -1
-					, showProjection: true
-					, showZoom: true
-					, showAddMarkers: true
-					, checkAddMarkers: true
-					, showHideMarkers: true
-					, checkHideMarkers: false
-					, showResultMarker: true
-					, fieldResultMarkerStyle: 'color: darkblue;' // green
-					, fieldResultMarkerText: 'Marker position: '
-					, fieldResultMarkerSeparator: ' | '
-					, fieldResultMarkerPrecision: 4
-					, removeMarkersOnClose: true
-					, showRemoveMarkersBtn: true
-					, buttonAlign: 'center'		// left, center, right
-						/*
-							http://spatialreference.org/ref/epsg/4326/
-							EPSG:4326
-							WGS 84
-						    WGS84 Bounds: -180.0000, -90.0000, 180.0000, 90.0000
-						    Projected Bounds: -180.0000, -90.0000, 180.0000, 90.0000
-
-							http://spatialreference.org/ref/epsg/28992/    
-							EPSG:28992
-							Amersfoort / RD New
-						    WGS84 Bounds: 3.3700, 50.7500, 7.2100, 53.4700
-						    Projected Bounds: 12628.0541, 308179.0423, 283594.4779, 611063.1429
-						*/
-				, hropts: [
-						{
-							  projEpsg: 'EPSG:4326'
-							, projDesc: 'EPSG:4326 - WGS 84'
-							, fieldLabelX: 'Lon [ลองจิจูด]'
-							, fieldLabelY: 'Lat [ละติจูด]'
-							, fieldEmptyTextX: 'กรุณาระบุพิกัดลองจิจูด...'
-							, fieldEmptyTextY: 'กรุณาระบุพิกัดละติจูด...'
-							, fieldMinX: -180
-							, fieldMinY: -90
-							, fieldMaxX: 180
-							, fieldMaxY: 90
-							, fieldDecPrecision: 6
-							, iconWidth: 32
-							, iconHeight: 32
-							, localIconFile: 'bluepin.png'
-							, iconUrl: null
-						}
-						,
-						{
-							 projEpsg: 'EPSG:32647'
-							, projDesc: 'EPSG:32647 - WGS 1984/UTM zone 47N'
-							, fieldLabelX: 'E [meters]'
-							, fieldLabelY: 'N [meters]'
-							, fieldEmptyTextX: 'กรุณาระบุพิกัดยูทีเอ็มทางตะวันออก...'
-							, fieldEmptyTextY: 'กรุณาระบุพิกัดยูทีเอ็มทางทางเหนือ...'
-							, fieldMinX: 166021.4431
-							, fieldMinY: 0.0000
-							, fieldMaxX: 833978.5569
-							, fieldMaxY: 9329005.1825
-							, fieldDecPrecision: 2
-							, iconWidth: 32
-							, iconHeight: 32
-							, localIconFile: 'redpin.png'
-							, iconUrl: null
-							
-						}
-						
-						,
-						{
-							 projEpsg: 'EPSG:32648'
-							, projDesc: 'EPSG:32648 - WGS 1984/UTM zone 48N'
-							, fieldLabelX: 'E [meters]'
-							, fieldLabelY: 'N [meters]'
-							, fieldEmptyTextX: 'กรุณาระบุพิกัดยูทีเอ็มทางตะวันออก...'
-							, fieldEmptyTextY: 'กรุณาระบุพิกัดยูทีเอ็มทางทางเหนือ...'
-							, fieldMinX: 166021.4431
-							, fieldMinY: 0.0000
-							, fieldMaxX: 833978.5569
-							, fieldMaxY: 9329005.1825
-							, fieldDecPrecision: 2
-							, iconWidth: 32
-							, iconHeight: 32
-							, localIconFile: 'redpin.png'
-							, iconUrl: null
-							
-						}
-						
-				]
-		}
-	}, {
-        type: "-"
-    }, {
-        type: "pan"
-    },
-    {
-        type: "zoomin"
-    }, {
-        type: "zoomout"
-    }, {
-        type: "zoomvisible"
-    }, {
-        type: "zoomprevious"
-    }, {
-        type: "zoomnext"
-    }, {
-        type: "-"
-    },
-    {
-        type: "measurelength",
-        options: {
-            geodesic: false
-        }
-    }, {
-        type: "measurearea",
-        options: {
-            geodesic: false
-        }
-    },{
-        type: "-"
-    }, {
-        type: "printdialog",
-        options: {
-            url: 'http://kademo.nl/print/pdf28992.kadviewer'
-        }
-    }, {
-        type: "-"
-    }, {
-        type: "featurechart" // CWR
-    }, {
-        type: "searchcenter",
-        // Options for SearchPanel window
-        options: {
-            show: false,
-
-            searchWindow: {
-                title: __('เครื่องมือค้นหา'),
-                x: 500,
-                y: undefined,
-                width: 400,
-                height: 440,
-                items: [
-                    Heron.examples.searchPanelConfig
-                ]
-            }
-        }
-    }, {
-        type: "-"
     }
-];
+}, {
+    type: "coordinatesearch",
+    options: {
+
+        // === Full demo configuration ===
+
+        // see ToolbarBuilder.js
+        formWidth: 420,
+        formPageX: 400,
+        formPageY: 100
+            // see CoordSearchPanel.js
+            // , title: 'My title'
+            ,
+        titleDescription: 'โปรดเลือกระบบเส้นโครงแผนที่ที่ต้องการ...<br><br>จากนั้นให้กรอกค่าพิกัด ลองจิจูด / ละติจูด หรือ<br>พิกัดยูทีเอ็มทางตะวันออก / พิกัดยูทีเอ็มทางทางเหนือ.<br>&nbsp;<br>',
+        titleDescriptionStyle: 'font-size:11px; color:dimgrey;',
+        bodyBaseCls: 'x-form-back',
+        bodyItemCls: 'hr-html-panel-font-size-11',
+        bodyCls: 'hr-html-panel-font-size-11',
+        fieldMaxWidth: 250,
+        fieldLabelWidth: 80,
+        fieldStyle: 'color: blue;',
+        fieldLabelStyle: 'color: darkblue'
+            //, layerName: 'Location Thailand - Lon/Lat'
+            ,
+        onProjectionIndex: 1,
+        onZoomLevel: -1,
+        showProjection: true,
+        showZoom: true,
+        showAddMarkers: true,
+        checkAddMarkers: true,
+        showHideMarkers: true,
+        checkHideMarkers: false,
+        showResultMarker: true,
+        fieldResultMarkerStyle: 'color: darkblue;' // green
+            ,
+        fieldResultMarkerText: 'Marker position: ',
+        fieldResultMarkerSeparator: ' | ',
+        fieldResultMarkerPrecision: 4,
+        removeMarkersOnClose: true,
+        showRemoveMarkersBtn: true,
+        buttonAlign: 'center' // left, center, right
+            /*
+                http://spatialreference.org/ref/epsg/4326/
+                EPSG:4326
+                WGS 84
+                WGS84 Bounds: -180.0000, -90.0000, 180.0000, 90.0000
+                Projected Bounds: -180.0000, -90.0000, 180.0000, 90.0000
+
+                http://spatialreference.org/ref/epsg/28992/    
+                EPSG:28992
+                Amersfoort / RD New
+                WGS84 Bounds: 3.3700, 50.7500, 7.2100, 53.4700
+                Projected Bounds: 12628.0541, 308179.0423, 283594.4779, 611063.1429
+            */
+            ,
+        hropts: [{
+                projEpsg: 'EPSG:4326',
+                projDesc: 'EPSG:4326 - WGS 84',
+                fieldLabelX: 'Lon [ลองจิจูด]',
+                fieldLabelY: 'Lat [ละติจูด]',
+                fieldEmptyTextX: 'กรุณาระบุพิกัดลองจิจูด...',
+                fieldEmptyTextY: 'กรุณาระบุพิกัดละติจูด...',
+                fieldMinX: -180,
+                fieldMinY: -90,
+                fieldMaxX: 180,
+                fieldMaxY: 90,
+                fieldDecPrecision: 6,
+                iconWidth: 32,
+                iconHeight: 32,
+                localIconFile: 'bluepin.png',
+                iconUrl: null
+            }, {
+                projEpsg: 'EPSG:32647',
+                projDesc: 'EPSG:32647 - WGS 1984/UTM zone 47N',
+                fieldLabelX: 'E [meters]',
+                fieldLabelY: 'N [meters]',
+                fieldEmptyTextX: 'กรุณาระบุพิกัดยูทีเอ็มทางตะวันออก...',
+                fieldEmptyTextY: 'กรุณาระบุพิกัดยูทีเอ็มทางทางเหนือ...',
+                fieldMinX: 166021.4431,
+                fieldMinY: 0.0000,
+                fieldMaxX: 833978.5569,
+                fieldMaxY: 9329005.1825,
+                fieldDecPrecision: 2,
+                iconWidth: 32,
+                iconHeight: 32,
+                localIconFile: 'redpin.png',
+                iconUrl: null
+
+            }
+
+            , {
+                projEpsg: 'EPSG:32648',
+                projDesc: 'EPSG:32648 - WGS 1984/UTM zone 48N',
+                fieldLabelX: 'E [meters]',
+                fieldLabelY: 'N [meters]',
+                fieldEmptyTextX: 'กรุณาระบุพิกัดยูทีเอ็มทางตะวันออก...',
+                fieldEmptyTextY: 'กรุณาระบุพิกัดยูทีเอ็มทางทางเหนือ...',
+                fieldMinX: 166021.4431,
+                fieldMinY: 0.0000,
+                fieldMaxX: 833978.5569,
+                fieldMaxY: 9329005.1825,
+                fieldDecPrecision: 2,
+                iconWidth: 32,
+                iconHeight: 32,
+                localIconFile: 'redpin.png',
+                iconUrl: null
+
+            }
+
+        ]
+    }
+}, {
+    type: "-"
+}, {
+    type: "pan"
+}, {
+    type: "zoomin"
+}, {
+    type: "zoomout"
+}, {
+    type: "zoomvisible"
+}, {
+    type: "zoomprevious"
+}, {
+    type: "zoomnext"
+}, {
+    type: "-"
+}, {
+    type: "measurelength",
+    options: {
+        geodesic: false
+    }
+}, {
+    type: "measurearea",
+    options: {
+        geodesic: false
+    }
+},/* {
+    type: "-"
+}, {
+    type: "printdialog",
+    options: {
+        url: 'http://kademo.nl/print/pdf28992.kadviewer'
+    }
+},*/ {
+    type: "-"
+}, {
+    type: "featurechart"
+}, {
+    type: "-"
+}, {
+    type: "searchcenter",
+    // Options for SearchPanel window
+    options: {
+        show: false,
+
+        searchWindow: {
+            title: __('เครื่องมือค้นหา'),
+            x: 100,
+            y: undefined,
+            width: 600,
+            height: 480,
+            items: [
+                Heron.examples.searchPanelConfig
+            ]
+        }
+    }
+}, {
+    type: "-"
+}];
 
 Heron.options.menuItems = [{
     id: 'hr-menu-bar',
@@ -577,26 +964,26 @@ Heron.options.menuItems = [{
         xtype: 'tbspacer',
         width: 240
     }, {
-/*        xtype: 'tbseparator'
-    }, {*/
+        /*        xtype: 'tbseparator'
+            }, {*/
         xtype: 'component',
         autoEl: {
-                //tag: 'a',
-                //href: 'http://localhost/alr-map/#menu3/',
-                html: hmodule
-            }
+            //tag: 'a',
+            //href: 'http://localhost/alr-map/#menu3/',
+            html: hmodule
+        }
     }, {
         xtype: 'tbseparator'
-    },{
+    }, {
         xtype: 'component',
         text: 'กลับหน้าหลัก',
         autoEl: {
-                tag: 'a',
-                href: 'http://map.nu.ac.th/alr-map/#portfolio',
-                html: 'กลับสู่หน้าหลัก'
-            }
-/*    }, {
-        xtype: 'tbseparator'*/
+            tag: 'a',
+            href: 'http://map.nu.ac.th/alr-map/#portfolio',
+            html: 'กลับสู่หน้าหลัก'
+        }
+        /*    }, {
+                xtype: 'tbseparator'*/
     }]
 }];
 
@@ -618,35 +1005,34 @@ Heron.layout = {
         bodyBorder: false,
         border: false,
         items: [{
-                xtype: 'hr_htmlpanel',
-                id: 'hr-logo-panel',
-                region: 'center',
-                bodyBorder: false,
-                border: false,
-                autoLoad: {
-                    url: 'img/north-logo.html'
-                },
-                //height: 55
-            },{
-                xtype: 'hr_menupanel',
-                id: 'hr-menu-panel',
-                region: 'south',
-                bodyBorder: false,
-                border: false,
-                height: 28,
-                /** Menu options, see widgets/MenuPanel */
-                hropts: {
-                    pageRoot: 'content/',
-                    cardContainer: 'hr-container-center',
-                    pageContainer: 'hr-content-main',
-                    defaultCard: 'hr-geo-main',
-                    //defaultPage: 'intro'
-                },
-                /** See above for the items. */
-                //items: Heron.geoportal.menuItems
-                items: Heron.options.menuItems
-            }
-        ]
+            xtype: 'hr_htmlpanel',
+            id: 'hr-logo-panel',
+            region: 'center',
+            bodyBorder: false,
+            border: false,
+            autoLoad: {
+                url: 'img/north-logo.html'
+            },
+            //height: 55
+        }, {
+            xtype: 'hr_menupanel',
+            id: 'hr-menu-panel',
+            region: 'south',
+            bodyBorder: false,
+            border: false,
+            height: 28,
+            /** Menu options, see widgets/MenuPanel */
+            hropts: {
+                pageRoot: 'content/',
+                cardContainer: 'hr-container-center',
+                pageContainer: 'hr-content-main',
+                defaultCard: 'hr-geo-main',
+                //defaultPage: 'intro'
+            },
+            /** See above for the items. */
+            //items: Heron.geoportal.menuItems
+            items: Heron.options.menuItems
+        }]
     }, {
         /**
          * Content area: either map + navigation or plain (HTML) content driven by Menu.
@@ -754,8 +1140,8 @@ Heron.layout = {
                             width: 320
                         },
                         actionTarget: ["gxplayerpanel.tbar", "layertree.contextMenu"]
-                        //                    actionTarget: ["layertree.contextMenu"],
-                        //                    outputTarget: "layertree"
+                            //                    actionTarget: ["layertree.contextMenu"],
+                            //                    outputTarget: "layertree"
                     }, {
                         ptype: "gxp_zoomtolayerextent",
                         actionTarget: ["gxplayerpanel.tbar", "layertree.contextMenu"]
@@ -777,7 +1163,7 @@ Heron.layout = {
                             url: Heron.scratch.urls.wmsAlr2,
                             version: "1.1.1",
                             title: 'ฐานข้อมูล ส.ป.ก. (alr-db2)'
-                            // owsPreviewStrategies: ['getlegendgraphic']  // or 'no preview available' if empty array
+                                // owsPreviewStrategies: ['getlegendgraphic']  // or 'no preview available' if empty array
                         }
                     },
                 }]
@@ -798,7 +1184,7 @@ Heron.layout = {
                     collapsible: false,
                     border: false,
                     hropts: Heron.options.map
-                },{
+                }, {
                     xtype: 'hr_featurechartpanel',
                     //id: 'hr-feature-info',
                     region: 'south',

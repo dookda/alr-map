@@ -3,14 +3,14 @@ Heron.gridColumns = [{
     columns: [
         //colModule,
 		//addEtc,
-        {header: "",
+        /*{header: "",
             width: 120,
             renderer: function(value, metaData, record, rowIndex, colIndex, store) {
                 var template = '<a target="_new" href="http://map.nu.ac.th/alr-map/route.html#/{alrcode}">เพิ่มข้อมูลเพาะปลูก</a>';
                 var options = { attrNames: ['alrcode'] };
                 return Heron.widgets.GridCellRenderer.substituteAttrValues(template, options, record);
             }
-        },
+        },*/
         { header: 'รหัสแปลงที่ดิน สปก.', dataIndex: 'alrcode' },
         { header: 'เจ้าของแปลง', dataIndex: 'active_owner' },
         { header: 'เนื้อที่ทั้งหมดของแปลง ส.ป.ก. (ไร่)', dataIndex: 'spk_rai' },

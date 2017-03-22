@@ -242,6 +242,6 @@ closedb();
 <script type="text/javascript" src="layersQuery.js"></script>
 <script type="text/javascript" src="plugin.js"></script>
 <script type="text/javascript" src="field.js"></script>
-<script type="text/javascript" src="layoutQuery3.js"></script>
+<script type="text/javascript" src="layoutQuery.js"></script>
 
 </html>

@@ -949,7 +949,7 @@ while (mapLayer[i]) {
 
 if(module == 'siteRegister'){
     //console.log(module);
-    var hmodule = "module: สมดุลน้ำรายแปลง";
+    var hmodule = "module: สำรวจรายแปลง";
 /*    var colModule = { header: "",
             width: 120,
             renderer: function(value, metaData, record, rowIndex, colIndex, store) {
@@ -958,7 +958,7 @@ if(module == 'siteRegister'){
                 return Heron.widgets.GridCellRenderer.substituteAttrValues(template, options, record);
             }
         };
-	var addEtc = { header: "",
+    var addEtc = { header: "",
             width: 120,
             renderer: function(value, metaData, record, rowIndex, colIndex, store) {
                 var template = '<a target="_new" href="http://map.nu.ac.th/alr-map/route.html#/{alrcode}">เพิ่มข้อมูลอื่นๆ</a>';
@@ -966,9 +966,9 @@ if(module == 'siteRegister'){
                 return Heron.widgets.GridCellRenderer.substituteAttrValues(template, options, record);
             }
         };*/
-}else{
+}else if (module == 'siteSelection'){
     //console.log(module);
-    var hmodule = "module: ที่ตั้งพื้นที่เหมาะสมพัฒนาแหล่งน้ำ";
+    var hmodule = "module: พัฒนาแหล่งน้ำ";
 /*    var colModule = { header: "",
             width: 120,
         }*/
