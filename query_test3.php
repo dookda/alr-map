@@ -141,7 +141,7 @@ if(!empty( $_GET['tam'] )){
 //echo $typc1;
 
 
-  $sql = "select json_build_object('type','Feature','properties',json_build_object('alrcode',alrcode,'ele',ele,'slp',slp,'s_suit',s_suit,'v_suit',v_suit,'f_suit',f_suit,'p_suit',p_suit),'geometry',ST_AsGeoJSON(ST_Transform(geom,3857))::json) as geojson FROM alr_parcel where $typSuit and $admCode";
+  $sql = "select json_build_object('type','Feature','properties',json_build_object('alrcode',alrcode,'ele',ele,'slp',slp,'dru',dru,'flo',flo,'s_suit',s_suit,'v_suit',v_suit,'f_suit',f_suit,'p_suit',p_suit),'geometry',ST_AsGeoJSON(ST_Transform(geom,3857))::json) as geojson FROM alr_parcel where $typSuit and $admCode";
   
   //echo $sql;
 
