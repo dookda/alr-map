@@ -54,7 +54,7 @@ Heron.scratch.urls = {
     OwsMapNU: 'http://map.nu.ac.th/geoserver-trfland/ows?',
     OwsGistNU: 'http://www2.cgistln.nu.ac.th/para/ows?',
     OwsGISTDA: 'http://tile.gistda.or.th/geoserver/ows?',
-    OwsFGDS: 'http://fgds.gistda.or.th/geoserver/ows?',
+    OwsFGDS: 'http://fgds.gistda.or.th/geoserver/NGIS2014/ows?',
     GwcGistNU: 'http://www2.cgistln.nu.ac.th/para/gwc/service/wms?'
 };
 
@@ -346,7 +346,7 @@ var suiteSugar = new OpenLayers.Layer.WMS(
     }
 );
 var suitePara = new OpenLayers.Layer.WMS(
-    "ระดับเหมาะสมปลูกยางพารา",
+    "ระดับเหมาะสมปลูกทุ่งหญ้าเลี้ยงสัตว์",
     Heron.scratch.urls.OwsMapNU, { layers: "trfgdb:spara", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
@@ -451,7 +451,7 @@ var spklu = new OpenLayers.Layer.WMS(
         }
     }
 );
-
+/*
 var p10_evap_tff = new OpenLayers.Layer.WMS(
     "ปริมาณการระเหยเฉลี่ย 10 ปี",
     Heron.scratch.urls.GwcGistNU, { layers: "para:p10_evap_tff", transparent: true, format: 'image/png' }, {
@@ -480,8 +480,9 @@ var p10_rain_tff = new OpenLayers.Layer.WMS(
         group: 'baseLayers'
     }
 );
+*/
 var flow_accum = new OpenLayers.Layer.WMS(
-    "การไหลสะสมของน้ำ",
+    "พื้นที่น้ำไหลสะสม",
     Heron.scratch.urls.gwcAlr2, { layers: "alr:flow_accum", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.6,
@@ -491,12 +492,12 @@ var flow_accum = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'siteselection'
+        group: 'siteselection1'
     }
 );
 
 var yield_4326 = new OpenLayers.Layer.WMS(
-    "ปริมาณน้ำใต้ดิน (ลบ.ม./ไร่/ปี)",
+    "ปริมาณน้ำใต้ดิน (ลบ.ม./วินาที)",
     Heron.scratch.urls.wmsAlr2, { layers: "alr:wsupply_gwat", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
@@ -506,7 +507,7 @@ var yield_4326 = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'siteselection'
+        group: 'siteselection1'
     }
 );
 
@@ -521,7 +522,7 @@ var wsupply_runoff = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'siteselection'
+        group: 'siteselection1'
     }
 );
 
@@ -536,7 +537,7 @@ var wsupply_rain = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'siteselection'
+        group: 'siteselection1'
     }
 );
 
@@ -713,7 +714,7 @@ var stream = new OpenLayers.Layer.WMS(
         group: 'waterResource'
     }
 );
-var L08_DS_HV_CONDUETOR = new OpenLayers.Layer.WMS(
+var l08_conduetor = new OpenLayers.Layer.WMS(
     "ข้อมูลสายส่งแรงสูง",
     Heron.scratch.urls.OwsFGDS, { layers: "NGIS2014:L08_DS_HV_CONDUETOR", transparent: true, format: 'image/png' }, {
         singleTile: false,
@@ -743,7 +744,7 @@ var trans = new OpenLayers.Layer.WMS(
 );
 
 var expertSiteselection = new OpenLayers.Layer.WMS(
-    "ตำแหน่งเหมาะสมต่อการพัฒนาแหล่งน้ำจากผู้เชี่ยวชาญ",
+    "ตำแหน่งเหมาะสมพัฒนาแหล่งน้ำ",
     Heron.scratch.urls.wmsAlr2, { layers: "alr:expert_site_selected_4326", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
@@ -841,7 +842,7 @@ var stabus = new OpenLayers.Layer.WMS(
     }
 );
 var ln9p_vill = new OpenLayers.Layer.WMS(
-    "หมู่บ้าน",
+    "ที่ตั้งหมู่บ้าน",
     Heron.scratch.urls.wmsAlr2, { layers: "alr:ln9p_vill", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
@@ -860,6 +861,7 @@ var ln9p_vill = new OpenLayers.Layer.WMS(
         }
     }
 );
+/*
 var p10_evap = new OpenLayers.Layer.WMS(
     "สถานีตรวจวัดค่าการระเหย",
     Heron.scratch.urls.OwsGistNU, { layers: "para:p10_evap", transparent: true, format: 'image/png' }, {
@@ -888,11 +890,11 @@ var p10_rain = new OpenLayers.Layer.WMS(
         group: 'place'
     }
 );
-
+*/
 var selectedLayers = [gTerrain, gSatellite, gStreet, alr_parcel];
 var layersGroup = {
                             default: {
-                                title: 'แปลง ส.ป.ก.',
+                                title: 'แปลงที่ดิน ส.ป.ก.',
                                 expanded: true
                             }
                         };
@@ -900,14 +902,19 @@ var layersGroup = {
 var i = 0;
 while (mapLayer[i]) {
     if (mapLayer[i] == 'lyrSiteselection') {
-        selectedLayers.push(flow_accum, yield_4326, wsupply_runoff, wsupply_rain, expertSiteselection);
+        selectedLayers.push( expertSiteselection);
         layersGroup['siteselection'] = {};
         layersGroup.siteselection['title'] = "ตำแหน่งเหมาะสมพัฒนาแหล่งน้ำ";
+///ปูเพิ่มเติม
+    } else if (mapLayer[i] == 'lyrSupport') {
+        selectedLayers.push(flow_accum, yield_4326, wsupply_runoff, wsupply_rain);
+        layersGroup['siteselection1'] = {};
+        layersGroup.siteselection1['title'] = "ข้อมูลสนับสนุนพัฒนาแหล่งน้ำ";
 
     } else if (mapLayer[i] == 'lyrPlace') {
-        selectedLayers.push(anamai, factory, hospital2, school, staairport, stabus, p10_evap, p10_rain);
+        selectedLayers.push(anamai, factory, hospital2, school, staairport, stabus);
         layersGroup['place'] = {};
-        layersGroup.place['title'] = "สถานที่สำคัญ";
+        layersGroup.place['title'] = "ที่ตั้งสถานที่สำคัญ";
 
     } else if (mapLayer[i] == 'lyrAdmin') {
         selectedLayers.push(ln9p_prov, ln9p_amp, ln9p_tam, municiple, ln9p_vill);
@@ -915,7 +922,7 @@ while (mapLayer[i]) {
         layersGroup.adminBoundary['title'] = "ขอบเขตการปกครอง";
 
     } else if (mapLayer[i] == 'lyrBase') {
-        selectedLayers.push(dem, basin, wshd_cl, dwrlu, spklu, p10_evap_tff, p10_rain_tff, L08_DS_HV_CONDUETOR, trans, forestc);
+        selectedLayers.push(dem, basin, wshd_cl, dwrlu, spklu, l08_conduetor, trans, forestc);
         layersGroup['baseLayers'] = {};
         layersGroup.baseLayers['title'] = "ข้อมูลพื้นฐาน";
 
@@ -925,9 +932,9 @@ while (mapLayer[i]) {
         layersGroup.waterResource['title'] = "แหล่งน้ำ";
 
     }else if (mapLayer[i] == 'lyrSoil') {
-        selectedLayers.push(suiteCasava, suiteCorn, suiteRice, suiteSugar, suitePara);
+        selectedLayers.push(suitePara, suiteSugar,suiteCasava,suiteCorn,suiteRice);
         layersGroup['soilsuite'] = {};
-        layersGroup.soilsuite['title'] = "ความเหมาะสมของดิน";
+        layersGroup.soilsuite['title'] = "ดินและความเหมาะสมของดิน";
     } else if (mapLayer[i] == 'lyrDisaster') {
         selectedLayers.push(flood_2005_geo, flood_2006_geo, flood_2007_geo, flood_2008_geo, flood_2009_geo, flood_2010_geo, flood_2011_geo, flood_2012_geo, flood_2013_geo, repeated_flooding, scl_drought4326, scl_erosion4326, scl_landslide4326);
         layersGroup['disaster'] = {};
