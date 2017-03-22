@@ -84,6 +84,31 @@
               }
          }
 
+    // progress bar
+         if ($data=='province4') { 
+              echo "<select class='form-control' name='province4' onChange=\"dochange('amphoe4', this.value)\">";
+              echo "<option value='0'>- เลือกจังหวัด -</option>\n";
+              $result=pg_query("select * from ln9p_prov order by prov_nam_t");
+              while($row = pg_fetch_array($result)){
+                   echo "<option value='$row[prov_code]' >$row[prov_nam_t]</option>" ;
+              }
+         } else if ($data=='amphoe4') {
+              echo "<select class='form-control' name='amphoe4' onChange=\"dochange('tambon4', this.value)\">";
+              echo "<option value='0'>- เลือกอำเภอ -</option>\n";                             
+              $result=pg_query("SELECT * FROM ln9p_amp WHERE prov_code= '$val' ORDER BY amp_nam_t");
+              while($row = pg_fetch_array($result)){
+                   echo "<option value=\"$row[amp_code]\" >$row[amp_nam_t]</option> " ;
+              }
+         } else if ($data=='tambon4') {
+              echo "<select class='form-control' name='tambon4'>\n";
+              echo "<option value='0'>- เลือกตำบล -</option>\n";
+              $result=pg_query("SELECT * FROM ln9p_tam WHERE amp_code= '$val' ORDER BY tam_nam_t");
+              while($row = pg_fetch_array($result)){
+                   echo "<option value=\"$row[tam_code]\" >$row[tam_nam_t]</option> \n" ;
+              }
+         }
+
+
 
          echo "</select>\n";
         
