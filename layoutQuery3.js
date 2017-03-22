@@ -390,12 +390,12 @@ Heron.examples.searchPanelConfig = {
                         dataIndex: "alrcode",
                         type: 'numeric'
                     }, {
-                        header: "ความสูงของแปลง",
+                        header: "ความสูงของแปลง(เมตร)",
                         width: 100,
                         dataIndex: "ele",
                         type: 'numeric'
                     }, {
-                        header: "ความลาดชัน",
+                        header: "ความลาดชัน(เปอร์เซนต์)",
                         width: 100,
                         dataIndex: "slp",
                         type: 'numeric'
