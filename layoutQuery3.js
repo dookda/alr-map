@@ -922,14 +922,14 @@ Heron.options.map.toolbar = [{
     options: {
         geodesic: false
     }
-}, {
+},/* {
     type: "-"
 }, {
     type: "printdialog",
     options: {
         url: 'http://kademo.nl/print/pdf28992.kadviewer'
     }
-}, {
+},*/ {
     type: "-"
 }, {
     type: "featurechart"
