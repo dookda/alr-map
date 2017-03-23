@@ -181,7 +181,7 @@ $app->get('/evap30y/{tamcode}', function($request, $response){
 
 
 
-$app->get('/quest_q', function($request, $response){  
+$app->get('/question', function($request, $response){  
     //$id = $request->getAttribute('id');  
     $sql = "select * from quest_list";
     $rs = pg_query($sql);
