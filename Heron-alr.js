@@ -7130,8 +7130,39 @@ Heron.widgets.search.FeatureInfoPanel = Ext.extend(Ext.Panel, {
 
 
             //alert(alrVal);
-            var ccurent = new Ext.Panel({
-                title: 'ภาพ'+featureSet.title,
+
+            var tabSoil = new Ext.Panel({
+                title: 'ข้อมูลดิน แปลง'+featureSet.title,
+                html: '<iframe src="tabSoil.php?alrcode='+alrVal+'" scrolling="yes" frameborder="0" style="position: relative; height: 100%; width: 100%;"></iframe>',
+                cls:'empty'
+                });
+
+            var tabWater = new Ext.Panel({
+                title: 'ข้อมูลน้ำ แปลง'+featureSet.title,
+                html: '<iframe src="tabWater.php?alrcode='+alrVal+'" scrolling="yes" frameborder="0" style="position: relative; height: 100%; width: 100%;"></iframe>',
+                cls:'empty'
+                });
+
+            var tabAgri = new Ext.Panel({
+                title: 'ข้อมูลการเกษตร แปลง'+featureSet.title,
+                html: '<iframe src="tabAgri.php?alrcode='+alrVal+'" scrolling="yes" frameborder="0" style="position: relative; height: 100%; width: 100%;"></iframe>',
+                cls:'empty'
+                });
+
+            var tabFarmer = new Ext.Panel({
+                title: 'ข้อมูลเกษตรกร แปลง'+featureSet.title,
+                html: '<iframe src="tabFarmer.php?alrcode='+alrVal+'" scrolling="yes" frameborder="0" style="position: relative; height: 100%; width: 100%;"></iframe>',
+                cls:'empty'
+                });
+
+            var tabSummary = new Ext.Panel({
+                title: 'ข้อมูลสรุป แปลง'+featureSet.title,
+                html: '<iframe src="tabSummary.php?alrcode='+alrVal+'" scrolling="yes" frameborder="0" style="position: relative; height: 100%; width: 100%;"></iframe>',
+                cls:'empty'
+                });
+
+            var tabImg = new Ext.Panel({
+                title: 'ภาพ แปลง'+featureSet.title,
                 html: '<iframe src="takeaphoto/index.php?alrcode='+alrVal+'" scrolling="yes" frameborder="0" style="position: relative; height: 100%; width: 100%;"></iframe>',
                 cls:'empty'
                 });
@@ -7164,8 +7195,7 @@ Heron.widgets.search.FeatureInfoPanel = Ext.extend(Ext.Panel, {
             });
             
             if(featureSet.title=="แปลงที่ดิน ส.ป.ก."){                
-                var tab = [panel, ccurent];
-
+                var tab = [panel, tabSoil, tabWater, tabAgri, tabFarmer, tabSummary, tabImg];
                 
             }else{
                 var tab = [panel];
