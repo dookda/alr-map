@@ -196,6 +196,20 @@ $app->get('/question', function($request, $response){
     return $newResponse;
 });
 
+$app->get('/question_gap', function($request, $response){  
+    //$id = $request->getAttribute('id');  
+    $sql = "select * from gap_list";
+    $rs = pg_query($sql);
+    
+    $result = array();
+
+    while($row = pg_fetch_array($rs)){
+      array_push($result, $row);
+    }
+
+    $newResponse = $response->withJson($result);
+    return $newResponse;
+});
 
 $app->post('/signin', function($request, $response){
 
