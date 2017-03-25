@@ -7132,37 +7132,31 @@ Heron.widgets.search.FeatureInfoPanel = Ext.extend(Ext.Panel, {
             //alert(alrVal);
 
             var tabSoil = new Ext.Panel({
-                title: 'ข้อมูลดิน '+featureSet.title,
+                title: 'ดิน ',
                 html: '<iframe src="tabSoil.php?alrcode='+alrVal+'" scrolling="yes" frameborder="0" style="position: relative; height: 100%; width: 100%;"></iframe>',
                 cls:'empty'
                 });
 
             var tabWater = new Ext.Panel({
-                title: 'ข้อมูลน้ำ '+featureSet.title,
+                title: 'น้ำ ',
                 html: '<iframe src="tabWater.php?alrcode='+alrVal+'" scrolling="yes" frameborder="0" style="position: relative; height: 100%; width: 100%;"></iframe>',
                 cls:'empty'
                 });
 
             var tabAgri = new Ext.Panel({
-                title: 'ข้อมูลการเกษตร '+featureSet.title,
+                title: 'เกษตร ',
                 html: '<iframe src="tabAgri.php?alrcode='+alrVal+'" scrolling="yes" frameborder="0" style="position: relative; height: 100%; width: 100%;"></iframe>',
                 cls:'empty'
                 });
 
             var tabFarmer = new Ext.Panel({
-                title: 'ข้อมูลเกษตรกร '+featureSet.title,
+                title: 'เกษตรกร ',
                 html: '<iframe src="tabFarmer.php?alrcode='+alrVal+'" scrolling="yes" frameborder="0" style="position: relative; height: 100%; width: 100%;"></iframe>',
                 cls:'empty'
                 });
 
-            var tabSummary = new Ext.Panel({
-                title: 'ข้อมูลสรุป '+featureSet.title,
-                html: '<iframe src="tabSummary.php?alrcode='+alrVal+'" scrolling="yes" frameborder="0" style="position: relative; height: 100%; width: 100%;"></iframe>',
-                cls:'empty'
-                });
-
             var tabImg = new Ext.Panel({
-                title: 'ภาพ '+featureSet.title,
+                title: 'ภาพ ',
                 html: '<iframe src="takeaphoto/index.php?alrcode='+alrVal+'" scrolling="yes" frameborder="0" style="position: relative; height: 100%; width: 100%;"></iframe>',
                 cls:'empty'
                 });
@@ -7194,8 +7188,8 @@ Heron.widgets.search.FeatureInfoPanel = Ext.extend(Ext.Panel, {
                 }
             });
             
-            if(featureSet.title=="แปลงที่ดิน ส.ป.ก."){                
-                var tab = [panel, tabSoil, tabWater, tabAgri, tabFarmer, tabSummary, tabImg];
+            if(featureSet.title=="แปลงที่ดิน"){                
+                var tab = [panel, tabSoil, tabWater, tabAgri, tabFarmer, tabImg];
                 
             }else{
                 var tab = [panel];

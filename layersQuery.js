@@ -583,7 +583,7 @@ var wsupply_rain = new OpenLayers.Layer.WMS(
 );
 
 var alr_parcel = new OpenLayers.Layer.WMS(
-    "แปลงที่ดิน ส.ป.ก.",
+    "แปลงที่ดิน",
     Heron.scratch.urls.wmsAlr2, {
         layers: "alr:alr_parcel_query",
         cql_filter: filter_tam,
