@@ -95,13 +95,13 @@ $(document).ready(function() {
             </div>
             <div class="header clearfix">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#home">พัฒนาแหล่งน้ำ</a></li>
-                    <li><a href="#menu1">สำรวจรายแปลง</a></li>
-                    <li><a href="#menu2">สรุปข้อมูล ส.ป.ก.</a></li>
+                    <!-- <li class="active"><a href="#home">พัฒนาแหล่งน้ำ</a></li> -->
+                    <li class="active"><a href="#menu1">สำรวจรายแปลง</a></li>
+                    <li><a href="#menu2">สรุปข้อมูลตามขอบเขตปกครอง</a></li>
                 </ul>
             </div>
             <div class="tab-content">
-                <div id="home" class="tab-pane fade in active">
+              <!--   <div id="home" class="tab-pane fade in active">
                     <h3 class="text-muted">ที่ตั้งพื้นที่เหมาะสมพัฒนาแหล่งน้ำ</h3>
                     <p>เลือกพื้นที่และชั้นข้อมูลที่ต้องการแสดงร่วม</p>
                     <div class="jumbotron">
@@ -172,9 +172,9 @@ $(document).ready(function() {
                             <button type="submit" class="btn btn-primary">ตกลง</button>
                         </form>
                     </div>
-                </div>
-                <div id="menu1" class="tab-pane fade">
-                    <h3 class="text-muted">ข้อมูล ส.ป.ก. รายแปลง</h3>
+                </div>-->
+                <div id="menu1" class="tab-pane fade in active">
+                    <h3 class="text-muted">ข้อมูลรายแปลง</h3>
                     <p>เลือกพื้นที่และชั้นข้อมูลที่ต้องการแสดงร่วม</p>
                     <div class="row">
                         <div class="col-sm-6">
@@ -213,40 +213,52 @@ $(document).ready(function() {
                                                     <label>
                                                         <input type="checkbox" checked="checked" name="lyrAlr" value="1" disabled>แปลงที่ดิน ส.ป.ก.</label>
                                                 </div>
-                                            </div>
-                                            <div class="col-xs-6 col-md-4">
-                                                <input type="hidden" name="module" value="siteRegister">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input type="checkbox" name="lyrWater" value="1">แหล่งน้ำ</label>
-                                                </div>
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="lyrSoil" value="1">ดินและความเหมาะสมของดิน</label>
-                                                </div>
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="" value="1">การใช้ที่ดิน</label>
-                                                </div>
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="lyrDisaster" value="1">ภัยธรรมชาติ</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 col-md-4">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="lyrBase" value="1">สภาพแวดล้อม</label>
-                                                </div>
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="lyrPlace" value="1">ที่ตั้งสถานที่สำคัญ</label>
+                                                        <input type="checkbox" checked="checked" name="lyrSiteselection" value="1">ที่ตั้งพื้นที่เหมาะสมพัฒนาแหล่งน้ำ</label>
                                                 </div>
                                                 <div class="checkbox disabled">
                                                     <label>
                                                         <input type="checkbox" checked="checked" name="lyrAdmin" value="1">ขอบเขตการปกครอง</label>
                                                 </div>
                                             </div>
+                                            <div class="col-xs-6 col-md-4">
+                                                <input type="hidden" name="module" value="siteRegister">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="lyrSoil" value="1">ดิน</label>
+                                                </div>
+
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="" value="1">การใช้ที่ดิน</label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="lyrWater" value="1">แหล่งน้ำ</label>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-xs-6 col-md-4">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="lyrBase" value="1">ข้อมูลพื้นฐาน</label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="lyrPlace" value="1">ที่ตั้งสถานที่สำคัญ</label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="lyrDisaster" value="1">ภัยธรรมชาติ</label>
+                                                </div>
+                                              </div>
+                                            <div class="col-xs-6 col-md-4">
+                                              <div class="checkbox">
+                                                  <label>
+                                                      <input type="checkbox" name="lyrService" value="1">ชั้นข้อมูลออนไลน์จากแหล่งต่างๆ</label>
+                                              </div>
+                                              </div>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary">ตกลง</button>
@@ -256,7 +268,7 @@ $(document).ready(function() {
                     </div>
                 </div>
                 <div id="menu2" class="tab-pane fade">
-                    <h3 class="text-muted">สรุปข้อมูล ส.ป.ก.</h3>
+                    <h3 class="text-muted">สรุปข้อมูลตามขอบเขตปกครอง</h3>
                     <p>เลือกพื้นที่และชั้นข้อมูลที่ต้องการแสดงร่วม</p>
                     <div class="jumbotron">
                         <form method="get" action="chart/chart.php" target="chart_php">
