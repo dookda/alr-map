@@ -117,7 +117,7 @@ var flood_2005_geo = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'disaster'
+        group: 'lyrService'
     }
 );
 var flood_2006_geo = new OpenLayers.Layer.WMS(
@@ -131,7 +131,7 @@ var flood_2006_geo = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'disaster'
+        group: 'lyrService'
     }
 );
 var flood_2007_geo = new OpenLayers.Layer.WMS(
@@ -145,7 +145,7 @@ var flood_2007_geo = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'disaster'
+        group: 'lyrService'
     }
 );
 var flood_2008_geo = new OpenLayers.Layer.WMS(
@@ -159,7 +159,7 @@ var flood_2008_geo = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'disaster'
+        group: 'lyrService'
     }
 );
 var flood_2009_geo = new OpenLayers.Layer.WMS(
@@ -173,7 +173,7 @@ var flood_2009_geo = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'disaster'
+        group: 'lyrService'
     }
 );
 var flood_2010_geo = new OpenLayers.Layer.WMS(
@@ -187,7 +187,7 @@ var flood_2010_geo = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'disaster'
+        group: 'lyrService'
     }
 );
 var flood_2011_geo = new OpenLayers.Layer.WMS(
@@ -201,7 +201,7 @@ var flood_2011_geo = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'disaster'
+        group: 'lyrService'
     }
 );
 var flood_2012_geo = new OpenLayers.Layer.WMS(
@@ -215,7 +215,7 @@ var flood_2012_geo = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'disaster'
+        group: 'lyrService'
     }
 );
 var flood_2013_geo = new OpenLayers.Layer.WMS(
@@ -229,7 +229,7 @@ var flood_2013_geo = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'disaster'
+        group: 'lyrService'
     }
 );
 var repeated_flooding = new OpenLayers.Layer.WMS(
@@ -1002,11 +1002,11 @@ while (mapLayer[i]) {
         layersGroup['soilsuite'] = {};
         layersGroup.soilsuite['title'] = "ดิน";
     } else if (mapLayer[i] == 'lyrService') {
-        selectedLayers.push();
-        layersGroup['Service'] = {};
-        layersGroup.Service['title'] = "ชั้นข้อมูลออนไลน์จากแหล่งต่างๆ";
+        selectedLayers.push(flood_2005_geo, flood_2006_geo, flood_2007_geo, flood_2008_geo, flood_2009_geo, flood_2010_geo, flood_2011_geo, flood_2012_geo, flood_2013_geo);
+        layersGroup['lyrService'] = {};
+        layersGroup.lyrService['title'] = "ชั้นข้อมูลออนไลน์จากแหล่งต่างๆ";
     } else if (mapLayer[i] == 'lyrDisaster') {
-        selectedLayers.push( flood_2005_geo, flood_2006_geo, flood_2007_geo, flood_2008_geo, flood_2009_geo, flood_2010_geo, flood_2011_geo, flood_2012_geo, flood_2013_geo, repeated_flooding, scl_drought4326, scl_erosion4326, scl_landslide4326 );
+        selectedLayers.push(repeated_flooding, scl_drought4326, scl_erosion4326, scl_landslide4326 );
         layersGroup['disaster'] = {};
         layersGroup.disaster['title'] = "ภัยธรรมชาติ";
     };

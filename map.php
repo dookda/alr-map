@@ -212,10 +212,6 @@ foreach($_GET as $key => $value) {
     elseif($key == 'lyrSiteselection') {
         echo "<script>mapLayer.push('lyrSiteselection');</script>";
     }
-		///ปูเพิ่มเติม
-		elseif($key == 'lyrService') {
-				echo "<script>mapLayer.push('lyrService');</script>";
-		}
     elseif($key == 'lyrWater') {
         echo "<script>mapLayer.push('lyrWater');</script>";
     }
