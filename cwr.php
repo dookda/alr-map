@@ -125,7 +125,7 @@ class meteoWeek
                 $rain[] = $value;
                 //print "$key = $value </br>";
               }else{
-                $rain[] = $value;
+                $rain[] = round($value,3);
               }
             }          
         }
@@ -141,7 +141,7 @@ class meteoWeek
     while ($row = pg_fetch_assoc($sql)) {
         foreach($row as $key => $value) {            
             if($key !== 'geom' & $key !== 'gid' & $key !== 'tam_code' & $key !== 'amp_code' & $key !== 'prov_code'){
-              $rain[] = $value;
+              $rain[] = round($value,3);
               //print "$key = $value </br>";
             }          
         }
@@ -157,7 +157,7 @@ class meteoWeek
     while ($row = pg_fetch_assoc($sql)) {
         foreach($row as $key => $value) {            
             if($key !== 'geom' & $key !== 'gid' & $key !== 'tam_code' & $key !== 'amp_code' & $key !== 'prov_code'){
-              $evap[] = $value;
+              $evap[] = round($value,3);
               //print "$key = $value </br>";
             }          
         }
