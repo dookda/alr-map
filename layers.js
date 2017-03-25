@@ -363,7 +363,7 @@ var suitePara = new OpenLayers.Layer.WMS(
 
 var dem = new OpenLayers.Layer.WMS(
     "ความสูงภูมิประเทศเชิงเลข 30 เมตร ",
-    Heron.scratch.urls.OwsFGDS, { layers: "gisportal:L040000_DEM_30m_RTSD", transparent: true, format: 'image/png' }, {
+    Heron.scratch.urls.OwsMapNU, { layers: "alrmap:gdem_utmth3", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
         isBaseLayer: false,
