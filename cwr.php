@@ -80,7 +80,7 @@ class cropWater
                 $cwrSelect[] = $value;
                 //print "$key = $value </br>";
               }else{
-                $cwrSelect[] = $value;
+                $cwrSelect[] = round($value,2);
               }
               
             }          
@@ -125,7 +125,7 @@ class meteoWeek
                 $rain[] = $value;
                 //print "$key = $value </br>";
               }else{
-                $rain[] = round($value,3);
+                $rain[] = round($value,2);
               }
             }          
         }
@@ -141,7 +141,7 @@ class meteoWeek
     while ($row = pg_fetch_assoc($sql)) {
         foreach($row as $key => $value) {            
             if($key !== 'geom' & $key !== 'gid' & $key !== 'tam_code' & $key !== 'amp_code' & $key !== 'prov_code'){
-              $rain[] = round($value,3);
+              $rain[] = round($value,2);
               //print "$key = $value </br>";
             }          
         }
@@ -157,7 +157,7 @@ class meteoWeek
     while ($row = pg_fetch_assoc($sql)) {
         foreach($row as $key => $value) {            
             if($key !== 'geom' & $key !== 'gid' & $key !== 'tam_code' & $key !== 'amp_code' & $key !== 'prov_code'){
-              $evap[] = round($value,3);
+              $evap[] = round($value,2);
               //print "$key = $value </br>";
             }          
         }
