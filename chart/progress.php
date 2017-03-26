@@ -6,9 +6,9 @@
 include "../../lib/sel_config.php";
 conndb();
 
-	$prov_name = $_GET[province4];
-	$amphoe_name = $_GET[amphoe4];
-	$tambon_name = $_GET[tambon4];
+	$prov_name = $_GET[province2];
+	$amphoe_name = $_GET[amphoe2];
+	$tambon_name = $_GET[tambon2];
 	
 ?>
   <meta charset="utf-8">
@@ -20,6 +20,7 @@ conndb();
 </head>
 
 <body>
+<div class="panel panel-default">
 
     <!-- start:content -->
 			<?php 
@@ -96,7 +97,7 @@ conndb();
 			?>
 	
 			<div class="col-md-12">
-			  <h2>อัตราการกรอกข้อมูล</h2>
+			  <h4>อัตราการกรอกข้อมูล</h4>
 			  <div class="progress">
 				<div class="progress-bar 
 				<?php if ($val < 20){
@@ -193,7 +194,7 @@ group by alr_parcel.tam_nam_t,alr_parcel.tam_code,ss.sum;");
 	
     <!-- end: content -->
 
-
+</div>
 </body>
 
 </html>
