@@ -20,6 +20,7 @@ conndb();
 </head>
 
 <body>
+<div class="panel panel-default">
 
     <!-- start:content -->
 			<?php 
@@ -193,7 +194,7 @@ group by alr_parcel.tam_nam_t,alr_parcel.tam_code,ss.sum;");
 	
     <!-- end: content -->
 
-
+</div>
 </body>
 
 </html>
