@@ -97,7 +97,7 @@ conndb();
 			?>
 	
 			<div class="col-md-12">
-			  <h2>อัตราการกรอกข้อมูล</h2>
+			  <h4>อัตราการกรอกข้อมูล</h4>
 			  <div class="progress">
 				<div class="progress-bar 
 				<?php if ($val < 20){
