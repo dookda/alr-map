@@ -36,9 +36,9 @@ function getParcel($col, $table, $alrcode){
 <body>
 
 <div class="container">
-  <h3>การทำการเกษตร</h3>
-
-
+  <h3>ข้อมูลน้ำ</h3>
+  
+  <h4> ข้อมูลปฐมภูมิ </h4>
 <table class="table table-striped">
     <thead>
       <tr>
@@ -48,16 +48,57 @@ function getParcel($col, $table, $alrcode){
     </thead>
     <tbody>
       <tr>
-        <td>รหัสการใช้ประโยชน์ที่ดินปี 57</td>
-        <td><?php  echo getParcel('lu57', 'alr_parcel_query', $alrcode); ?></td>
+        <td>ประเภทแหล่งน้ำที่ใช้หลัก</td>
+        <td>#</td>
       </tr>
       <tr>
-        <td>คำอธิบายการใช้ประโยชน์ที่ดินปี 57</td>
-        <td><?php  echo getParcel('lu57_t', 'alr_parcel_query', $alrcode); ?></td>
+        <td>เนื้อที่แหล่งน้ำ (ไร่)</td>
+        <td>#</td>
       </tr>
       <tr>
-        <td>July</td>
-        <td>Dooley</td>
+        <td>เนื้อที่แหล่งน้ำ (งาน)</td>
+        <td>#</td>
+      </tr>
+	  <tr>
+        <td>เนื้อที่แหล่งน้ำ (วา)</td>
+        <td>#</td>
+      </tr>
+	  <tr>
+        <td>จำนวนบ่อน้ำแปลงนี้ (บ่อ)</td>
+        <td>#</td>
+      </tr>
+	  <tr>
+        <td>จำนวนสระน้ำที่ขุดในแปลงนี้(แห่ง)</td>
+        <td>#</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+<h4> ข้อมูลทุติยภูมิ </h4>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ชื่อข้อมูล</th>
+        <th>ค่าข้อมูล</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ปริมาณฝนตกเฉลี่ยทั้งปี (มม.)</td>
+        <td>#</td>
+      </tr>
+      <tr>
+        <td>ปริมาณน้ำท่าทั้งปี (ลบ.ม)</td>
+        <td>#</td>
+      </tr>
+      <tr>
+        <td>ปริมาณน้ำใต้ดิน (ลบ.ม/วินาที)</td>
+        <td>#</td>
+      </tr>
+	  <tr>
+        <td>ความลึกน้ำใต้ดิน (เมตร)</td>
+        <td>#</td>
       </tr>
     </tbody>
   </table>

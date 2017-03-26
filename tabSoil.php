@@ -1,4 +1,4 @@
-<?php 
+<?php
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Credentials: true");
     header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
@@ -13,8 +13,8 @@ $alrcode = $_GET['alrcode'];
 function getParcel($col, $table, $alrcode){
     //$pgdb = pg_connect("host=localhost user=postgres password=1234 dbname=alr");
 
-	$sql = pg_query("SELECT $col FROM $table where alrcode='$alrcode'"); 
-    
+	$sql = pg_query("SELECT $col FROM $table where alrcode='$alrcode'");
+
 	$data = pg_fetch_array($sql);
     	return $data[0];
 };
@@ -36,7 +36,7 @@ function getParcel($col, $table, $alrcode){
 <body>
 
 <div class="container">
-  <h3>การทำการเกษตร</h3>
+  <h3>ข้อมูลดิน</h3>
 
 
 <table class="table table-striped">
@@ -48,12 +48,40 @@ function getParcel($col, $table, $alrcode){
     </thead>
     <tbody>
       <tr>
-        <td>รหัสการใช้ประโยชน์ที่ดินปี 57</td>
-        <td><?php  echo getParcel('lu57', 'alr_parcel_query', $alrcode); ?></td>
+        <td>กลุุ่มดิน</td>
+        <td></td>
       </tr>
       <tr>
-        <td>คำอธิบายการใช้ประโยชน์ที่ดินปี 57</td>
-        <td><?php  echo getParcel('lu57_t', 'alr_parcel_query', $alrcode); ?></td>
+        <td>ชุดดิน</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>ความเหมาะสมในการปลูกข้าว</td>
+        <td><?php  echo getParcel('r_suit', 'alr_parcel_query', $alrcode); ?></td>
+      </tr>
+      <tr>
+        <td>ความเหมาะสมในการปลูกข้าวโพดเลี้ยงสัตว์</td>
+        <td><?php  echo getParcel('m_suit', 'alr_parcel_query', $alrcode); ?></td>
+      </tr>
+      <tr>
+        <td>ความเหมาะสมในการปลูกมัน</td>
+        <td><?php  echo getParcel('c_suit', 'alr_parcel_query', $alrcode); ?></td>
+      </tr>
+      <tr>
+        <td>ความเหมาะสมในการปลูกอ้อย</td>
+        <td><?php  echo getParcel('s_suit', 'alr_parcel_query', $alrcode); ?></td>
+      </tr>
+      <tr>
+        <td>ความเหมาะสมในการปลูกพืชผัก</td>
+        <td><?php  echo getParcel('v_suit', 'alr_parcel_query', $alrcode); ?></td>
+      </tr>
+      <tr>
+        <td>ความเหมาะสมในการปลูกผลไม้</td>
+        <td><?php  echo getParcel('f_suit', 'alr_parcel_query', $alrcode); ?></td>
+      </tr>
+      <tr>
+        <td>ความเหมาะสมในการปลูกทุ่งหญ้าเลี้ยงสัตว์</td>
+        <td><?php  echo getParcel('p_suit', 'alr_parcel_query', $alrcode); ?></td>
       </tr>
       <tr>
         <td>July</td>

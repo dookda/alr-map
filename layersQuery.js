@@ -5,6 +5,7 @@ Ext.namespace("Heron.geoportal");
 
 OpenLayers.Util.onImageLoadErrorColor = "transparent";
 OpenLayers.ProxyHost = "/cgi-bin/proxy.cgi?url=";
+//OpenLayers.ProxyHost = "geoproxy.php?url=";
 OpenLayers.DOTS_PER_INCH = 25.4 / 0.28;
 
 Ext.BLANK_IMAGE_URL = 'http://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/resources/images/default/s.gif';
@@ -248,7 +249,7 @@ var repeated_flooding = new OpenLayers.Layer.WMS(
 //////// rain
 var scl_drought4326 = new OpenLayers.Layer.WMS(
     "ระดับเสี่ยงแล้ง",
-    Heron.scratch.urls.OwsMapNU, { layers: "trfgdb:scl_drought4326", transparent: true, format: 'image/png' }, {
+    Heron.scratch.urls.gwcAlr2, { layers: "alrmap:rcl_drought", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
         isBaseLayer: false,
@@ -262,7 +263,7 @@ var scl_drought4326 = new OpenLayers.Layer.WMS(
 );
 var scl_erosion4326 = new OpenLayers.Layer.WMS(
     "ระดับเสี่ยงการสูญเสียดิน",
-    Heron.scratch.urls.OwsMapNU, { layers: "trfgdb:scl_erosion4326", transparent: true, format: 'image/png' }, {
+    Heron.scratch.urls.gwcAlr2, { layers: "alrmap:rcl_erosion", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
         isBaseLayer: false,
@@ -277,7 +278,7 @@ var scl_erosion4326 = new OpenLayers.Layer.WMS(
 
 var scl_landslide4326 = new OpenLayers.Layer.WMS(
     "ระดับเสี่ยงดินถล่ม",
-    Heron.scratch.urls.OwsMapNU, { layers: "trfgdb:scl_landslide4326", transparent: true, format: 'image/png' }, {
+    Heron.scratch.urls.gwcAlr2, { layers: "alrmap:rcl_landslide", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
         isBaseLayer: false,
@@ -403,6 +404,20 @@ var hshade_alr = new OpenLayers.Layer.WMS(
         group: 'baseLayers'
     }
 );
+var rainsplinegrid = new OpenLayers.Layer.WMS(
+    "ปริมาณน้ำฝนวันนี้ (มม.)",
+    Heron.scratch.urls.gwcAlr2, { layers: "alrmap:rainsplinegrid", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'waterResource'
+    }
+);
 var basin = new OpenLayers.Layer.WMS(
     "พื้นที่ลุ่มน้ำ",
     Heron.scratch.urls.OwsMapNU, { layers: "trfgdb:basin250", transparent: true, format: 'image/png' }, {
@@ -479,9 +494,9 @@ var spklu = new OpenLayers.Layer.WMS(
         }
     }
 );
-
+/*
 var p10_evap_tff = new OpenLayers.Layer.WMS(
-    "ปริมาณการระเหยเฉลี่ย 10 ปี",
+    "ปริมาณการระเหยเฉลี่ย 30 ปี",
     Heron.scratch.urls.GwcGistNU, { layers: "para:p10_evap_tff", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
@@ -491,11 +506,11 @@ var p10_evap_tff = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'baseLayers'
+        group: 'waterResource'
     }
 );
 var p10_rain_tff = new OpenLayers.Layer.WMS(
-    "ปริมาณน้ำฝนเฉลี่ย 10 ปี",
+    "ปริมาณน้ำฝนเฉลี่ย 30 ปี",
     Heron.scratch.urls.GwcGistNU, { layers: "para:p10_rain_tff", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
@@ -505,9 +520,10 @@ var p10_rain_tff = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'baseLayers'
+        group: 'waterResource'
     }
 );
+*/
 var flow_accum = new OpenLayers.Layer.WMS(
     "การไหลสะสมของน้ำ",
     Heron.scratch.urls.gwcAlr2, { layers: "alr:flow_accum", transparent: true, format: 'image/png' }, {
@@ -519,12 +535,12 @@ var flow_accum = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'waterResource'
+        group: 'waterSupport'
     }
 );
 
 var yield_4326 = new OpenLayers.Layer.WMS(
-    "ปริมาณน้ำใต้ดิน (ลบ.ม./วินาที",
+    "ปริมาณน้ำใต้ดิน (ลบ.ม./วินาที)",
     Heron.scratch.urls.wmsAlr2, { layers: "alr:wsupply_gwat", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
@@ -534,7 +550,7 @@ var yield_4326 = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'waterResource'
+        group: 'waterSupport'
     }
 );
 ///ความลึกของน้ำใต้ดิน
@@ -549,11 +565,11 @@ var ln9p_gwat_dept_4326 = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'waterResource'
+        group: 'waterSupport'
     }
 );
 var wsupply_runoff = new OpenLayers.Layer.WMS(
-    "ปริมาณน้ำท่า (ลบ.ม./ไร่/ปี)",
+    "ปริมาณน้ำท่า 30 ปี (ลบ.ม./ไร่/ปี)",
     Heron.scratch.urls.wmsAlr2, { layers: "alr:wsupply_runoff", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
@@ -563,12 +579,12 @@ var wsupply_runoff = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'waterResource'
+        group: 'waterSupport'
     }
 );
 
 var wsupply_rain = new OpenLayers.Layer.WMS(
-    "ปริมาณน้ำฝน (ลบ.ม./ไร่/ปี)",
+    "ปริมาณน้ำฝน 30 ปี(ลบ.ม./ไร่/ปี)",
     Heron.scratch.urls.wmsAlr2, { layers: "alr:wsupply_rain", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
@@ -578,7 +594,7 @@ var wsupply_rain = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'waterResource'
+        group: 'waterSupport'
     }
 );
 
@@ -988,14 +1004,20 @@ while (mapLayer[i]) {
         layersGroup.adminBoundary['title'] = "ขอบเขตการปกครอง";
 
     } else if (mapLayer[i] == 'lyrBase') {
-        selectedLayers.push(	slope_alr, hshade_alr, gdem_alr, forestc, trans);
+        selectedLayers.push( hshade_alr, slope_alr, gdem_alr, forestc, trans);
         layersGroup['baseLayers'] = {};
         layersGroup.baseLayers['title'] = "ข้อมูลพื้นฐาน";
 
     } else if (mapLayer[i] == 'lyrWater') {
-        selectedLayers.push(flow_accum, ln9p_gwat_dept_4326, yield_4326, wsupply_runoff, wsupply_rain, ln9p_irr_4326, ln9p_wat_manmade_4326, ln9p_wat_natural_4326,stream);
+        selectedLayers.push(ln9p_irr_4326, ln9p_wat_manmade_4326, ln9p_wat_natural_4326,stream);
         layersGroup['waterResource'] = {};
         layersGroup.waterResource['title'] = "น้ำ";
+
+    }
+	else if (mapLayer[i] == 'lyrSupport') {
+        selectedLayers.push(flow_accum, ln9p_gwat_dept_4326, yield_4326 , wsupply_runoff, wsupply_rain, rainsplinegrid);
+        layersGroup['waterSupport'] = {};
+        layersGroup.waterSupport['title'] = "ข้อมูลสนับสนุนพัฒนาแหล่งน้ำ";
 
     }else if (mapLayer[i] == 'lyrSoil') {
         selectedLayers.push(suitePara, suiteSugar, suiteCorn, suiteRice);

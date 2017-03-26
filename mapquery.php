@@ -235,6 +235,10 @@ foreach($_GET as $key => $value) {
 		elseif($key == 'lyrService') {
 				echo "<script>mapLayer.push('lyrService');</script>";
 		}
+		elseif($key == 'lyrSupport') {
+				echo "<script>mapLayer.push('lyrSupport');</script>";
+		}
+		///end
     elseif($key == 'module') {
         echo "<script>var module = '".$value."';</script>";
     }

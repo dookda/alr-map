@@ -36,7 +36,7 @@ function getParcel($col, $table, $alrcode){
 <body>
 
 <div class="container">
-  <h3>การทำการเกษตร</h3>
+  <h3>ข้อมูลเกษตรกร</h3>
 
 
 <table class="table table-striped">
@@ -48,15 +48,68 @@ function getParcel($col, $table, $alrcode){
     </thead>
     <tbody>
       <tr>
-        <td>รหัสการใช้ประโยชน์ที่ดินปี 57</td>
-        <td><?php  echo getParcel('lu57', 'alr_parcel_query', $alrcode); ?></td>
+        <td>ชื่อ-สกุลเกษตรกรที่ลงทะเบียนใช้ที่ดินแปลงนี้</td>
+        <td></td>
       </tr>
       <tr>
-        <td>คำอธิบายการใช้ประโยชน์ที่ดินปี 57</td>
-        <td><?php  echo getParcel('lu57_t', 'alr_parcel_query', $alrcode); ?></td>
+        <td>เลขบัตรประชาชน</td>
+        <td></td>
       </tr>
       <tr>
-        <td>July</td>
+        <td>สถานะการถือครอง</td>
+        <td>Dooley</td>
+      </tr>
+	  <tr>
+        <td>ศพก.</td>
+        <td>Dooley</td>
+      </tr>
+	  <tr>
+        <td>ชุดเกษตรยั่งยืน</td>
+        <td>Dooley</td>
+      </tr><tr>
+        <td>การเป็นเกษตรต้นแบบ</td>
+        <td>Dooley</td>
+      </tr><tr>
+        <td>ศักยภาพหรือสิ่งที่ท่านพร้อม</td>
+        <td>Dooley</td>
+      </tr><tr>
+        <td>โครงการด้านใดที่คิดว่าจำเป็นต่อการทำกินในที่ดิน ส.ป.ก. มากที่สุด</td>
+        <td>Dooley</td>
+      </tr>
+	  <tr>
+        <td>รายได้หลักจากการใช้ที่ดินแปลงนี้</td>
+        <td>Dooley</td>
+      </tr>
+	   <tr>
+        <td>ผลผลิตทางการเกษตรจากแปลงนี้ขายโดยช่องทางใด</td>
+        <td>Dooley</td>
+      </tr> 
+	  <tr>
+        <td>รายได้จาการทำการเกษตรในที่ดินแปลงนี้ (บาท/ปี)</td>
+        <td>Dooley</td>
+      </tr>
+	   <tr>
+        <td>ต้นทุนจาการทำการเกษตรในที่ดินแปลงนี้ (บาท/ปี)</td>
+        <td>Dooley</td>
+      </tr> 
+	  <tr>
+        <td>ภาระหนี้สินในปัจจุบัน</td>
+        <td>Dooley</td>
+      </tr> 
+	  <tr>
+        <td>ประเภทหนี้สิน</td>
+        <td>Dooley</td>
+      </tr>
+	   <tr>
+        <td>แหล่งเงินกู้</td>
+        <td>Dooley</td>
+      </tr>
+	  <tr>
+        <td>จำนวนหนี้สินทั้งหมด (เงินต้น+ดอกเบี้ย) (บาท)</td>
+        <td>Dooley</td>
+      </tr>
+	  <tr>
+        <td>จำนวนการชำระคืนหนี้ (เงินต้น+ดอกเบี้ย) (บาทต่อปี)</td>
         <td>Dooley</td>
       </tr>
     </tbody>
