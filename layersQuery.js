@@ -406,7 +406,7 @@ var hshade_alr = new OpenLayers.Layer.WMS(
 );
 //rain
 var rainsplinegrid = new OpenLayers.Layer.WMS(
-    "ปริมาณน้ำฝนวันนี้ (มม.)",
+    "ปริมาณน้ำฝนวันนี้",
     Heron.scratch.urls.wmsAlr2, { layers: "alrmap:rainsplinegrid", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
@@ -416,12 +416,12 @@ var rainsplinegrid = new OpenLayers.Layer.WMS(
         featureInfoFormat: 'application/vnd.ogc.gml',
         transitionEffect: 'null',
         queryable: true,
-        group: 'waterResource'
+        group: 'waterSupport'
     }
 );
-var basin = new OpenLayers.Layer.WMS(
+var ln9p_basin_4326 = new OpenLayers.Layer.WMS(
     "พื้นที่ลุ่มน้ำ",
-    Heron.scratch.urls.OwsMapNU, { layers: "trfgdb:basin250", transparent: true, format: 'image/png' }, {
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:ln9p_basin_4326", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
         isBaseLayer: false,
@@ -541,7 +541,7 @@ var flow_accum = new OpenLayers.Layer.WMS(
 );
 
 var yield_4326 = new OpenLayers.Layer.WMS(
-    "ปริมาณน้ำใต้ดิน (ลบ.ม./วินาที)",
+    "ปริมาณน้ำใต้ดิน",
     Heron.scratch.urls.wmsAlr2, { layers: "alr:wsupply_gwat", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
@@ -556,7 +556,7 @@ var yield_4326 = new OpenLayers.Layer.WMS(
 );
 ///ความลึกของน้ำใต้ดิน
 var ln9p_gwat_dept_4326 = new OpenLayers.Layer.WMS(
-    "ความลึกน้ำใต้ดิน (เมตร)",
+    "ความลึกน้ำใต้ดิน",
     Heron.scratch.urls.wmsAlr2, { layers: "alr:ln9p_gwat_dept_4326", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
@@ -570,7 +570,7 @@ var ln9p_gwat_dept_4326 = new OpenLayers.Layer.WMS(
     }
 );
 var wsupply_runoff = new OpenLayers.Layer.WMS(
-    "ปริมาณน้ำท่า 30 ปี (ลบ.ม./ไร่/ปี)",
+    "ปริมาณน้ำท่า 30 ปี",
     Heron.scratch.urls.wmsAlr2, { layers: "alr:wsupply_runoff", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
@@ -585,7 +585,7 @@ var wsupply_runoff = new OpenLayers.Layer.WMS(
 );
 
 var wsupply_rain = new OpenLayers.Layer.WMS(
-    "ปริมาณน้ำฝน 30 ปี(ลบ.ม./ไร่/ปี)",
+    "ปริมาณน้ำฝน 30 ปี",
     Heron.scratch.urls.wmsAlr2, { layers: "alr:wsupply_rain", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
@@ -802,9 +802,9 @@ var stream = new OpenLayers.Layer.WMS(
         group: 'waterResource'
     }
 );
-var L08_DS_HV_CONDUETOR = new OpenLayers.Layer.WMS(
+var ln9p_elecline_4326 = new OpenLayers.Layer.WMS(
     "ข้อมูลสายส่งแรงสูง",
-    Heron.scratch.urls.OwsFGDS, { layers: "NGIS2014:L08_DS_HV_CONDUETOR", transparent: true, format: 'image/png' }, {
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:ln9p_elecline_4326", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
         isBaseLayer: false,
@@ -1005,7 +1005,7 @@ while (mapLayer[i]) {
         layersGroup.adminBoundary['title'] = "ขอบเขตการปกครอง";
 
     } else if (mapLayer[i] == 'lyrBase') {
-        selectedLayers.push( hshade_alr, slope_alr, gdem_alr, forestc, trans);
+        selectedLayers.push( ln9p_basin_4326, hshade_alr, slope_alr, gdem_alr, forestc, trans, ln9p_elecline_4326);
         layersGroup['baseLayers'] = {};
         layersGroup.baseLayers['title'] = "ข้อมูลพื้นฐาน";
 
