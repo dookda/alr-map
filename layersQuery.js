@@ -404,9 +404,10 @@ var hshade_alr = new OpenLayers.Layer.WMS(
         group: 'baseLayers'
     }
 );
+//rain
 var rainsplinegrid = new OpenLayers.Layer.WMS(
     "ปริมาณน้ำฝนวันนี้ (มม.)",
-    Heron.scratch.urls.gwcAlr2, { layers: "alrmap:rainsplinegrid", transparent: true, format: 'image/png' }, {
+    Heron.scratch.urls.wmsAlr2, { layers: "alrmap:rainsplinegrid", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
         isBaseLayer: false,
