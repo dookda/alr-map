@@ -34,10 +34,11 @@ if (isset($postdata)) {
     $alrcode = $request->alrcode;
         
     foreach($request as $item => $value){
-        echo chkData($item,$value,$alrcode);
+        chkData($item,$value,$alrcode);
         //echo $item;
         //echo $value;
     }
+    echo 'ส่งข้อมูลสำเร็จ';
 }else {
     echo "Not called properly with username parameter!";
 }
