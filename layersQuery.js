@@ -692,6 +692,51 @@ var ln9p_irr_4326= new OpenLayers.Layer.WMS(
 );
 /// end แหล่งน้ำ ///
 
+///lu
+var lu_level1 = new OpenLayers.Layer.WMS(
+    "การใช้ที่ดิน level1",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:lu_level1", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'LandUse'
+    }
+);
+var lu_level2 = new OpenLayers.Layer.WMS(
+    "การใช้ที่ดิน level2",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:lu_level2", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'LandUse'
+    }
+);
+var lu_level3= new OpenLayers.Layer.WMS(
+    "การใช้ที่ดิน level3",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:lu_level3", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'LandUse'
+    }
+);
+/// end lu ///
+
 // admin
 var ln9p_prov = new OpenLayers.Layer.WMS(
     "ขอบเขตจังหวัด",
@@ -1013,6 +1058,12 @@ while (mapLayer[i]) {
         selectedLayers.push(ln9p_irr_4326, ln9p_wat_manmade_4326, ln9p_wat_natural_4326,stream);
         layersGroup['waterResource'] = {};
         layersGroup.waterResource['title'] = "น้ำ";
+
+    }
+	else if (mapLayer[i] == 'lyrLandUse') {
+        selectedLayers.push(lu_level3, lu_level2, lu_level1 );
+        layersGroup['LandUse'] = {};
+        layersGroup.LandUse['title'] = "การใช้ที่ดิน";
 
     }
 	else if (mapLayer[i] == 'lyrSupport') {

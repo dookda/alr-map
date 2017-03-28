@@ -19,7 +19,7 @@ function getParcel($col, $table, $alrcode){
     	return $data[0];
 };
 
-
+ini_set('max_execution_time', 300);
 
 
 ?>
@@ -49,27 +49,27 @@ function getParcel($col, $table, $alrcode){
     <tbody>
       <tr>
         <td>ประเภทแหล่งน้ำที่ใช้หลัก</td>
-        <td>#</td>
+        <td><?php  echo getParcel('alr_wat', 'alr_mobile', $alrcode); ?></td>
       </tr>
       <tr>
         <td>เนื้อที่แหล่งน้ำ (ไร่)</td>
-        <td>#</td>
+        <td><?php  echo getParcel('alr_wat_rai', 'alr_mobile', $alrcode); ?></td>
       </tr>
       <tr>
         <td>เนื้อที่แหล่งน้ำ (งาน)</td>
-        <td>#</td>
+        <td><?php  echo getParcel('alr_wat_ngan', 'alr_mobile', $alrcode); ?></td>
       </tr>
 	  <tr>
         <td>เนื้อที่แหล่งน้ำ (วา)</td>
-        <td>#</td>
+        <td><?php  echo getParcel('alr_wat_wa', 'alr_mobile', $alrcode); ?></td>
       </tr>
 	  <tr>
         <td>จำนวนบ่อน้ำแปลงนี้ (บ่อ)</td>
-        <td>#</td>
+        <td><?php  echo getParcel('alr_pit', 'alr_mobile', $alrcode); ?></td>
       </tr>
 	  <tr>
         <td>จำนวนสระน้ำที่ขุดในแปลงนี้(แห่ง)</td>
-        <td>#</td>
+        <td><?php  echo getParcel('alr_pond', 'alr_mobile', $alrcode); ?></td>
       </tr>
 
     </tbody>
@@ -86,19 +86,19 @@ function getParcel($col, $table, $alrcode){
     <tbody>
       <tr>
         <td>ปริมาณฝนตกเฉลี่ยทั้งปี (มม.)</td>
-        <td>#</td>
+        <td><?php  echo getParcel('rain', 'alr_soil_4326', $alrcode); ?></td>
       </tr>
       <tr>
         <td>ปริมาณน้ำท่าทั้งปี (ลบ.ม)</td>
-        <td>#</td>
+        <td><?php  echo getParcel('evap', 'alr_soil_4326', $alrcode); ?></td>
       </tr>
       <tr>
         <td>ปริมาณน้ำใต้ดิน (ลบ.ม/วินาที)</td>
-        <td>#</td>
+        <td><?php  echo getParcel('yield', 'alr_soil_4326', $alrcode); ?></td>
       </tr>
 	  <tr>
         <td>ความลึกน้ำใต้ดิน (เมตร)</td>
-        <td>#</td>
+        <td><?php  echo getParcel('detp', 'alr_soil_4326', $alrcode); ?></td>
       </tr>
     </tbody>
   </table>

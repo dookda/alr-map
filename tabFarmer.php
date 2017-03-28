@@ -20,7 +20,7 @@ function getParcel($col, $table, $alrcode){
 };
 
 
-
+ini_set('max_execution_time', 300);
 
 ?>
 <!DOCTYPE html>
@@ -49,68 +49,68 @@ function getParcel($col, $table, $alrcode){
     <tbody>
       <tr>
         <td>ชื่อ-สกุลเกษตรกรที่ลงทะเบียนใช้ที่ดินแปลงนี้</td>
-        <td></td>
+        <td><?php  echo getParcel('farmer_name', 'alr_mobile', $alrcode); ?></td>
       </tr>
       <tr>
         <td>เลขบัตรประชาชน</td>
-        <td></td>
+        <td><?php  echo getParcel('farmer_id', 'alr_mobile', $alrcode); ?></td>
       </tr>
       <tr>
         <td>สถานะการถือครอง</td>
-        <td>Dooley</td>
+        <td><?php  echo getParcel('alr_status', 'alr_mobile', $alrcode); ?></td>
       </tr>
 	  <tr>
-        <td>ศพก.</td>
-        <td>Dooley</td>
+        <td>การเป็นศูนย์เครือข่าย ศพก. </td>
+        <td><?php  echo getParcel('alr_center', 'alr_mobile', $alrcode); ?></td>
       </tr>
 	  <tr>
         <td>ชุดเกษตรยั่งยืน</td>
-        <td>Dooley</td>
+        <td><?php  echo getParcel('alr_type', 'alr_mobile', $alrcode); ?></td>
       </tr><tr>
         <td>การเป็นเกษตรต้นแบบ</td>
-        <td>Dooley</td>
+        <td><?php  echo getParcel('alr_model', 'alr_mobile', $alrcode); ?></td>
       </tr><tr>
         <td>ศักยภาพหรือสิ่งที่ท่านพร้อม</td>
-        <td>Dooley</td>
+        <td><?php  echo getParcel('alr_proten', 'alr_mobile', $alrcode); ?></td>
       </tr><tr>
-        <td>โครงการด้านใดที่คิดว่าจำเป็นต่อการทำกินในที่ดิน ส.ป.ก. มากที่สุด</td>
-        <td>Dooley</td>
+        <td>โครงการที่ท่านต้องการมากที่สุด</td>
+        <td><?php  echo getParcel('alr_need', 'alr_mobile', $alrcode); ?></td>
       </tr>
 	  <tr>
         <td>รายได้หลักจากการใช้ที่ดินแปลงนี้</td>
-        <td>Dooley</td>
+        <td><?php  echo getParcel('alr_income', 'alr_mobile', $alrcode); ?></td>
       </tr>
 	   <tr>
         <td>ผลผลิตทางการเกษตรจากแปลงนี้ขายโดยช่องทางใด</td>
-        <td>Dooley</td>
+        <td><?php  echo getParcel('alr_market', 'alr_mobile', $alrcode); ?></td>
       </tr> 
 	  <tr>
         <td>รายได้จาการทำการเกษตรในที่ดินแปลงนี้ (บาท/ปี)</td>
-        <td>Dooley</td>
+        <td><?php  echo getParcel('alr_baht', 'alr_mobile', $alrcode); ?></td>
       </tr>
 	   <tr>
         <td>ต้นทุนจาการทำการเกษตรในที่ดินแปลงนี้ (บาท/ปี)</td>
-        <td>Dooley</td>
+        <td><?php  echo getParcel('alr_cost', 'alr_mobile', $alrcode); ?></td>
       </tr> 
 	  <tr>
         <td>ภาระหนี้สินในปัจจุบัน</td>
-        <td>Dooley</td>
+        <td><?php  echo getParcel('alr_debt', 'alr_mobile', $alrcode); ?></td>
       </tr> 
 	  <tr>
         <td>ประเภทหนี้สิน</td>
-        <td>Dooley</td>
+        <td><?php  echo getParcel('debt_type', 'alr_mobile', $alrcode); ?></td>
       </tr>
 	   <tr>
         <td>แหล่งเงินกู้</td>
-        <td>Dooley</td>
+        <td><?php  echo getParcel('debt_source', 'alr_mobile', $alrcode); ?></td>
       </tr>
 	  <tr>
         <td>จำนวนหนี้สินทั้งหมด (เงินต้น+ดอกเบี้ย) (บาท)</td>
-        <td>Dooley</td>
+        <td><?php  echo getParcel('debt_cost', 'alr_mobile', $alrcode); ?></td>
       </tr>
 	  <tr>
         <td>จำนวนการชำระคืนหนี้ (เงินต้น+ดอกเบี้ย) (บาทต่อปี)</td>
-        <td>Dooley</td>
+        <td><?php  echo getParcel('debt_pay', 'alr_mobile', $alrcode); ?></td>
       </tr>
     </tbody>
   </table>
