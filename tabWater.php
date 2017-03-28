@@ -53,15 +53,15 @@ ini_set('max_execution_time', 300);
       </tr>
       <tr>
         <td>เนื้อที่แหล่งน้ำ (ไร่)</td>
-        <td><?php  echo getParcel('alr_wat_rai', 'alr_mobile', $alrcode); ?></td>
+        <td><?php  echo getParcel('alr_wat_r', 'alr_mobile', $alrcode); ?></td>
       </tr>
       <tr>
         <td>เนื้อที่แหล่งน้ำ (งาน)</td>
-        <td><?php  echo getParcel('alr_wat_ngan', 'alr_mobile', $alrcode); ?></td>
+        <td><?php  echo getParcel('alr_wat_n', 'alr_mobile', $alrcode); ?></td>
       </tr>
 	  <tr>
         <td>เนื้อที่แหล่งน้ำ (วา)</td>
-        <td><?php  echo getParcel('alr_wat_wa', 'alr_mobile', $alrcode); ?></td>
+        <td><?php  echo getParcel('alr_wat_w', 'alr_mobile', $alrcode); ?></td>
       </tr>
 	  <tr>
         <td>จำนวนบ่อน้ำแปลงนี้ (บ่อ)</td>

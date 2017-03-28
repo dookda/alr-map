@@ -48,8 +48,12 @@ ini_set('max_execution_time', 300);
     </thead>
     <tbody>
       <tr>
-        <td>ชื่อ-สกุลเกษตรกรที่ลงทะเบียนใช้ที่ดินแปลงนี้</td>
-        <td><?php  echo getParcel('farmer_name', 'alr_mobile', $alrcode); ?></td>
+        <td>ชื่อเกษตรกรที่ลงทะเบียนใช้ที่ดินแปลงนี้</td>
+        <td><?php  echo getParcel('farmer_f', 'alr_mobile', $alrcode); ?></td>
+      </tr>
+	  <tr>
+        <td>นานสกุลเกษตรกรที่ลงทะเบียนใช้ที่ดินแปลงนี้</td>
+        <td><?php  echo getParcel('farmer_s', 'alr_mobile', $alrcode); ?></td>
       </tr>
       <tr>
         <td>เลขบัตรประชาชน</td>
@@ -102,7 +106,7 @@ ini_set('max_execution_time', 300);
       </tr>
 	   <tr>
         <td>แหล่งเงินกู้</td>
-        <td><?php  echo getParcel('debt_source', 'alr_mobile', $alrcode); ?></td>
+        <td><?php  echo getParcel('debt_sourc', 'alr_mobile', $alrcode); ?></td>
       </tr>
 	  <tr>
         <td>จำนวนหนี้สินทั้งหมด (เงินต้น+ดอกเบี้ย) (บาท)</td>
