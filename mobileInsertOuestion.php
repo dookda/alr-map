@@ -145,19 +145,19 @@ if (isset($postdata)) {
 
     foreach($request as $item => $value){
         if($item=='c1_name'){
-            echo $value;
+            //echo $value;
             cwr($alrcode, "c1_name", "c1_grow", "active_land_cwr");
 
         }elseif($item=='c2_name'){
-            echo $value;
+            //echo $value;
             cwr($alrcode, "c2_name", "c2_grow", "active_land_cwr2");
 
         }elseif($item=='c3_name'){
-            echo $value;        
+            //echo $value;        
             cwr($alrcode, "c3_name", "c3_grow", "active_land_cwr3");
         };
     }
-    
+
     echo 'ส่งข้อมูลสำเร็จ';
 }else {
     echo "Not called properly with username parameter!";
