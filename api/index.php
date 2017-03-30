@@ -134,6 +134,7 @@ $app->get('/cwr3/{alrCode}', function($request, $response){
     $newResponse = $response->withJson($result);
     return $newResponse;
 });
+
 $app->get('/rain_now/{tamcode}', function($request, $response){  
     $tamCode = $request->getAttribute('tamcode');  
     $sql = "select * from rain_now where tam_code = '$tamCode'";
@@ -199,6 +200,21 @@ $app->get('/question', function($request, $response){
 $app->get('/question_gap', function($request, $response){  
     //$id = $request->getAttribute('id');  
     $sql = "select * from gap_list";
+    $rs = pg_query($sql);
+    
+    $result = array();
+
+    while($row = pg_fetch_array($rs)){
+      array_push($result, $row);
+    }
+
+    $newResponse = $response->withJson($result);
+    return $newResponse;
+});
+
+$app->get('/alrMobileAns/{alrCode}', function($request, $response){  
+    $alrCode = $request->getAttribute('alrCode');  
+    $sql = "select * from alr_mobile where alrcode = '$alrCode'";
     $rs = pg_query($sql);
     
     $result = array();
