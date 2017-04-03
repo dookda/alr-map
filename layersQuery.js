@@ -290,6 +290,597 @@ var scl_landslide4326 = new OpenLayers.Layer.WMS(
         group: 'disaster'
     }
 );
+
+var soil_group = new OpenLayers.Layer.WMS(
+    "กลุ่มดิน",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:ln9p_soil_group_4326", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var soil_series = new OpenLayers.Layer.WMS(
+    "ชุดดิน",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:ln9p_soil_series_4326", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+///ความเหมาะต่อการปลูกพืช
+var s_cassava = new OpenLayers.Layer.WMS(
+    "ระดับเหมาะสมปลูกมันสำปะหลัง",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_cassava", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_maize = new OpenLayers.Layer.WMS(
+    "ระดับเหมาะสมปลูกข้าวโพด",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_maize", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_rice = new OpenLayers.Layer.WMS(
+    "ระดับเหมาะสมปลูกข้าว",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_rice", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_sugar = new OpenLayers.Layer.WMS(
+    "ระดับเหมาะสมปลูกอ้อย",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_sugar", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_pasture = new OpenLayers.Layer.WMS(
+    "ระดับเหมาะสมปลูกทุ่งหญ้าเลี้ยงสัตว์",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_pasture", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_fruit = new OpenLayers.Layer.WMS(
+    "ระดับเหมาะสมปลูกผลไม้",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_fruit", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_vege = new OpenLayers.Layer.WMS(
+    "ระดับเหมาะสมปลูกพืชผัก",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_vege", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+
+var s_wheat = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกข้าวสาลี",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_wheat", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_barley = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกข้าวบาร์เล่ย์",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_barley", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_sorghum = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกข้าวฟ่าง",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_sorghum", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_soybean = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกถั่วเหลือง",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_soybean", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_peanut = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกถั่วลิสง",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_peanut", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_mungbean = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกถั่วเขียว",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_mungbean", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_bean = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกถั่ว",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_bean", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_sesame = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกงา",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_sesame", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_oil = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกปาล์มน้ำมัน",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_oil", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_cotton = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกฝ้าย",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_cotton", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_tobacco = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกยาสูบ",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_tobacco", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_lychee = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกลิ้นจี่",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_lychee", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_longan = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกลำไย",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_longan", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_arabica = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกกาแฟ",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_arabica", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_tea = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกชา",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_tea", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_mango = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกมะม่วง",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_mango", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_onion_l = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกต้นหอม",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_onion_l", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_garlic = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกกระเทียม",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_garlic", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_tomato = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกมะเขือเทศ",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_tomato", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);var s_orange1 = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกส้ม",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_orange1", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_pineappl = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกสัปปะรด",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_pineappl", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);var s_silk = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกไหม",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_silk", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_tamarind = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกมะขาม",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_tamarind", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_banana = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกกล้วย",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_banana", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_cashewnu = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกมะม่วงหิมพานต์",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_cashewnu", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_jackfrui = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกขนุน",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_jackfrui", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_bamboo = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกไม้ไผ่",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_bamboo", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_chili = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกพริก",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_chili", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_cabbage = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกกะหล่ำปลี",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_cabbage", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_potato = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกมันฝรั่ง",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_potato", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_kapok = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกนุ่น",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_kapok", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_avocado = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกอาโวคาโด",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_avocado", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+var s_flowers = new OpenLayers.Layer.WMS(
+    "ความเหมาะสมต่อการปลูกดอกไม้",
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:s_flowers", transparent: true, format: 'image/png' }, {
+        singleTile: false,
+        opacity: 0.9,
+        isBaseLayer: false,
+        visibility: false,
+        noLegend: false,
+        featureInfoFormat: 'application/vnd.ogc.gml',
+        transitionEffect: 'null',
+        queryable: true,
+        group: 'soilsuite'
+    }
+);
+///ความเหมาะต่อการปลูกพืช
+/*
 var suiteCasava = new OpenLayers.Layer.WMS(
     "ระดับเหมาะสมปลูกมันสำปะหลัง",
     Heron.scratch.urls.OwsMapNU, { layers: "trfgdb:scasava", transparent: true, format: 'image/png' }, {
@@ -347,7 +938,7 @@ var suiteSugar = new OpenLayers.Layer.WMS(
     }
 );
 var suitePara = new OpenLayers.Layer.WMS(
-    "ระดับเหมาะสมปลูกยางพารา",
+    "ระดับเหมาะสมปลูกทุ่งหญ้าเลี้ยงสัตว์",
     Heron.scratch.urls.OwsMapNU, { layers: "trfgdb:spara", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
@@ -360,7 +951,7 @@ var suitePara = new OpenLayers.Layer.WMS(
         group: 'soilsuite'
     }
 );
-
+*/
 
 var gdem_alr = new OpenLayers.Layer.WMS(
     "แบบจำลองระดับสูงเชิงเลข (เมตร)",
@@ -435,7 +1026,7 @@ var ln9p_basin_4326 = new OpenLayers.Layer.WMS(
 );
 var wshd_cl = new OpenLayers.Layer.WMS(
     "ชั้นคุณภาพลุ่มน้ำ",
-    Heron.scratch.urls.OwsMapNU, { layers: "trfgdb:wshd_cl", transparent: true, format: 'image/png' }, {
+    Heron.scratch.urls.wmsAlr2, { layers: "alr:ln9p_wsh_4326", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
         isBaseLayer: false,
@@ -1050,7 +1641,7 @@ while (mapLayer[i]) {
         layersGroup.adminBoundary['title'] = "ขอบเขตการปกครอง";
 
     } else if (mapLayer[i] == 'lyrBase') {
-        selectedLayers.push( ln9p_basin_4326, hshade_alr, slope_alr, gdem_alr, forestc, trans, ln9p_elecline_4326);
+        selectedLayers.push( wshd_cl, ln9p_basin_4326, hshade_alr, slope_alr, gdem_alr, forestc, trans, ln9p_elecline_4326);
         layersGroup['baseLayers'] = {};
         layersGroup.baseLayers['title'] = "ข้อมูลพื้นฐาน";
 
@@ -1072,10 +1663,10 @@ while (mapLayer[i]) {
         layersGroup.waterSupport['title'] = "ข้อมูลสนับสนุนพัฒนาแหล่งน้ำ";
 
     }else if (mapLayer[i] == 'lyrSoil') {
-        selectedLayers.push(suitePara, suiteSugar, suiteCorn, suiteRice);
+        selectedLayers.push( s_flowers, s_silk, s_tamarind, s_banana, s_cashewnu, s_pineappl, s_orange1, s_jackfrui, s_bamboo, s_chili, s_cabbage, s_potato, s_kapok, s_avocado, s_onion_l, s_garlic, s_sesame, s_oil, s_cotton, s_tobacco, s_lychee, s_longan, s_arabica, s_tea, s_mango, s_soybean, s_peanut, s_mungbean, s_bean, s_sorghum, s_wheat, s_barley, s_pasture, s_fruit, s_vege, s_sugar, s_cassava, s_maize, s_rice, soil_series, soil_group);
         layersGroup['soilsuite'] = {};
         layersGroup.soilsuite['title'] = "ดิน";
-    } else if (mapLayer[i] == 'lyrService') {
+	} else if (mapLayer[i] == 'lyrService') {
         selectedLayers.push(flood_2005_geo, flood_2006_geo, flood_2007_geo, flood_2008_geo, flood_2009_geo, flood_2010_geo, flood_2011_geo, flood_2012_geo, flood_2013_geo);
         layersGroup['lyrService'] = {};
         layersGroup.lyrService['title'] = "ชั้นข้อมูลออนไลน์จากแหล่งต่างๆ";

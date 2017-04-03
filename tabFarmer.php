@@ -20,7 +20,7 @@ function getParcel($col, $table, $alrcode){
 };
 
 
-ini_set('max_execution_time', 300);
+//ini_set('max_execution_time', 300);
 
 ?>
 <!DOCTYPE html>
@@ -48,73 +48,73 @@ ini_set('max_execution_time', 300);
     </thead>
     <tbody>
       <tr>
-        <td>ชื่อเกษตรกรที่ลงทะเบียนใช้ที่ดินแปลงนี้</td>
-        <td><?php  echo getParcel('farmer_f', 'alr_mobile', $alrcode); ?></td>
+        <td><h6>ชื่อเกษตรกรที่ลงทะเบียนใช้ที่ดินแปลงนี้</h6></td>
+        <td><h6><?php  echo getParcel('farmer_f', 'alr_mobile', $alrcode); ?></h6></td>
       </tr>
 	  <tr>
-        <td>นานสกุลเกษตรกรที่ลงทะเบียนใช้ที่ดินแปลงนี้</td>
-        <td><?php  echo getParcel('farmer_s', 'alr_mobile', $alrcode); ?></td>
+        <td><h6>นานสกุลเกษตรกรที่ลงทะเบียนใช้ที่ดินแปลงนี้</h6></td>
+        <td><h6><?php  echo getParcel('farmer_s', 'alr_mobile', $alrcode); ?></h6></td>
       </tr>
       <tr>
-        <td>เลขบัตรประชาชน</td>
-        <td><?php  echo getParcel('farmer_id', 'alr_mobile', $alrcode); ?></td>
+        <td><h6>เลขบัตรประชาชน</h6></td>
+        <td><h6><?php  echo getParcel('farmer_id', 'alr_mobile', $alrcode); ?></h6></td>
       </tr>
       <tr>
-        <td>สถานะการถือครอง</td>
-        <td><?php  echo getParcel('alr_status', 'alr_mobile', $alrcode); ?></td>
+        <td><h6>สถานะการถือครอง</h6></td>
+        <td><h6><?php  echo getParcel('alr_status', 'alr_mobile', $alrcode); ?></h6></td>
       </tr>
 	  <tr>
-        <td>การเป็นศูนย์เครือข่าย ศพก. </td>
-        <td><?php  echo getParcel('alr_center', 'alr_mobile', $alrcode); ?></td>
+        <td><h6>การเป็นศูนย์เครือข่าย ศพก. </h6></td>
+        <td><h6><?php  echo getParcel('alr_center', 'alr_mobile', $alrcode); ?></h6></td>
       </tr>
 	  <tr>
-        <td>ชุดเกษตรยั่งยืน</td>
-        <td><?php  echo getParcel('alr_type', 'alr_mobile', $alrcode); ?></td>
+        <td><h6>ชุดเกษตรยั่งยืน</h6></td>
+        <td><h6><?php  echo getParcel('alr_type', 'alr_mobile', $alrcode); ?></h6></td>
       </tr><tr>
-        <td>การเป็นเกษตรต้นแบบ</td>
-        <td><?php  echo getParcel('alr_model', 'alr_mobile', $alrcode); ?></td>
+        <td><h6>การเป็นเกษตรต้นแบบ</h6></td>
+        <td><h6><?php  echo getParcel('alr_model', 'alr_mobile', $alrcode); ?></h6></td>
       </tr><tr>
-        <td>ศักยภาพหรือสิ่งที่ท่านพร้อม</td>
-        <td><?php  echo getParcel('alr_proten', 'alr_mobile', $alrcode); ?></td>
+        <td><h6>ศักยภาพหรือสิ่งที่ท่านพร้อม</h6></td>
+        <td><h6><?php  echo getParcel('alr_proten', 'alr_mobile', $alrcode); ?></h6></td>
       </tr><tr>
-        <td>โครงการที่ท่านต้องการมากที่สุด</td>
-        <td><?php  echo getParcel('alr_need', 'alr_mobile', $alrcode); ?></td>
+        <td><h6>โครงการที่ท่านต้องการมากที่สุด</h6></td>
+        <td><h6><?php  echo getParcel('alr_need', 'alr_mobile', $alrcode); ?></h6></td>
       </tr>
 	  <tr>
-        <td>รายได้หลักจากการใช้ที่ดินแปลงนี้</td>
-        <td><?php  echo getParcel('alr_income', 'alr_mobile', $alrcode); ?></td>
+        <td><h6>รายได้หลักจากการใช้ที่ดินแปลงนี้</h6></td>
+        <td><h6><?php  echo getParcel('alr_income', 'alr_mobile', $alrcode); ?></h6></td>
       </tr>
 	   <tr>
-        <td>ผลผลิตทางการเกษตรจากแปลงนี้ขายโดยช่องทางใด</td>
-        <td><?php  echo getParcel('alr_market', 'alr_mobile', $alrcode); ?></td>
+        <td><h6>ผลผลิตทางการเกษตรจากแปลงนี้ขายโดยช่องทางใด</h6></td>
+        <td><h6><?php  echo getParcel('alr_market', 'alr_mobile', $alrcode); ?></h6></td>
       </tr> 
 	  <tr>
-        <td>รายได้จาการทำการเกษตรในที่ดินแปลงนี้ (บาท/ปี)</td>
-        <td><?php  echo getParcel('alr_baht', 'alr_mobile', $alrcode); ?></td>
+        <td><h6>รายได้จาการทำการเกษตรในที่ดินแปลงนี้ (บาท/ปี)</h6></td>
+        <td><h6><?php  echo getParcel('alr_baht', 'alr_mobile', $alrcode); ?></h6></td>
       </tr>
 	   <tr>
-        <td>ต้นทุนจาการทำการเกษตรในที่ดินแปลงนี้ (บาท/ปี)</td>
-        <td><?php  echo getParcel('alr_cost', 'alr_mobile', $alrcode); ?></td>
+        <td><h6>ต้นทุนจาการทำการเกษตรในที่ดินแปลงนี้ (บาท/ปี)</h6></td>
+        <td><h6><?php  echo getParcel('alr_cost', 'alr_mobile', $alrcode); ?></h6></td>
       </tr> 
 	  <tr>
-        <td>ภาระหนี้สินในปัจจุบัน</td>
-        <td><?php  echo getParcel('alr_debt', 'alr_mobile', $alrcode); ?></td>
+        <td><h6>ภาระหนี้สินในปัจจุบัน</h6></td>
+        <td><h6><?php  echo getParcel('alr_debt', 'alr_mobile', $alrcode); ?></h6></td>
       </tr> 
 	  <tr>
-        <td>ประเภทหนี้สิน</td>
-        <td><?php  echo getParcel('debt_type', 'alr_mobile', $alrcode); ?></td>
+        <td><h6>ประเภทหนี้สิน</h6></td>
+        <td><h6><?php  echo getParcel('debt_type', 'alr_mobile', $alrcode); ?></h6></td>
       </tr>
 	   <tr>
-        <td>แหล่งเงินกู้</td>
-        <td><?php  echo getParcel('debt_sourc', 'alr_mobile', $alrcode); ?></td>
+        <td><h6>แหล่งเงินกู้</h6></td>
+        <td><h6><?php  echo getParcel('debt_sourc', 'alr_mobile', $alrcode); ?></h6></td>
       </tr>
 	  <tr>
-        <td>จำนวนหนี้สินทั้งหมด (เงินต้น+ดอกเบี้ย) (บาท)</td>
-        <td><?php  echo getParcel('debt_cost', 'alr_mobile', $alrcode); ?></td>
+        <td><h6>จำนวนหนี้สินทั้งหมด (เงินต้น+ดอกเบี้ย) (บาท)</h6></td>
+        <td><h6><?php  echo getParcel('debt_cost', 'alr_mobile', $alrcode); ?></h6></td>
       </tr>
 	  <tr>
-        <td>จำนวนการชำระคืนหนี้ (เงินต้น+ดอกเบี้ย) (บาทต่อปี)</td>
-        <td><?php  echo getParcel('debt_pay', 'alr_mobile', $alrcode); ?></td>
+        <td><h6>จำนวนการชำระคืนหนี้ (เงินต้น+ดอกเบี้ย) (บาทต่อปี)</h6></td>
+        <td><h6><?php  echo getParcel('debt_pay', 'alr_mobile', $alrcode); ?></h6></td>
       </tr>
     </tbody>
   </table>
