@@ -7167,66 +7167,71 @@ Heron.widgets.search.FeatureInfoPanel = Ext.extend(Ext.Panel, {
                 cls:'empty'
                 });
 
-           var panel = new Heron.widgets.search.FeaturePanel({
-                title: featureSet.title,
-                featureType: featureSet.featureType,
-                featureSetKey: featureSetKey,
-                header: false,
-                features: featureSet.features,
-                autoConfig: autoConfig,
-                autoConfigMaxSniff: this.autoConfigMaxSniff,
-                hideColumns: this.hideColumns,
-                columnFixedWidth: this.columnFixedWidth,
-                autoMaxWidth: this.autoMaxWidth,
-                autoMinWidth: this.autoMinWidth,
-                columnCapitalize: this.columnCapitalize,
-                showGeometries: this.showGeometries,
-                featureSelection: this.featureSelection,
-                gridCellRenderers: this.gridCellRenderers,
-                columns: columns,
-                showTopToolbar: this.showTopToolbar,
-                exportFormats: this.exportFormats,
-                displayPanels: this.displayPanels,
-                hropts: {
-                    zoomOnRowDoubleClick: true,
-                    zoomOnFeatureSelect: false,
-                    zoomLevelPointSelect: 8
-                }
-            });
-            
-			var panel_gis = new Heron.widgets.search.FeaturePanel({
-                title: "Gis",
-                featureType: featureSet.featureType,
-                featureSetKey: featureSetKey,
-                header: false,
-                features: featureSet.features,
-                autoConfig: autoConfig,
-                autoConfigMaxSniff: this.autoConfigMaxSniff,
-                hideColumns: this.hideColumns,
-                columnFixedWidth: this.columnFixedWidth,
-                autoMaxWidth: this.autoMaxWidth,
-                autoMinWidth: this.autoMinWidth,
-                columnCapitalize: this.columnCapitalize,
-                showGeometries: this.showGeometries,
-                featureSelection: this.featureSelection,
-                gridCellRenderers: this.gridCellRenderers,
-                columns: columns,
-                showTopToolbar: this.showTopToolbar,
-                exportFormats: this.exportFormats,
-                displayPanels: this.displayPanels,
-                hropts: {
-                    zoomOnRowDoubleClick: true,
-                    zoomOnFeatureSelect: false,
-                    zoomLevelPointSelect: 8
-                }
-            });
-			
+
+            		
 			
             if(featureSet.title=="แปลงที่ดิน"){ 
+
+                var panel = new Heron.widgets.search.FeaturePanel({
+                    title: 'gis oho',
+                    //title: da,
+                    featureType: featureSet.featureType,
+                    featureSetKey: featureSetKey,
+                    header: false,
+                    features: featureSet.features,
+                    autoConfig: autoConfig,
+                    autoConfigMaxSniff: this.autoConfigMaxSniff,
+                    hideColumns: this.hideColumns,
+                    columnFixedWidth: this.columnFixedWidth,
+                    autoMaxWidth: this.autoMaxWidth,
+                    autoMinWidth: this.autoMinWidth,
+                    columnCapitalize: this.columnCapitalize,
+                    showGeometries: this.showGeometries,
+                    featureSelection: this.featureSelection,
+                    gridCellRenderers: this.gridCellRenderers,
+                    columns: columns,
+                    showTopToolbar: this.showTopToolbar,
+                    exportFormats: this.exportFormats,
+                    displayPanels: this.displayPanels,
+                    hropts: {
+                        zoomOnRowDoubleClick: true,
+                        zoomOnFeatureSelect: false,
+                        zoomLevelPointSelect: 8
+                    }
+                });
 			
-                var tab = [panel_gis, tabPlang, tabSoil, tabWater, tabAgri, tabFarmer, tabImg];
+                var tab = [panel, tabPlang, tabSoil, tabWater, tabAgri, tabFarmer, tabImg];
                 
             }else{
+
+                var panel = new Heron.widgets.search.FeaturePanel({
+                    title: featureSet.title,
+                    //title: da,
+                    featureType: featureSet.featureType,
+                    featureSetKey: featureSetKey,
+                    header: false,
+                    features: featureSet.features,
+                    autoConfig: autoConfig,
+                    autoConfigMaxSniff: this.autoConfigMaxSniff,
+                    hideColumns: this.hideColumns,
+                    columnFixedWidth: this.columnFixedWidth,
+                    autoMaxWidth: this.autoMaxWidth,
+                    autoMinWidth: this.autoMinWidth,
+                    columnCapitalize: this.columnCapitalize,
+                    showGeometries: this.showGeometries,
+                    featureSelection: this.featureSelection,
+                    gridCellRenderers: this.gridCellRenderers,
+                    columns: columns,
+                    showTopToolbar: this.showTopToolbar,
+                    exportFormats: this.exportFormats,
+                    displayPanels: this.displayPanels,
+                    hropts: {
+                        zoomOnRowDoubleClick: true,
+                        zoomOnFeatureSelect: false,
+                        zoomLevelPointSelect: 8
+                    }
+                });
+
                 var tab = [panel];
             };
 

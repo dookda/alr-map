@@ -4,8 +4,8 @@ Ext.namespace("Heron.options.map");
 Ext.namespace("Heron.geoportal");
 
 OpenLayers.Util.onImageLoadErrorColor = "transparent";
-//OpenLayers.ProxyHost = "/cgi-bin/proxy.cgi?url=";
-OpenLayers.ProxyHost = "geoproxy.php?url=";
+OpenLayers.ProxyHost = "/cgi-bin/proxy.cgi?url=";
+//OpenLayers.ProxyHost = "geoproxy.php?url=";
 OpenLayers.DOTS_PER_INCH = 25.4 / 0.28;
 
 Ext.BLANK_IMAGE_URL = 'http://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/resources/images/default/s.gif';
