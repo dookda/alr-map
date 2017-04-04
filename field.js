@@ -137,7 +137,7 @@ Heron.gridColumns = [{
         //colModule,
 		//addEtc,
        
-        { header: 'ปริมาณน้ำฝน(ลบ.ม./ไร่/ปี)', dataIndex: 'Rain' },
+        { header: 'ปริมาณน้ำฝน(ลบ.ม./ไร่/ปี)', dataIndex: 'rain' },
 
 
     ]
@@ -170,7 +170,7 @@ Heron.gridColumns = [{
         //colModule,
 		//addEtc,
       
-        { header: 'ความลึกน้ำใต้ดิน (ลบ.ม./วินาที)', dataIndex: 'detp'},
+        { header: 'ความลึกน้ำใต้ดิน (ลบ.ม./วินาที)', dataIndex: 'dept'},
 
 
     ]
@@ -254,9 +254,9 @@ Heron.gridColumns = [{
         //colModule,
 		//addEtc,
 		{ header: 'ความยาว (กม.)', dataIndex: 'length_km' },
-        { header: 'ชื่อ_ภาษาไทย', dataIndex: 'muni_nam_t'},
-		{ header: 'ชื่อ_ภาษาอังกฤษ', dataIndex: 'muni_nam_e'},
-		{ header: 'ประเภท', dataIndex: 'rai' },
+        { header: 'ชื่อภาษาไทย', dataIndex: 'str_nam_t'},
+		{ header: 'ชื่อภาษาอังกฤษ', dataIndex: 'str_nam_e'},
+		{ header: 'ประเภท', dataIndex: 'str_type' },
 
     ]
 },
@@ -267,8 +267,8 @@ Heron.gridColumns = [{
 		//addEtc,
 		{ header: 'เนื้อที่ (ตร.กม.)', dataIndex: 'sqkm' },
 		{ header: 'เนื้อที่(ไร่)', dataIndex: 'rai' },
-        { header: 'ชื่อ_ภาษาไทย', dataIndex: 'wb_nam_t'},
-		{ header: 'ชื่อ_ภาษาอังกฤษ', dataIndex: 'wb_nam_e'},
+        { header: 'ชื่อภาษาไทย', dataIndex: 'wb_nam_t'},
+		{ header: 'ชื่อภาษาอังกฤษ', dataIndex: 'wb_nam_e'},
 
     ]
 },
@@ -279,8 +279,8 @@ Heron.gridColumns = [{
 		//addEtc,
 		{ header: 'เนื้อที่ (ตร.กม.)', dataIndex: 'sqkm' },
 		{ header: 'เนื้อที่(ไร่)', dataIndex: 'rai' },
-        { header: 'ชื่อ_ภาษาไทย', dataIndex: 'wb_nam_t'},
-		{ header: 'ชื่อ_ภาษาอังกฤษ', dataIndex: 'wb_nam_e'},
+        { header: 'ชื่อภาษาไทย', dataIndex: 'wb_nam_t'},
+		{ header: 'ชื่อภาษาอังกฤษ', dataIndex: 'wb_nam_e'},
 
     ]
 },
@@ -317,6 +317,28 @@ Heron.gridColumns = [{
 		{ header: 'ความยาว (กม.)', dataIndex: 'length_km' },
         { header: 'ประเภท', dataIndex: 'typ_t'},
 		{ header: 'ชื่อ', dataIndex: 'name_t'},
+
+    ]
+},
+{
+    featureType: 'ln9p_basin_4326',
+    columns: [
+        //colModule,
+		//addEtc,
+		{ header: 'ชื่อ', dataIndex: 'gb_nam_t'},
+
+    ]
+},
+{
+    featureType: 'ln9p_wsh_4326',
+    columns: [
+        //colModule,
+		//addEtc,
+		{ header: 'เนื้อที่ (ตร.กม.)', dataIndex: 'sqkm' },
+        { header: 'เนื้อที่ (ไร่)', dataIndex: 'rai'},
+		{ header: 'ชั้น', dataIndex: 'wshd_class'},
+		{ header: 'คำอธิบาย', dataIndex: 'desc_'},
+		{ header: 'ประเภทการใช้ที่ดินที่เหมาะสม', dataIndex: 'luse'},
 
     ]
 },
@@ -367,7 +389,7 @@ Heron.gridColumns = [{
 
 		{ header: 'ชื่อ', dataIndex: 'fac_name_t'},
 		{ header: 'คำอธิบาย_ภาษาไทย', dataIndex: 'desc_t' },
-       { header: 'คำอธิบาย__ภาษาอังกฤษ', dataIndex: 'desc_e' },
+       { header: 'คำอธิบาย_ภาษาอังกฤษ', dataIndex: 'desc_e' },
 		{ header: 'ประเภท', dataIndex: 'fac_agtyp'},
 		{ header: 'ตำบล', dataIndex: 'tam_name'},
 		{ header: 'อำเภอ', dataIndex: 'amp_name'},
@@ -417,4 +439,484 @@ Heron.gridColumns = [{
 		
 
     ]
-}];
+},
+//การใช้ที่ดินดิน
+{
+    featureType: 'lu_level1',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'รหัส', dataIndex: 're_code1'},
+		{ header: 'ชื่อ', dataIndex: 're_name1'},
+		
+
+    ]
+},
+{
+    featureType: 'lu_level2',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'รหัส', dataIndex: 're_code2'},
+		{ header: 'ชื่อ', dataIndex: 're_name2'},
+
+    ]
+},
+{
+    featureType: 'lu_level3',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'รหัส', dataIndex: 're_code3'},
+		{ header: 'ชื่อ', dataIndex: 're_name3_t'},
+
+    ]
+},
+//ดิน
+{
+    featureType: 'ln9p_soil_group_4326',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'หมายเลขกลุ่มดิน', dataIndex: 'soil_grp'},
+		
+
+    ]
+},
+{
+    featureType: 'ln9p_soil_series_4326',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ชื่อชุดดิน', dataIndex: 'soil_name'},
+		{ header: 'ความลึกของดิน', dataIndex: 'eff_des'},
+		{ header: 'การระบายน้ำของดิน', dataIndex: 'dr_des'},
+		{ header: 'ลักษณะของดิน', dataIndex: 'ture_des'},
+
+    ]
+},
+{
+    featureType: 's_arabica',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_arabica'},
+		
+
+    ]
+},
+{
+    featureType: 's_tea',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_tea'},
+		
+
+    ]
+},
+{
+    featureType: 's_mango',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_mango'},
+		
+
+    ]
+},
+{
+    featureType: 's_onion_l',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_onion_l'},
+		
+
+    ]
+},
+{
+    featureType: 's_garlic',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_garlic'},
+		
+
+    ]
+},
+{
+    featureType: 's_tomato',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_tomato'},
+		
+
+    ]
+},
+{
+    featureType: 's_rice',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_rice'},
+		
+
+    ]
+},
+{
+    featureType: 's_wheat',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_wheat'},
+		
+
+    ]
+},
+{
+    featureType: 's_barley',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_barley'},
+		
+
+    ]
+},
+{
+    featureType: 's_soybean',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_soybean'},
+		
+
+    ]
+},
+{
+    featureType: 's_peanut',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_peanut'},
+		
+
+    ]
+},
+{
+    featureType: 's_mungbean',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_mungbean'},
+		
+
+    ]
+},
+{
+    featureType: 's_bean',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_bean'},
+		
+
+    ]
+},
+{
+    featureType: 's_maize',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_maize'},
+		
+
+    ]
+},
+{
+    featureType: 's_sorghum',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_sorghum'},
+		
+
+    ]
+},
+{
+    featureType: 's_cassava',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_cassava'},
+		
+
+    ]
+},
+{
+    featureType: 's_sugar',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_sugar'},
+		
+
+    ]
+},
+{
+    featureType: 's_sesame',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_sesame'},
+		
+
+    ]
+},
+{
+    featureType: 's_oil',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_oil'},
+		
+
+    ]
+},
+{
+    featureType: 's_cotton',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_cotton'},
+		
+
+    ]
+},
+{
+    featureType: 's_lychee',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_lychee'},
+		
+
+    ]
+},
+{
+    featureType: 's_longan',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_longan'},
+		
+
+    ]
+},
+{
+    featureType: 's_fruit',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_fruit'},
+		
+
+    ]
+},
+{
+    featureType: 's_pineappl',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_pineappl'},
+		
+
+    ]
+},
+{
+    featureType: 's_silk',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_silk'},
+		
+
+    ]
+},
+{
+    featureType: 's_tamarind',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_tamarind'},
+		
+
+    ]
+},
+{
+    featureType: 's_banana',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_banana'},
+		
+
+    ]
+},
+{
+    featureType: 's_cashewnu',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_cashewnu'},
+		
+
+    ]
+},
+{
+    featureType: 's_vege',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_vege'},
+		
+
+    ]
+},
+{
+    featureType: 's_orange1',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_orange1'},
+		
+
+    ]
+},
+{
+    featureType: 's_jackfrui',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_jackfrui'},
+		
+
+    ]
+},
+{
+    featureType: 's_chili',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_chili'},
+		
+
+    ]
+},
+{
+    featureType: 's_cabbage',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_cabbage'},
+		
+
+    ]
+},
+{
+    featureType: 's_potato',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_potato'},
+		
+
+    ]
+},
+{
+    featureType: 's_kapok',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_kapok'},
+		
+
+    ]
+},
+{
+    featureType: 's_avocado',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_avocado'},
+		
+
+    ]
+},
+{
+    featureType: 's_flowers',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_flowers'},
+		
+
+    ]
+},
+{
+    featureType: 's_pasture',
+    columns: [
+        //colModule,
+		//addEtc,
+
+		{ header: 'ระดับความเหมาะสม', dataIndex: 's_pasture'},
+		
+
+    ]
+}
+//จบดิน
+];

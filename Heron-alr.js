@@ -7154,6 +7154,12 @@ Heron.widgets.search.FeatureInfoPanel = Ext.extend(Ext.Panel, {
                 html: '<iframe src="tabFarmer.php?alrcode='+alrVal+'" scrolling="yes" frameborder="0" style="position: relative; height: 100%; width: 100%;"></iframe>',
                 cls:'empty'
                 });
+				
+			var tabPlang = new Ext.Panel({
+				title: 'แปลงที่ดิน ',
+				html: '<iframe src="tabPlang.php?alrcode='+alrVal+'" scrolling="yes" frameborder="0" style="position: relative; height: 100%; width: 100%;"></iframe>',
+                cls:'empty'
+                });
 
             var tabImg = new Ext.Panel({
                 title: 'ภาพ ',
@@ -7161,7 +7167,7 @@ Heron.widgets.search.FeatureInfoPanel = Ext.extend(Ext.Panel, {
                 cls:'empty'
                 });
 
-            var panel = new Heron.widgets.search.FeaturePanel({
+           var panel = new Heron.widgets.search.FeaturePanel({
                 title: featureSet.title,
                 featureType: featureSet.featureType,
                 featureSetKey: featureSetKey,
@@ -7188,8 +7194,37 @@ Heron.widgets.search.FeatureInfoPanel = Ext.extend(Ext.Panel, {
                 }
             });
             
-            if(featureSet.title=="แปลงที่ดิน"){                
-                var tab = [panel, tabSoil, tabWater, tabAgri, tabFarmer, tabImg];
+			var panel_gis = new Heron.widgets.search.FeaturePanel({
+                title: "Gis",
+                featureType: featureSet.featureType,
+                featureSetKey: featureSetKey,
+                header: false,
+                features: featureSet.features,
+                autoConfig: autoConfig,
+                autoConfigMaxSniff: this.autoConfigMaxSniff,
+                hideColumns: this.hideColumns,
+                columnFixedWidth: this.columnFixedWidth,
+                autoMaxWidth: this.autoMaxWidth,
+                autoMinWidth: this.autoMinWidth,
+                columnCapitalize: this.columnCapitalize,
+                showGeometries: this.showGeometries,
+                featureSelection: this.featureSelection,
+                gridCellRenderers: this.gridCellRenderers,
+                columns: columns,
+                showTopToolbar: this.showTopToolbar,
+                exportFormats: this.exportFormats,
+                displayPanels: this.displayPanels,
+                hropts: {
+                    zoomOnRowDoubleClick: true,
+                    zoomOnFeatureSelect: false,
+                    zoomLevelPointSelect: 8
+                }
+            });
+			
+			
+            if(featureSet.title=="แปลงที่ดิน"){ 
+			
+                var tab = [panel_gis, tabPlang, tabSoil, tabWater, tabAgri, tabFarmer, tabImg];
                 
             }else{
                 var tab = [panel];
