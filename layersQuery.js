@@ -1046,6 +1046,7 @@ var wshd_cl = new OpenLayers.Layer.WMS(
 );
 
 //////// landuse
+/*
 var dwrlu = new OpenLayers.Layer.WMS(
     "การใช้ประโยชน์ที่ดิน (กรมทรัพยากรน้ำ)",
     Heron.scratch.urls.OwsMapNU, { layers: "trfgdb:dwrlu", transparent: true, format: 'image/png' }, {
@@ -1086,7 +1087,8 @@ var spklu = new OpenLayers.Layer.WMS(
         }
     }
 );
-/*
+
+
 var p10_evap_tff = new OpenLayers.Layer.WMS(
     "ปริมาณการระเหยเฉลี่ย 30 ปี",
     Heron.scratch.urls.GwcGistNU, { layers: "para:p10_evap_tff", transparent: true, format: 'image/png' }, {
@@ -1439,7 +1441,7 @@ var stream = new OpenLayers.Layer.WMS(
     }
 );
 var ln9p_elecline_4326 = new OpenLayers.Layer.WMS(
-    "ข้อมูลสายส่งแรงสูง",
+    "สายส่งแรงสูง",
     Heron.scratch.urls.wmsAlr2, { layers: "alr:ln9p_elecline_4326", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
@@ -1567,7 +1569,7 @@ var stabus = new OpenLayers.Layer.WMS(
     }
 );
 var ln9p_vill = new OpenLayers.Layer.WMS(
-    "หมู่บ้าน",
+    "ที่ตั้งหมู่บ้าน",
     Heron.scratch.urls.wmsAlr2, { layers: "alr:ln9p_vill", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
@@ -1629,7 +1631,7 @@ while (mapLayer[i]) {
         selectedLayers.push(expertSiteselection);
         layersGroup['siteselection'] = {};
         layersGroup.siteselection['title'] = "ตำแหน่งเหมาะสมพัฒนาแหล่งน้ำ";
-
+		
     } else if (mapLayer[i] == 'lyrPlace') {
         selectedLayers.push(anamai, hospital2, school, factory, staairport, stabus);
         layersGroup['place'] = {};
@@ -1649,13 +1651,11 @@ while (mapLayer[i]) {
         selectedLayers.push(ln9p_irr_4326, ln9p_wat_manmade_4326, ln9p_wat_natural_4326,stream);
         layersGroup['waterResource'] = {};
         layersGroup.waterResource['title'] = "น้ำ";
-
     }
 	else if (mapLayer[i] == 'lyrLandUse') {
         selectedLayers.push(lu_level3, lu_level2, lu_level1 );
         layersGroup['LandUse'] = {};
         layersGroup.LandUse['title'] = "การใช้ที่ดิน";
-
     }
 	else if (mapLayer[i] == 'lyrSupport') {
         selectedLayers.push(flow_accum, ln9p_gwat_dept_4326, yield_4326 , wsupply_runoff, wsupply_rain, rainsplinegrid);

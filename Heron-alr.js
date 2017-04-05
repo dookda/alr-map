@@ -7173,7 +7173,7 @@ Heron.widgets.search.FeatureInfoPanel = Ext.extend(Ext.Panel, {
             if(featureSet.title=="แปลงที่ดิน"){ 
 
                 var panel = new Heron.widgets.search.FeaturePanel({
-                    title: 'gis oho',
+                    title: 'Gis',
                     //title: da,
                     featureType: featureSet.featureType,
                     featureSetKey: featureSetKey,
