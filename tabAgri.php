@@ -38,7 +38,7 @@ function getParcel($col, $table, $alrcode){
 <body>
 
 <div class="container">
-  <h3>ข้อมูลการทำการเกษตร</h3>
+  <h4>ข้อมูลการทำการเกษตร</h4>
 
 
 <table class="table table-striped">
@@ -63,7 +63,7 @@ function getParcel($col, $table, $alrcode){
       </tr>
     </tbody>
   </table>
-  
+<hr color=red>
 <table class="table table-striped">
     <thead>
       <tr>
@@ -138,7 +138,7 @@ function getParcel($col, $table, $alrcode){
       </tr>
     </tbody>
   </table>
-   <hr width="100%  size="5" color="red" align="center"><p>
+   <hr color=red>
 <table class="table table-striped">
     <thead>
       <tr>
@@ -213,6 +213,7 @@ function getParcel($col, $table, $alrcode){
       </tr>
     </tbody>
   </table>
+  <hr color=red>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -287,6 +288,7 @@ function getParcel($col, $table, $alrcode){
       </tr>
     </tbody>
   </table>
+  <hr color=red>
 <table class="table table-striped">
     <thead>
       <tr>
@@ -353,6 +355,7 @@ function getParcel($col, $table, $alrcode){
       </tr>  
     </tbody>
   </table>
+  <hr color=red>
 <table class="table table-striped">
     <thead>
       <tr>
@@ -419,6 +422,7 @@ function getParcel($col, $table, $alrcode){
       </tr>  
     </tbody>
   </table>
+  <hr color=red>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -485,6 +489,7 @@ function getParcel($col, $table, $alrcode){
       </tr>  
     </tbody>
   </table>
+  <hr color=red>
   <table class="table table-striped">
     <thead>
       <tr>

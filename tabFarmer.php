@@ -36,7 +36,7 @@ function getParcel($col, $table, $alrcode){
 <body>
 
 <div class="container">
-  <h3>ข้อมูลเกษตรกร</h3>
+  <h4>ข้อมูลเกษตรกร</h4>
 
 
 <table class="table table-striped">

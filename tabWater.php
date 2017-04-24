@@ -36,9 +36,9 @@ function getParcel($col, $table, $alrcode){
 <body>
 
 <div class="container">
-  <h3>ข้อมูลน้ำ</h3>
+  <h4>ข้อมูลน้ำ</h4>
   
-  <h4> ข้อมูลปฐมภูมิ </h4>
+ <!-- <h5> ข้อมูลปฐมภูมิ </h5> -->
 <table class="table table-striped">
     <thead>
       <tr>
@@ -74,8 +74,8 @@ function getParcel($col, $table, $alrcode){
 
     </tbody>
   </table>
-
-<h4> ข้อมูลทุติยภูมิ </h4>
+<hr color=red>
+<!--<h5> ข้อมูลทุติยภูมิ </h5> -->
 <table class="table table-striped">
     <thead>
       <tr>
