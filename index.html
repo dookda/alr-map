@@ -106,7 +106,7 @@ $(document).ready(function() {
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">Smart OFFICE smart farmer</h1>
+                <h1 id="homeHeading">Smart OFFICER smart farmer</h1>
                 <p>ส.ป.ก. 4.0 "ระบบสนับสนุนการวางแผนพัฒนาพื้นที่ ส.ป.ก. ใน 9 จังหวัดภาคเหนือตอนล่าง"</p>
                 <a href="#portfolio" class="btn btn-primary btn-xl page-scroll">เข้าใช้งาน</a>
             </div>
@@ -200,11 +200,9 @@ $(document).ready(function() {
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-info" method="GET" formaction="mapquery.php" formtarget="_top">แผนที่</button>
-                                    <button type="submit" class="btn btn-success" formaction="chart/progress.php" formtarget="progress_php">สรุปผลการกรอกข้อมูล</button>
+                                    
                                 </form>
-                                <p></p>
-                                <p></p>                                
-                                    <iframe name="progress_php" src="" style="width: 100%;" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>                                
+                                                             
                             </div>
                         </div>
                     </div>
@@ -280,10 +278,14 @@ $(document).ready(function() {
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">ตกลง</button>
+                            <button type="submit" class="btn btn-primary" formtarget="progress_php">สรุปข้อมูลพื้นฐาน</button>
+							<button type="submit" class="btn btn-success" formaction="chart/progress.php" formtarget="progress_php">สรุปข้อมูลสำรวจโดยโมบายแอพ</button>
                         </form>
                     </div>
-                    <iframe name="chart_php" src="" style="width: 100%;" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+					<p></p>
+                    <p></p>                                
+                    <iframe name="progress_php" src="" style="width: 100%;" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+         
                 </div>
             </div>
         </div>
