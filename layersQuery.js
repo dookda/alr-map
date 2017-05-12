@@ -51,6 +51,7 @@ Heron.scratch.urls = {
     gwcAlr: 'http://map.nu.ac.th/gs-alr/gwc/service/wms?',
     wmsAlr2: 'http://map.nu.ac.th/gs-alr2/ows?',
     gwcAlr2: 'http://map.nu.ac.th/gs-alr2/gwc/service/wms?',
+    gwcCGI: 'http://localhost:8080/gs-disaster/gwc/service/wms?',
     gwcTrf: 'http://map.nu.ac.th/geoserver-trfland/gwc/service/wms?',
     OwsMapNU: 'http://map.nu.ac.th/geoserver-trfland/ows?',
     OwsGistNU: 'http://www2.cgistln.nu.ac.th/para/ows?',
@@ -249,7 +250,7 @@ var repeated_flooding = new OpenLayers.Layer.WMS(
 //////// rain
 var scl_drought4326 = new OpenLayers.Layer.WMS(
     "ระดับเสี่ยงแล้ง",
-    Heron.scratch.urls.gwcAlr2, { layers: "alrmap:rcl_drought", transparent: true, format: 'image/png' }, {
+    Heron.scratch.urls.gwcCGI, { layers: "alrmap:rcl_drought", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
         isBaseLayer: false,
@@ -263,7 +264,7 @@ var scl_drought4326 = new OpenLayers.Layer.WMS(
 );
 var scl_erosion4326 = new OpenLayers.Layer.WMS(
     "ระดับเสี่ยงการสูญเสียดิน",
-    Heron.scratch.urls.gwcAlr2, { layers: "alrmap:rcl_erosion", transparent: true, format: 'image/png' }, {
+    Heron.scratch.urls.gwcCGI, { layers: "alrmap:rcl_erosion", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
         isBaseLayer: false,
@@ -278,7 +279,7 @@ var scl_erosion4326 = new OpenLayers.Layer.WMS(
 
 var scl_landslide4326 = new OpenLayers.Layer.WMS(
     "ระดับเสี่ยงดินถล่ม",
-    Heron.scratch.urls.gwcAlr2, { layers: "alrmap:rcl_landslide", transparent: true, format: 'image/png' }, {
+    Heron.scratch.urls.gwcCGI, { layers: "alrmap:rcl_landslide", transparent: true, format: 'image/png' }, {
         singleTile: false,
         opacity: 0.9,
         isBaseLayer: false,

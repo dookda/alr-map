@@ -18,7 +18,65 @@ $corsOptions = array(
 $cors = new \CorsSlim\CorsSlim($corsOptions);
 $app->add($cors);
 
+//// select patv
+$app->get('/prov', function($request, $response){  
+    //$alrCode = $request->getAttribute('alrCode');  
+    $sql = "select distinct prov_x, prov_y, prov_code, prov_name from ln9p_prov";
+    $rs = pg_query($sql);
+    
+    $result = array();
+    while($row = pg_fetch_assoc($rs)){
+      array_push($result, $row);
+    }
 
+    $newResponse = $response->withJson($result);
+    return $newResponse;
+});
+
+$app->get('/amp/{pcode}', function($request, $response){  
+    $pcode = $request->getAttribute('pcode');  
+    $sql = "select distinct amp_x, amp_y, amp_code, amp_name, prov_code from ln9p_amp where prov_code = '$pcode'";
+    $rs = pg_query($sql);
+    
+    $result = array();
+    while($row = pg_fetch_assoc($rs)){
+      array_push($result, $row);
+    }
+
+    $newResponse = $response->withJson($result);
+    return $newResponse;
+});
+
+$app->get('/tam/{acode}', function($request, $response){  
+    $acode = $request->getAttribute('acode');  
+    $sql = "select distinct tam_x, tam_y, tam_code, tam_name, amp_code from ln9p_tam where amp_code = '$acode'";
+    $rs = pg_query($sql);
+    
+    $result = array();
+    while($row = pg_fetch_assoc($rs)){
+      array_push($result, $row);
+    }
+
+    $newResponse = $response->withJson($result);
+    return $newResponse;
+});
+
+$app->get('/vill/{tcode}', function($request, $response){  
+    $tcode = $request->getAttribute('tcode');  
+    $sql = "select distinct vill_x, vill_y, vill_code, vill_name, tam_code from ln9p_vill where tam_code = '$tcode'";
+    $rs = pg_query($sql);
+    
+    $result = array();
+    while($row = pg_fetch_assoc($rs)){
+      array_push($result, $row);
+    }
+
+    $newResponse = $response->withJson($result);
+    return $newResponse;
+});
+
+
+////////////
 $app->get('/place/{place}', function($request, $response){
     $place = $request->getAttribute('place'); 
     if($place=='tam'){
