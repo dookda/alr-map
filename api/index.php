@@ -18,7 +18,30 @@ $corsOptions = array(
 $cors = new \CorsSlim\CorsSlim($corsOptions);
 $app->add($cors);
 
-//// select patv
+//// select location
+$app->get('/loc/{place}/{code}', function($request, $response){
+    $place = $request->getAttribute('place'); 
+    $code = $request->getAttribute('code'); 
+    
+    if($place=='province'){
+        $sql = "select prov_code, prov_nam_t, c_x, c_y from ln9p_prov where prov_code = '$code'";
+    }elseif($place=='amphoe'){
+        $sql = "select amp_code, amp_nam_t, c_x, c_y from ln9p_amp where amp_code = '$code'";
+    }elseif ($place=='tambon') {
+        $sql = "select tam_code, tam_nam_t, c_x, c_y from ln9p_tam where tam_code = '$code'";
+    }elseif ($place=='village') {
+        $sql = "select vill_code, vill_nam_t, c_x, c_y from ln9p_vill where vill_code = '$code'";
+    }
+    
+    $rs = pg_query($sql);
+    $result = array();
+    while($row = pg_fetch_assoc($rs)){
+      array_push($result, $row);
+    }
+    $newResponse = $response->withJson($result);
+    return $newResponse;
+});
+
 $app->get('/prov', function($request, $response){  
     //$alrCode = $request->getAttribute('alrCode');  
     $sql = "select distinct c_x, c_y, prov_code, prov_nam_t from ln9p_prov";
