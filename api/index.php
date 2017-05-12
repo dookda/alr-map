@@ -19,7 +19,7 @@ $cors = new \CorsSlim\CorsSlim($corsOptions);
 $app->add($cors);
 
 //// select location
-$app->get('/loc/{place}/{code}', function($request, $response){
+$app->get('/location/{place}/{code}', function($request, $response){
     $place = $request->getAttribute('place'); 
     $code = $request->getAttribute('code'); 
     
