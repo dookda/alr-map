@@ -18,7 +18,7 @@ $corsOptions = array(
 $cors = new \CorsSlim\CorsSlim($corsOptions);
 $app->add($cors);
 
-//// select location
+//// select by location
 $app->get('/location/{place}/{code}', function($request, $response){
     $place = $request->getAttribute('place'); 
     $code = $request->getAttribute('code'); 
@@ -97,7 +97,21 @@ $app->get('/vill/{tcode}', function($request, $response){
     $newResponse = $response->withJson($result);
     return $newResponse;
 });
-
+//////// select by rawang id
+$app->get('/rawang/{plang}/{rawang}', function($request, $response){
+    $plang = $request->getAttribute('plang'); 
+    $rawang = $request->getAttribute('rawang'); 
+    
+    $sql = "select * from alr_plang_centroid where plang = '$plang' and rawang = '$rawang' ";
+    
+    $rs = pg_query($sql);
+    $result = array();
+    while($row = pg_fetch_assoc($rs)){
+      array_push($result, $row);
+    }
+    $newResponse = $response->withJson($result);
+    return $newResponse;
+});
 
 ////////////
 $app->get('/place/{place}', function($request, $response){
