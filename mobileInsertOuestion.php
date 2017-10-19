@@ -93,12 +93,12 @@ function insertCwr($alrCode, $wkNum, $cropType, $active_land_cwr){
 }
 
 
-function cwr($alrCode, $crop_type, $active_date, $active_land_cwr)
+function cwr($alrCode, $crop_type, $rai, $active_date, $active_land_cwr)
 {   
     $chkExist = chkActivelandcwr($alrCode, $active_land_cwr);
     //print $chkExist."</br>";
 
-    $pacelSql = pg_query("SELECT alrcode, $crop_type as active_type, date_part('week'::text, $active_date) AS wk FROM alr_mobile where alrcode='$alrCode'");
+    $pacelSql = pg_query("SELECT alrcode, $crop_type as active_type, $rai as rai, date_part('week'::text, $active_date) AS wk FROM alr_mobile where alrcode='$alrCode'");
 
     if($chkExist==0){
 
@@ -109,7 +109,7 @@ function cwr($alrCode, $crop_type, $active_date, $active_land_cwr)
                 print "$pacelKey = $pacelValue <br />";
             }*/
             
-            pg_query("INSERT INTO $active_land_cwr (alrcode, crop_type, active_wk) VALUES ('".$pacelRow['alrcode']."','".$pacelRow['active_type']."','".$pacelRow['wk']."')");
+            pg_query("INSERT INTO $active_land_cwr (alrcode, crop_type, active_wk, rai) VALUES ('".$pacelRow['alrcode']."','".$pacelRow['active_type']."','".$pacelRow['wk']."',".$pacelRow['rai'].")");
 
             $wkNum = $pacelRow['wk'];
             $cropType = $pacelRow['active_type'];
@@ -119,7 +119,7 @@ function cwr($alrCode, $crop_type, $active_date, $active_land_cwr)
     }else{
         while ($pacelRow = pg_fetch_assoc($pacelSql)) {
 
-            pg_query("UPDATE $active_land_cwr SET crop_type='".$pacelRow['active_type']."', active_wk='".$pacelRow['wk']."' WHERE alrcode='$alrCode'");
+            pg_query("UPDATE $active_land_cwr SET crop_type='".$pacelRow['active_type']."', active_wk='".$pacelRow['wk']."',".$pacelRow['rai']." WHERE alrcode='$alrCode'");
 
             $wkNum = $pacelRow['wk'];
             $cropType = $pacelRow['active_type'];
@@ -146,15 +146,15 @@ if (isset($postdata)) {
     foreach($request as $item => $value){
         if($item=='c1_name'){
             //echo $value;
-            cwr($alrcode, "c1_name", "c1_grow", "active_land_cwr");
+            cwr($alrcode, "c1_name", "c1_rai", "c1_grow", "active_land_cwr");
 
         }elseif($item=='c2_name'){
             //echo $value;
-            cwr($alrcode, "c2_name", "c2_grow", "active_land_cwr2");
+            cwr($alrcode, "c2_name", "c2_rai", "c2_grow", "active_land_cwr2");
 
         }elseif($item=='c3_name'){
             //echo $value;        
-            cwr($alrcode, "c3_name", "c3_grow", "active_land_cwr3");
+            cwr($alrcode, "c3_name", "c3_rai", "c3_grow", "active_land_cwr3");
         };
     }
 

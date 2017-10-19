@@ -91,7 +91,7 @@ function insertCwr($alrCode, $wkNum, $cropType, $active_land_cwr){
 }
 
 
-function cwr($alrCode, $active_land, $active_land_cwr)
+function cwr($alrCode, $active_land, $active_land_cwr, $rai)
 {   
     $chkExist = chkActivelandcwr($alrCode, $active_land_cwr);
     //print $chkExist."</br>";
@@ -107,7 +107,7 @@ function cwr($alrCode, $active_land, $active_land_cwr)
                 print "$pacelKey = $pacelValue <br />";
             }*/
             
-            pg_query("INSERT INTO $active_land_cwr (alrcode, crop_type, active_wk) VALUES ('".$pacelRow['alrcode']."','".$pacelRow['active_type']."','".$pacelRow['wk']."')");
+            pg_query("INSERT INTO $active_land_cwr (alrcode, crop_type, active_wk, rai) VALUES ('".$pacelRow['alrcode']."','".$pacelRow['active_type']."','".$pacelRow['wk']."', $rai)");
 
             $wkNum = $pacelRow['wk'];
             $cropType = $pacelRow['active_type'];
@@ -117,7 +117,7 @@ function cwr($alrCode, $active_land, $active_land_cwr)
     }else{
         while ($pacelRow = pg_fetch_assoc($pacelSql)) {
 
-            pg_query("UPDATE $active_land_cwr SET crop_type='".$pacelRow['active_type']."',active_wk='".$pacelRow['wk']."' WHERE alrcode='$alrCode'");
+            pg_query("UPDATE $active_land_cwr SET crop_type='".$pacelRow['active_type']."',active_wk='".$pacelRow['wk']."',rai = $rai WHERE alrcode='$alrCode'");
 
             $wkNum = $pacelRow['wk'];
             $cropType = $pacelRow['active_type'];
@@ -145,7 +145,7 @@ foreach($data as $item => $value){
         $active_land = "active_land";
         $active_land_cwr ="active_land_cwr";
         updateActiveland($code, $owner, $type, $rai, $date, $active_land);
-        cwr($code, $active_land, $active_land_cwr);
+        cwr($code, $active_land, $active_land_cwr, $rai);
         //echo "updateActiveland($code, $owner, $type, $rai, $date, $active_land) cwr($code, $active_land, $active_land_cwr)";
     }elseif($item=='ctype2'){
         //echo "type2 $item: $value";
@@ -157,7 +157,7 @@ foreach($data as $item => $value){
         $active_land = "active_land2";
         $active_land_cwr ="active_land_cwr2";
         updateActiveland($code, $owner, $type, $rai, $date, $active_land);
-        cwr($code, $active_land, $active_land_cwr);
+        cwr($code, $active_land, $active_land_cwr, $rai);
         //echo "updateActiveland($code, $owner, $type, $rai, $date, $active_land) cwr($code, $active_land, $active_land_cwr)";
     }elseif($item=='ctype3'){
         //echo "type3 $item: $value";
@@ -169,7 +169,7 @@ foreach($data as $item => $value){
         $active_land = "active_land3";
         $active_land_cwr ="active_land_cwr3";
         updateActiveland($code, $owner, $type, $rai, $date, $active_land);
-        cwr($code, $active_land, $active_land_cwr);
+        cwr($code, $active_land, $active_land_cwr, $rai);
         //echo "updateActiveland($code, $owner, $type, $rai, $date, $active_land) cwr($code, $active_land, $active_land_cwr)";
     }
 }
