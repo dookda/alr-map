@@ -48,13 +48,13 @@ Heron.scratch.urls = {
     PDOK: 'http://geodata.nationaalgeoregister.nl',
     wmsAlr: 'http://map.nu.ac.th/gs-alr/ows?',
     gwcAlr: 'http://map.nu.ac.th/gs-alr/gwc/service/wms?',
-    wmsAlr2: 'http://map.nu.ac.th/gs-alr2/ows?',
-    gwcAlr2: 'http://map.nu.ac.th/gs-alr2/gwc/service/wms?',
+    wmsAlr2: 'http://gistnu.com/gs-alr/ows?',
+    gwcAlr2: 'http://gistnu.com/gs-alr/gwc/service/wms?',
     gwcTrf: 'http://map.nu.ac.th/geoserver-trfland/gwc/service/wms?',
     OwsMapNU: 'http://map.nu.ac.th/geoserver-trfland/ows?',
     OwsGistNU: 'http://www2.cgistln.nu.ac.th/para/ows?',
     OwsGISTDA: 'http://tile.gistda.or.th/geoserver/ows?',
-    OwsFGDS: 'http://fgds.gistda.or.th/geoserver/NGIS2014/ows?',
+    OwsFGDS: 'http://fgds.gistda.or.th/geoserver/ows?',
     GwcGistNU: 'http://www2.cgistln.nu.ac.th/para/gwc/service/wms?'
 };
 

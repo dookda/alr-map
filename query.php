@@ -1,13 +1,8 @@
 <?php
   header('Content-Type: application/json');
-   $host        = "host=localhost";
-   $port        = "port=5432";
-   $dbname      = "dbname=alr";
-   $credentials = "user=postgres password=TRF2cn2010";
-   $db = pg_connect( "$host $port $dbname $credentials"  );
-   if(!$db){
-      echo "Error : Unable to open database\n";
-   }
+  
+  require('../lib/conn.php');
+  $db = pg_connect($conn_alr) or die('Could not connect');
 
 
    $prov=$_GET["prov__eq"];
@@ -141,5 +136,6 @@
 
 
    }
-pg_close($db);
+// Closing connection
+pg_close($dbconn);
 ?>

@@ -5,8 +5,8 @@
     header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
     header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
 	
-	include "../lib/sel_config.php";
-    conndb();
+    require('../lib/conn.php');
+    $dbconn = pg_connect($conn_alr) or die('Could not connect');
 
 	$postData = file_get_contents("php://input");
 	$data = json_decode($postData);
@@ -140,5 +140,6 @@ updateActiveland($code,$owner,$type,$rai,$date);
 //$alrcode  = "650113-245488";
 cwr($code);
 
-closedb();
+// Closing connection
+pg_close($dbconn);
 ?>

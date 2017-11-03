@@ -4,8 +4,8 @@
     header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
     header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
 
-include "../lib/sel_config.php";
-conndb();
+  require('../lib/conn.php');
+  $dbconn = pg_connect($conn_alr) or die('Could not connect');
 
 
 $alrcode = $_GET['alrcode'];
@@ -110,6 +110,9 @@ function getParcel($col, $table, $alrcode){
 
 
 
-<?php closedb(); ?>
+<?php 
+// Closing connection
+pg_close($dbconn); 
+?>
 </body>
 </html>

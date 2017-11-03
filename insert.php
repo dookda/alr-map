@@ -1,6 +1,6 @@
 <?php
-include "../lib/sel_config.php";
-conndb();
+    require('../lib/conn.php');
+    $dbconn = pg_connect($conn_alr) or die('Could not connect');
 
 
 function chkActivelandcwr($alrcode){
@@ -107,7 +107,8 @@ function cwr($alrCode)
 $alrcode  = "650113-245488";
 cwr($alrcode);
 
-closedb();
+// Closing connection
+pg_close($dbconn);
 
 
 

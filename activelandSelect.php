@@ -1,6 +1,6 @@
 <?php
-	include "../lib/sel_config.php";
-    conndb();
+	require('../lib/conn.php');
+	$dbconn = pg_connect($conn_alr) or die('Could not connect');
 
 	$sql = "select * from active_land";
 	$result = pg_query($sql);
@@ -11,7 +11,9 @@
 	}
 
 	echo json_encode($data);
-	closedb();
+	
+// Closing connection
+pg_close($dbconn);
 ?>
 
 

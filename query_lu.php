@@ -5,8 +5,8 @@
     header ("Cache-Control: no-cache, must-revalidate");
     header ("Pragma: no-cache");
 
-    include "../lib/sel_config.php";
-    conndb();
+  require('../lib/conn.php');
+  $dbconn = pg_connect($conn_alr) or die('Could not connect');
 
 
    $suitCrop=$_GET["suitCrop__eq"];  
@@ -86,5 +86,6 @@ if(!empty( $_GET['tam'] )){
 
   loadJsonData($sql);
 
-closedb();
+// Closing connection
+pg_close($dbconn);
 ?>

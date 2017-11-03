@@ -979,7 +979,7 @@ Heron.options.menuItems = [{
         text: 'กลับหน้าหลัก',
         autoEl: {
             tag: 'a',
-            href: 'http://map.nu.ac.th/alr-map/#portfolio',
+            href: 'https://wwww.gistnu.com/alr-map/#portfolio',
             html: 'กลับสู่หน้าหลัก'
         }
         /*    }, {

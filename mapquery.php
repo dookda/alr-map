@@ -6,10 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
 	<!-- External lib: ExtJS -->
-	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/adapter/ext/ext-base.js"></script>
-	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/ext-all.js"></script>
-	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/resources/css/ext-all.css"/>
-    <link rel="stylesheet" type="text/css" title="gray" href="http://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/resources/css/xtheme-gray.css" />
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/adapter/ext/ext-base.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/ext-all.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/resources/css/ext-all.css"/>
+    <link rel="stylesheet" type="text/css" title="gray" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/resources/css/xtheme-gray.css" />
 
 	<!-- External lib: Proj4JS (reproject lib) -->
    	<!--script src="http://cdnjs.cloudflare.com/ajax/libs/proj4js/1.1.0/proj4js-compressed.js" type="text/javascript"></script-->
@@ -21,11 +21,11 @@
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB2EX6KhAr-gvvFzBLpF4OZ1zY8edGyc1s"></script>
 
 	<!-- External lib: OpenLayers -->
-	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/openlayers/2.12/theme/default/style.css"/>
-	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/openlayers/2.12/OpenLayers.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/2.12/theme/default/style.css"/>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/2.12/OpenLayers.js"></script>
 
 	<!-- External lib: GeoExt -->
-	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/geoext/1.1/script/GeoExt.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/geoext/1.1/script/GeoExt.js"></script>
 	<script type="text/javascript" src="../heron-1.0.6/ux/gxp/gxp.js"></script>
 
 	<!-- application -->
@@ -62,6 +62,11 @@
 <body>
 <?php
 
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Credentials: true");
+    header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+
 $setDefault = '<script>var center = "11140015,1901789";
 		var zoom = 8;
 		var filter_pro = null;
@@ -73,8 +78,8 @@ $setDefault = '<script>var center = "11140015,1901789";
 		var lyrvisible_vill = true;
 		var lyrvisible_alr = true; </script>';
 
-include "../lib/sel_config.php";
-conndb();
+    require('../lib/conn.php');
+    $dbconn = pg_connect($conn_alr) or die('Could not connect');
 
 function getdat($getVal, $getFiedlName) {
     $getsql = '';
@@ -246,7 +251,10 @@ foreach($_GET as $key => $value) {
         echo "<script>var module = '".$value."';</script>";
     }
 };
-closedb();
+
+
+// Closing connection
+pg_close($dbconn);
 ?>
 
 <script type="text/javascript" src="Heron-alr.js"></script>

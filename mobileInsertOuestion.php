@@ -4,8 +4,8 @@
     header("Access-Control-Allow-Credentials: true");
     header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 
-	include "../lib/sel_config.php";
-    conndb();
+    require('../lib/conn.php');
+    $dbconn = pg_connect($conn_alr) or die('Could not connect'); 
 
 	
 function getData($col,$val,$alrcode){
@@ -163,5 +163,7 @@ if (isset($postdata)) {
     echo "Not called properly with username parameter!";
 }
 
-closedb();
+
+// Closing connection
+pg_close($dbconn);
 ?>

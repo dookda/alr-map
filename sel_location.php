@@ -5,8 +5,8 @@
     header ("Cache-Control: no-cache, must-revalidate");
     header ("Pragma: no-cache");
 
-    include "../lib/sel_config.php";
-    conndb();
+  require('../lib/conn.php');
+  $dbconn = pg_connect($conn_alr) or die('Could not connect');
 
     $data = $_GET['data'];
 
@@ -113,5 +113,6 @@
          echo "</select>\n";
         
         //echo pg_error();
-        closedb();
+        // Closing connection
+        pg_close($dbconn);
 ?>

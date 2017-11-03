@@ -4,8 +4,8 @@
     header("Access-Control-Allow-Credentials: true");
     header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 
-	include "../lib/sel_config.php";
-    conndb();
+	require('../lib/conn.php');
+	$dbconn = pg_connect($conn_alr) or die('Could not connect');
 
 	
 function getData($wk){     
@@ -121,5 +121,7 @@ $currentWeekNumber = date('W');
 $wk = 'w'.$currentWeekNumber;
 echo 'Week number:' . $wk;
 getData($wk);
-closedb();
+
+// Closing connection
+pg_close($dbconn);
 ?>

@@ -2,8 +2,8 @@
 <html>
 
 <?php
-include "../lib/sel_config.php";
-conndb();
+	require('../lib/conn.php');
+	$dbconn = pg_connect($conn_alr) or die('Could not connect');
 
 	$prov_name = $_GET[prov_name];
 	$amphoe_name = $_GET[amphoe_name];
@@ -804,7 +804,12 @@ order by sumpoint DESC;");
 		if ($sel_plant == '1'){
 		}else{
 			echo "*/";
-		} ?>	
+		} 
+
+		// Closing connection
+pg_close($dbconn);
+
+?>	
         </script>
 		
 		
